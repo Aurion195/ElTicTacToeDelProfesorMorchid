@@ -35,7 +35,7 @@
                <image>
                   <Image url="@../Images/perfect-circle_icon-icons.com_53928.png" />
                </image>
-            </ImageView>
+            </ImageView> 
             <ImageView fitHeight="82.0" fitWidth="88.0" layoutX="360.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fitHeight="82.0" fitWidth="88.0" layoutX="147.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fitHeight="82.0" fitWidth="88.0" layoutX="254.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" />
