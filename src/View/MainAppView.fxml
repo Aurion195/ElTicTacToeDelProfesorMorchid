@@ -12,7 +12,7 @@
          <children>
             <ImageView fitHeight="50.0" fitWidth="88.0" layoutX="169.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Téléchargements/places-home-3_icon-icons.com_48499.png" />
+                  <Image url="@../Images/places-home-3_icon-icons.com_48499.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="50.0" fitWidth="88.0" layoutX="252.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
@@ -33,7 +33,7 @@
             <ImageView fitHeight="82.0" fitWidth="88.0" layoutX="148.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fitHeight="59.0" fitWidth="61.0" layoutX="265.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Téléchargements/perfect-circle_icon-icons.com_53928.png" />
+                  <Image url="@../Images/perfect-circle_icon-icons.com_53928.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="82.0" fitWidth="88.0" layoutX="360.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true" />
@@ -42,7 +42,7 @@
             <ImageView fitHeight="82.0" fitWidth="88.0" layoutX="358.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fitHeight="82.0" fitWidth="88.0" layoutX="159.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Téléchargements/1487086345-cross_81577.png" />
+                  <Image url="@../Images/1487086345-cross_81577.png" />
                </image>
             </ImageView>
          </children></AnchorPane>
