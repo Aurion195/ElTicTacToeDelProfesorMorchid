@@ -1,31 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #607D8B;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1">
-   <top>
-      <MenuBar BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-   </top>
-</BorderPane>
+<SplitPane dividerPositions="0.17587939698492464" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="48.0" prefWidth="598.0" style="-fx-background-color: #424242;">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="88.0" layoutX="169.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Téléchargements/places-home-3_icon-icons.com_48499.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="88.0" layoutX="252.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="50.0" fitWidth="88.0" layoutX="388.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Téléchargements/1486564730-gears-cogs_81537.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+    <AnchorPane prefHeight="281.0" prefWidth="520.0" style="-fx-background-color: #424242;">
+         <children>
+            <Separator layoutX="166.0" layoutY="104.0" prefHeight="3.0" prefWidth="260.0" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="160.0" />
+            <Separator layoutX="162.0" layoutY="199.0" prefHeight="3.0" prefWidth="260.0" AnchorPane.bottomAnchor="117.0" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="199.0" />
+            <Separator layoutX="248.0" layoutY="27.0" orientation="VERTICAL" prefHeight="260.0" prefWidth="6.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="240.0" AnchorPane.rightAnchor="350.0" AnchorPane.topAnchor="35.0" />
+            <Separator layoutX="350.0" layoutY="24.0" orientation="VERTICAL" prefHeight="260.0" prefWidth="6.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="240.0" AnchorPane.topAnchor="35.0" />
+            <ImageView fitHeight="82.0" fitWidth="88.0" layoutX="252.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="82.0" fitWidth="88.0" layoutX="357.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="82.0" fitWidth="88.0" layoutX="148.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="59.0" fitWidth="61.0" layoutX="265.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Téléchargements/perfect-circle_icon-icons.com_53928.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="82.0" fitWidth="88.0" layoutX="360.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="82.0" fitWidth="88.0" layoutX="147.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="82.0" fitWidth="88.0" layoutX="254.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="82.0" fitWidth="88.0" layoutX="358.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="82.0" fitWidth="88.0" layoutX="159.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Téléchargements/1487086345-cross_81577.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
