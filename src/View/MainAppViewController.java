@@ -46,7 +46,7 @@ public class MainAppViewController
 	}
 
 	@FXML
-	void touch()
+	void onClickListener()
     {
 		if(this.Button00.isPressed() && this.casePlayed.elementAt(0))
 		{
