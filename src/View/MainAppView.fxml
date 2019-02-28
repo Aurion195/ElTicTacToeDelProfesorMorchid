@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="519.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainAppViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="519.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainAppViewController">
    <children>
       <AnchorPane layoutX="-7.0" layoutY="-1.0" prefHeight="66.0" prefWidth="527.0" style="-fx-background-color: #455A64;">
          <children>
@@ -34,7 +34,7 @@
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button02" fx:id="Button02" fitHeight="109.0" fitWidth="113.0" layoutX="328.0" layoutY="82.0" onMousePressed="#onClickListener" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 0;">
+            <ImageView id="Button02" fx:id="Button02" fitHeight="109.0" fitWidth="113.0" layoutX="328.0" layoutY="82.0" onMousePressed="#onClickListener" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Blanc.png" />
                </image>

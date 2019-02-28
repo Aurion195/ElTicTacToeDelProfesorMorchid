@@ -4,11 +4,10 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.* ;
 import javafx.stage.Stage;
 
-public class MainAppView extends Application 
+public class Launcher extends Application 
 {
 
     private Stage primaryStage;
@@ -31,7 +30,7 @@ public class MainAppView extends Application
         try {
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainAppView.class.getClassLoader().getResource("View/MainAppView.fxml"));
+            loader.setLocation(Launcher.class.getClassLoader().getResource("View/MainAppView.fxml"));
             rootLayout = (AnchorPane) loader.load();
             
             // Show the scene containing the root layout.
