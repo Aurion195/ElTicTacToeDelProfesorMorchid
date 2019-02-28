@@ -45,7 +45,7 @@ public class MainAppView extends Application {
         }
     }
 
-
+ 
     
     /**
      * Returns the main stage.
