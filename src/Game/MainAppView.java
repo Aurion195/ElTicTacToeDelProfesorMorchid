@@ -8,7 +8,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class MainAppView extends Application {
+public class MainAppView extends Application 
+{
 
     private Stage primaryStage;
     private AnchorPane rootLayout;
