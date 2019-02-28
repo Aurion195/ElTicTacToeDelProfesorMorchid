@@ -22,7 +22,7 @@
             <Button id="Buton00" layoutX="352.0" layoutY="90.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="90.0">
                <textFill>
                   <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-                     <stops> 
+                     <stops>  
                         <Stop color="BLACK" />
                         <Stop color="WHITE" offset="1.0" />
                      </stops> 
