@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="519.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainAppViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="519.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainAppViewController">
    <children>
-      <AnchorPane layoutX="-7.0" layoutY="-1.0" prefHeight="72.0" prefWidth="527.0" style="-fx-background-color: #455A64;" />
-      <AnchorPane layoutY="73.0" prefHeight="498.0" prefWidth="519.0" style="-fx-background-color: #455A64;">
+      <AnchorPane layoutX="-7.0" layoutY="-1.0" prefHeight="66.0" prefWidth="527.0" style="-fx-background-color: #455A64;">
+         <children>
+            <ImageView fitHeight="57.0" fitWidth="54.0" layoutX="43.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/places-home-3_icon-icons.com_48499.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <AnchorPane layoutY="77.0" prefHeight="494.0" prefWidth="519.0" style="-fx-background-color: #455A64;">
          <children>
             <Separator layoutX="160.0" layoutY="200.0" prefWidth="200.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" />
             <Separator layoutX="157.0" layoutY="319.0" prefWidth="200.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" />
@@ -24,7 +34,7 @@
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button02" fx:id="Button02" fitHeight="109.0" fitWidth="113.0" layoutX="328.0" layoutY="82.0" onMousePressed="#onClickListener" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button02" fx:id="Button02" fitHeight="109.0" fitWidth="113.0" layoutX="328.0" layoutY="82.0" onMousePressed="#onClickListener" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 0;">
                <image>
                   <Image url="@Blanc.png" />
                </image>
@@ -59,6 +69,10 @@
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="30.0" layoutX="48.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true" />
+            <Polygon fill="#455a64" layoutX="67.0" layoutY="-30.0" points="-16.0, 40.0, 11.0, 40.0, -3.0, 17.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <Text id="TourJoueur" layoutX="171.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tour du joueur" wrappingWidth="156.7294921875" />
+            <TextField layoutX="270.0" layoutY="23.0" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #455A64;" />
          </children>
       </AnchorPane>
    </children>
