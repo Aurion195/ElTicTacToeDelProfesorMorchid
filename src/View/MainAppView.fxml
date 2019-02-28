@@ -1,38 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.RadialGradient?>
-<?import javafx.scene.paint.Stop?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="519.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="-7.0" layoutY="-1.0" prefHeight="72.0" prefWidth="527.0" style="-fx-background-color: #455A64;" />
       <AnchorPane layoutY="73.0" prefHeight="498.0" prefWidth="519.0" style="-fx-background-color: #455A64;">
          <children>
-            <Button id="Buton01" layoutX="209.0" layoutY="93.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="215.0" AnchorPane.rightAnchor="215.0" AnchorPane.topAnchor="90.0" />
-            <Button id="Buton02" layoutX="68.0" layoutY="90.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: transparent;" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="90.0" />
-            <Button id="Buton00" layoutX="352.0" layoutY="90.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="90.0">
-               <textFill>
-                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-                     <stops>  
-                        <Stop color="BLACK" />
-                        <Stop color="WHITE" offset="1.0" />
-                     </stops> 
-                  </RadialGradient>
-               </textFill>
-            </Button>
-            <Button id="Buton12" layoutX="214.0" layoutY="198.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="215.0" />
-            <Button id="Buton10" layoutX="89.0" layoutY="194.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="215.0" />
-            <Button id="Buton11" layoutX="215.0" layoutY="197.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="215.0" AnchorPane.rightAnchor="215.0" AnchorPane.topAnchor="215.0" />
-            <Button id="Buton21" layoutX="212.0" layoutY="326.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="80.0" />
-            <Button id="20" layoutX="71.0" layoutY="323.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="340.0" />
-            <Button id="Buton22" layoutX="355.0" layoutY="323.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="90.0" />
             <Separator layoutX="160.0" layoutY="200.0" prefWidth="200.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" />
             <Separator layoutX="157.0" layoutY="319.0" prefWidth="200.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" />
             <Separator layoutX="192.0" layoutY="160.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="80.0" AnchorPane.topAnchor="80.0" />
             <Separator layoutX="319.0" layoutY="160.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="80.0" AnchorPane.topAnchor="80.0" />
+            <ImageView id="Button00" fitHeight="101.0" fitWidth="98.0" layoutX="85.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="101.0" fitWidth="98.0" layoutX="209.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="101.0" fitWidth="98.0" layoutX="333.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
    </children>
