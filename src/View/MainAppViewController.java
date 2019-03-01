@@ -4,6 +4,7 @@ import java.util.Vector;
 
 import Game.Game;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
