@@ -24,47 +24,47 @@
             <Separator layoutX="157.0" layoutY="319.0" prefWidth="200.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" />
             <Separator layoutX="192.0" layoutY="160.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="80.0" AnchorPane.topAnchor="80.0" />
             <Separator layoutX="319.0" layoutY="160.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="80.0" AnchorPane.topAnchor="80.0" />
-            <ImageView id="Button00" fx:id="Button00" fitHeight="109.0" fitWidth="113.0" layoutX="77.0" layoutY="81.0" onMousePressed="#onClickListener" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button00" fx:id="Button00" fitHeight="109.0" fitWidth="113.0" layoutX="77.0" layoutY="81.0" onMousePressed="#onClickButton00" pickOnBounds="true" preserveRatio="true">
             	<image>
             		<Image url="@Blanc.png" />
             	</image>
             </ImageView>
-            <ImageView id="Button01" fx:id="Button01" fitHeight="109.0" fitWidth="113.0" layoutX="203.0" layoutY="81.0" onMousePressed="#onClickListener" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button01" fx:id="Button01" fitHeight="109.0" fitWidth="113.0" layoutX="203.0" layoutY="81.0" onMousePressed="#onClickButton01" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button02" fx:id="Button02" fitHeight="109.0" fitWidth="113.0" layoutX="328.0" layoutY="82.0" onMousePressed="#onClickListener" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button02" fx:id="Button02" fitHeight="109.0" fitWidth="113.0" layoutX="328.0" layoutY="82.0" onMousePressed="#onClickButton02" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button10" fx:id="Button10" fitHeight="109.0" fitWidth="113.0" layoutX="77.0" layoutY="206.0" onMousePressed="#onClickListener" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button10" fx:id="Button10" fitHeight="109.0" fitWidth="113.0" layoutX="77.0" layoutY="206.0" onMousePressed="#onClickButton10" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button11" fx:id="Button11" fitHeight="109.0" fitWidth="113.0" layoutX="203.0" layoutY="206.0" onMousePressed="#onClickListener" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button11" fx:id="Button11" fitHeight="109.0" fitWidth="113.0" layoutX="203.0" layoutY="206.0" onMousePressed="#onClickButton11" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button12" fx:id="Button12" fitHeight="109.0" fitWidth="113.0" layoutX="328.0" layoutY="206.0" onMousePressed="#onClickListener" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button12" fx:id="Button12" fitHeight="109.0" fitWidth="113.0" layoutX="328.0" layoutY="206.0" onMousePressed="#onClickButton12" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button20" fx:id="Button20" fitHeight="109.0" fitWidth="113.0" layoutX="77.0" layoutY="327.0" onMousePressed="#onClickListener" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button20" fx:id="Button20" fitHeight="109.0" fitWidth="113.0" layoutX="77.0" layoutY="327.0" onMousePressed="#onClickButton20" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button21" fx:id="Button21" fitHeight="109.0" fitWidth="113.0" layoutX="203.0" layoutY="327.0" onMousePressed="#onClickListener" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button21" fx:id="Button21" fitHeight="109.0" fitWidth="113.0" layoutX="203.0" layoutY="327.0" onMousePressed="#onClickButton21" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button22" fx:id="Button22" fitHeight="109.0" fitWidth="113.0" layoutX="328.0" layoutY="327.0" onMousePressed="#onClickListener" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button22" fx:id="Button22" fitHeight="109.0" fitWidth="113.0" layoutX="328.0" layoutY="327.0" onMousePressed="#onClickButton22" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Blanc.png" />
                </image>

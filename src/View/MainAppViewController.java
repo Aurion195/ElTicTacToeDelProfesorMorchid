@@ -40,77 +40,84 @@ public class MainAppViewController
 	}
 
 	@FXML
-	void onClickListener()
-    {
-		if(this.Button00.isPressed() && this.casePlayed.elementAt(0))
-		{
-			this.Button00.setImage((turnPlayer1 ? cercle : croix)) ;
-			this.choicePlayeurStrings.set(0, (this.turnPlayer1 ? "x" : "o"));
-			this.turnPlayer1 = !this.turnPlayer1 ;
-			this.casePlayed.set(0, false) ;
-		}
-		else if(this.Button01.isPressed() && this.casePlayed.elementAt(1))
-		{
-			this.Button01.setImage((turnPlayer1 ? cercle : croix)) ;
-			this.choicePlayeurStrings.set(1, (this.turnPlayer1 ? "x" : "o"));
-			this.turnPlayer1 = !this.turnPlayer1 ;
-			this.casePlayed.set(1, false) ;
-		}
-		else if(this.Button02.isPressed() && this.casePlayed.elementAt(2))
-		{
-			this.Button02.setImage((turnPlayer1 ? cercle : croix)) ;
-			this.choicePlayeurStrings.set(2, (this.turnPlayer1 ? "x" : "o"));
-			this.turnPlayer1 = !this.turnPlayer1 ;
-			this.casePlayed.set(2, false) ;
-		}
-		else if(this.Button10.isPressed() && this.casePlayed.elementAt(3))
-		{
-			this.Button10.setImage((turnPlayer1 ? cercle : croix)) ;
-			this.choicePlayeurStrings.set(3, (this.turnPlayer1 ? "x" : "o"));
-			this.turnPlayer1 = !this.turnPlayer1 ;
-			this.casePlayed.set(3, false) ;
-		}
-		else if(this.Button11.isPressed() && this.casePlayed.elementAt(4))
-		{
-			this.Button11.setImage((turnPlayer1 ? cercle : croix)) ;
-			this.choicePlayeurStrings.set(4, (this.turnPlayer1 ? "x" : "o"));
-			this.turnPlayer1 = !this.turnPlayer1 ;
-			this.casePlayed.set(4, false) ;
-		}
-		else if(this.Button12.isPressed() && this.casePlayed.elementAt(5))
-		{
-			this.Button12.setImage((turnPlayer1 ? cercle : croix)) ;
-			this.choicePlayeurStrings.set(5, (this.turnPlayer1 ? "x" : "o"));
-			this.turnPlayer1 = !this.turnPlayer1 ;
-			this.casePlayed.set(5, false) ;
-		}
-		else if(this.Button20.isPressed() && this.casePlayed.elementAt(6))
-		{
-			this.Button20.setImage((turnPlayer1 ? cercle : croix)) ;
-			this.choicePlayeurStrings.set(6, (this.turnPlayer1 ? "x" : "o"));
-			this.turnPlayer1 = !this.turnPlayer1 ;
-			this.casePlayed.set(6, false) ;
-		}
-		else if(this.Button21.isPressed() && this.casePlayed.elementAt(7))
-		{
-			this.Button21.setImage((turnPlayer1 ? cercle : croix)) ;
-			this.choicePlayeurStrings.set(7, (this.turnPlayer1 ? "x" : "o"));
-			this.turnPlayer1 = !this.turnPlayer1 ;
-			this.casePlayed.set(7, false) ;
-		}
-		else if(this.Button22.isPressed() && this.casePlayed.elementAt(8))
-		{
-			this.Button22.setImage((turnPlayer1 ? cercle : croix)) ;
-			this.choicePlayeurStrings.set(8, (this.turnPlayer1 ? "x" : "o"));
-			this.turnPlayer1 = !this.turnPlayer1 ;
-			this.casePlayed.set(8, false) ;
-		}
-		
-		if(this.game.win(this.choicePlayeurStrings))
-		{
-			System.out.println("Ta grosse mere a gagner");	
-			
-			//On se casse vers une autre view
-		}
-    }
+	void onClickButton00()
+	{
+		this.Button00.setDisable(true);
+		this.Button00.setImage((turnPlayer1 ? cercle : croix)) ;
+		this.turnPlayer1 = !this.turnPlayer1 ;
+		this.choicePlayeurStrings.set(0, (this.turnPlayer1 ? "x" : "o"));
+	}
+	
+	@FXML
+	void onClickButton01()
+	{
+		this.Button01.setDisable(true);
+		this.Button01.setImage((turnPlayer1 ? cercle : croix)) ;
+		this.turnPlayer1 = !this.turnPlayer1 ;
+		this.choicePlayeurStrings.set(1, (this.turnPlayer1 ? "x" : "o"));
+	}
+	
+	@FXML
+	void onClickButton02()
+	{
+		this.Button02.setDisable(true);
+		this.Button02.setImage((turnPlayer1 ? cercle : croix)) ;
+		this.turnPlayer1 = !this.turnPlayer1 ;
+		this.choicePlayeurStrings.set(2, (this.turnPlayer1 ? "x" : "o"));
+	}
+	
+	@FXML
+	void onClickButton10()
+	{
+		this.Button10.setDisable(true);
+		this.Button10.setImage((turnPlayer1 ? cercle : croix)) ;
+		this.turnPlayer1 = !this.turnPlayer1 ;
+		this.choicePlayeurStrings.set(3, (this.turnPlayer1 ? "x" : "o"));
+	}
+	
+	@FXML
+	void onClickButton11()
+	{
+		this.Button11.setDisable(true);
+		this.Button11.setImage((turnPlayer1 ? cercle : croix)) ;
+		this.turnPlayer1 = !this.turnPlayer1 ;
+		this.choicePlayeurStrings.set(4, (this.turnPlayer1 ? "x" : "o"));
+	}
+	
+	@FXML
+	void onClickButton12()
+	{
+		this.Button12.setDisable(true);
+		this.Button12.setImage((turnPlayer1 ? cercle : croix)) ;
+		this.turnPlayer1 = !this.turnPlayer1 ;
+		this.choicePlayeurStrings.set(5, (this.turnPlayer1 ? "x" : "o"));
+	}
+	
+	@FXML
+	void onClickButton20()
+	{
+		this.Button20.setDisable(true);
+		this.Button20.setImage((turnPlayer1 ? cercle : croix)) ;
+		this.turnPlayer1 = !this.turnPlayer1 ;
+		this.choicePlayeurStrings.set(6, (this.turnPlayer1 ? "x" : "o"));
+	}
+	
+	@FXML
+	void onClickButton21()
+	{
+		this.Button21.setDisable(true);
+		this.Button21.setImage((turnPlayer1 ? cercle : croix)) ;
+		this.turnPlayer1 = !this.turnPlayer1 ;
+		this.choicePlayeurStrings.set(7, (this.turnPlayer1 ? "x" : "o"));
+	}
+	
+	@FXML
+	void onClickButton22()
+	{
+		this.Button22.setDisable(true);
+		this.Button22.setImage((turnPlayer1 ? cercle : croix)) ;
+		this.turnPlayer1 = !this.turnPlayer1 ;
+		this.choicePlayeurStrings.set(8, (this.turnPlayer1 ? "x" : "o"));
+	}
+	
 }
