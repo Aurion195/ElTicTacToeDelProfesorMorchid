@@ -15,18 +15,44 @@ public class Game
 		}
 	}
 	
+	private boolean crossWin(Vector<String> c)
+	{
+		if((c.elementAt(0).toString().equals(c.elementAt(4).toString()) && c.elementAt(4).toString().equals(c.elementAt(8).toString()) ||
+		(c.elementAt(2).toString().equals(c.elementAt(4).toString()) && c.elementAt(4).toString().equals(c.elementAt(6).toString()))))
+		{
+			return true ;
+		}
+		
+		return false ;
+	}
+	private boolean horizontalWin(Vector<String> c)
+	{
+		if((c.elementAt(0).toString().equals(c.elementAt(1).toString()) && c.elementAt(1).toString().equals(c.elementAt(2).toString())) ||
+		   (c.elementAt(3).toString().equals(c.elementAt(4).toString()) && c.elementAt(4).toString().equals(c.elementAt(5).toString())) ||
+		   (c.elementAt(6).toString().equals(c.elementAt(7).toString()) && c.elementAt(7).toString().equals(c.elementAt(8).toString())))
+		{
+			return true ;
+		}
+		
+		return false ;
+	}
+	
+	private boolean verticaleWin(Vector<String> c)
+	{
+		if((c.elementAt(0).toString().equals(c.elementAt(3).toString()) && c.elementAt(3).toString().equals(c.elementAt(6).toString())) ||
+		   (c.elementAt(1).toString().equals(c.elementAt(4).toString()) && c.elementAt(4).toString().equals(c.elementAt(7).toString())) ||
+		   (c.elementAt(2).toString().equals(c.elementAt(4).toString()) && c.elementAt(4).toString().equals(c.elementAt(6).toString())))
+		{
+			return true ;
+		}
+		
+		return false ;
+	}
+	
 	public boolean win(Vector<String> c)
 	{
-		if((c.elementAt(0).toString().equals(c.elementAt(1).toString()) && c.elementAt(1).toString().equals(c.elementAt(2).toString())) || 
-		   (c.elementAt(0).toString().equals(c.elementAt(3).toString()) && c.elementAt(3).toString().equals(c.elementAt(6).toString())) ||
-		   (c.elementAt(2).toString().equals(c.elementAt(5).toString()) && c.elementAt(5).toString().equals(c.elementAt(8).toString())) ||
-		   (c.elementAt(3).toString().equals(c.elementAt(4).toString()) && c.elementAt(4).toString().equals(c.elementAt(5).toString())) ||
-		   (c.elementAt(6).toString().equals(c.elementAt(7).toString()) && c.elementAt(7).toString().equals(c.elementAt(8).toString())) ||
-		   (c.elementAt(0).toString().equals(c.elementAt(4).toString()) && c.elementAt(4).toString().equals(c.elementAt(8).toString())) ||
-		   (c.elementAt(2).toString().equals(c.elementAt(4).toString()) && c.elementAt(4).toString().equals(c.elementAt(6).toString())) ||
-		   (c.elementAt(1).toString().equals(c.elementAt(4).toString()) && c.elementAt(4).toString().equals(c.elementAt(7).toString())))
+		if(this.crossWin(c) || this.horizontalWin(c) || this.verticaleWin(c))
 		{
-			
 			return true ;
 		}
 		
