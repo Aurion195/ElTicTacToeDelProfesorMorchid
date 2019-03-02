@@ -4,6 +4,17 @@ import java.util.Vector;
 
 public class Game 
 {
+	private boolean turnPlayer1 = true ;
+	private Vector<String> choicePlayeurStrings = new Vector<String>() ;
+	
+	public Game()
+	{
+		for(int i = 0 ; i < 9 ; i++)
+		{
+			this.choicePlayeurStrings.addElement(String.valueOf(i));
+		}
+	}
+	
 	public boolean win(Vector<String> c)
 	{
 		if((c.elementAt(0).toString().equals(c.elementAt(1).toString()) && c.elementAt(1).toString().equals(c.elementAt(2).toString())) || 
@@ -20,5 +31,17 @@ public class Game
 		}
 		
 		return false ;
+	}
+	
+	public boolean turnPlayer(int placePosition)
+	{
+		this.turnPlayer1 = !this.turnPlayer1 ;
+		this.placeStringPlayer(placePosition) ;
+		return this.turnPlayer1 ;
+	}
+	
+	public void placeStringPlayer(int placePosition)
+	{
+		this.choicePlayeurStrings.set(placePosition, (this.turnPlayer1 ? "x" : "o")) ;
 	}
 }
