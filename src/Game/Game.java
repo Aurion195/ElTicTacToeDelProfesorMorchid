@@ -60,6 +60,14 @@ public class Game
 		return false ;
 	}
 	
+	public void erasePion()
+	{
+		for(int i = 0 ; i < 9 ; i++)
+		{
+			this.choicePlayeurStrings.set(i, String.valueOf(i)) ;
+		}
+	}
+	
 	public boolean turnPlayer(int placePosition)
 	{
 		this.turnPlayer1 = !this.turnPlayer1 ;
