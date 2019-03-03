@@ -25,6 +25,7 @@ public class Game
 		
 		return false ;
 	}
+	
 	private boolean horizontalWin(Vector<String> c)
 	{
 		if((c.elementAt(0).toString().equals(c.elementAt(1).toString()) && c.elementAt(1).toString().equals(c.elementAt(2).toString())) ||
@@ -49,9 +50,9 @@ public class Game
 		return false ;
 	}
 	
-	public boolean win(Vector<String> c)
+	public boolean win()
 	{
-		if(this.crossWin(c) || this.horizontalWin(c) || this.verticaleWin(c))
+		if(this.crossWin(this.choicePlayeurStrings) || this.horizontalWin(this.choicePlayeurStrings) || this.verticaleWin(this.choicePlayeurStrings))
 		{
 			return true ;
 		}
