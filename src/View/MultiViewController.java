@@ -207,8 +207,21 @@ public class MultiViewController extends ToolsBarController
 	@FXML
 	public void onClickHomeButton()
 	{
-		super.onClickHomeButton();
+		Alert alert = new Alert(AlertType.CONFIRMATION);
+		alert.setTitle("Attention");
+		alert.setHeaderText("Voullez-vous vraiment quitter ?");
+		ButtonType buttonType = new ButtonType("Non") ;
+		
+		alert.getButtonTypes().addAll(buttonType) ;
+		
+		Optional<ButtonType> result = alert.showAndWait();
+		if(result.get() != buttonType)
+		{
+			this.eraseImage() ;
+			super.onClickHomeButton();
+		}
 	}
+	
 	public void gameNull()
 	{
 		Alert alert = new Alert(AlertType.CONFIRMATION);
