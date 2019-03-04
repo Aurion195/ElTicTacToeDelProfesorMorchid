@@ -44,7 +44,7 @@
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button02" fx:id="Button02" fitHeight="109.0" fitWidth="113.0" layoutX="347.865966796875" layoutY="75.0" onMousePressed="#onClickButton02" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="82.36083984375">
+             <ImageView id="Button02" fx:id="Button02" fitHeight="109.0" fitWidth="113.0" layoutX="347.865966796875" layoutY="75.0" onMousePressed="#onClickButton02" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="82.36083984375">
                <image>
                   <Image url="@Blanc.png" />
                </image>
