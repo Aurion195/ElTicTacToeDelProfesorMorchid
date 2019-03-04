@@ -33,8 +33,7 @@ public class MenuViewController
 	@FXML
 	void onClickHomeButton()
 	{
-		this.ButtonHome.setDisable(true);
-		if(this.ButtonHome.isPressed()) {
+		System.out.println("erhrereahreghr");
 		Launcher main = Launcher.getInstance();
     	FXMLLoader loader = new FXMLLoader();
     	try {
@@ -48,7 +47,6 @@ public class MenuViewController
     	}
     	catch (Exception e) {
 			System.out.println(e.getMessage());
-		}
 		}
 	}
 }

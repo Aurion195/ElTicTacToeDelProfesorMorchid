@@ -11,7 +11,7 @@
    <children>
       <AnchorPane layoutX="-8.0" prefHeight="66.0" prefWidth="519.0" style="-fx-background-color: #ffff;">
          <children>
-            <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="39.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="3.0">
+            <ImageView id="ButtonHome" accessibleRole="BUTTON" fitHeight="54.0" fitWidth="54.0" layoutX="39.0" layoutY="5.0" onMouseClicked="#onClickHomeButton" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="3.0">
                <image>
                   <Image url="@../Images/places-home-3_icon-icons.com_48499.png" />
                </image>
