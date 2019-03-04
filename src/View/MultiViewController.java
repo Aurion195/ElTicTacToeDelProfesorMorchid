@@ -15,7 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 
-public class MultiViewController
+public class MultiViewController extends ToolsBarController
 {
 	@FXML private ImageView Button00;
 	@FXML private ImageView Button01;
@@ -205,22 +205,9 @@ public class MultiViewController
 		this.game.erasePion() ;
 	}
 	@FXML
-	void onClickHomeButton()
+	public void onClickHomeButton()
 	{
-		Launcher main = Launcher.getInstance();
-    	FXMLLoader loader = new FXMLLoader();
-    	try {
-    		loader.setLocation(getClass().getResource("MenuView.fxml"));
-    		//loader.setLocation(getClass().getResource("winner.fxml"));
-    		main.setRootLayout(loader.load());
-
-    		Scene scene = new Scene(main.getRootLayout());
-    		main.getPrimaryStage().setScene(scene);
-    		main.getPrimaryStage().show();
-    	}
-    	catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
+		super.onClickHomeButton();
 	}
 	public void gameNull()
 	{
