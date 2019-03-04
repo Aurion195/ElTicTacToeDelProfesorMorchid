@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -8,71 +7,102 @@
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="519.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainAppViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="519.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainAppViewController">
    <children>
-      <AnchorPane layoutX="-7.0" layoutY="-1.0" prefHeight="66.0" prefWidth="527.0" style="-fx-background-color: #455A64;">
+      <AnchorPane layoutX="-8.0" prefHeight="66.0" prefWidth="519.0" style="-fx-background-color: #ffff;">
          <children>
-            <ImageView fitHeight="57.0" fitWidth="54.0" layoutX="43.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="39.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="3.0">
                <image>
                   <Image url="@../Images/places-home-3_icon-icons.com_48499.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="168.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="305.0" AnchorPane.topAnchor="3.0">
+               <image>
+                  <Image url="@../Images/game-icon-png-4487.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="405.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="170.0" AnchorPane.topAnchor="13.0">
+               <image>
+                  <Image url="@../Images/1486564730-gears-cogs_81537.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="420.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="13.0">
+               <image>
+                  <Image url="@../Images/iconfinder_power_926636.png" />
+               </image>
+            </ImageView>
          </children></AnchorPane>
-      <AnchorPane layoutY="77.0" prefHeight="494.0" prefWidth="519.0" style="-fx-background-color: #455A64;">
+      <AnchorPane layoutY="77.0" prefHeight="494.0" prefWidth="519.0" style="-fx-background-color: #009cfc;">
          <children>
-            <Separator layoutX="160.0" layoutY="200.0" prefWidth="200.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" />
-            <Separator layoutX="157.0" layoutY="319.0" prefWidth="200.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" />
-            <Separator layoutX="192.0" layoutY="160.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="80.0" AnchorPane.topAnchor="80.0" />
-            <Separator layoutX="319.0" layoutY="160.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="80.0" AnchorPane.topAnchor="80.0" />
-            <ImageView id="Button00" fx:id="Button00" fitHeight="109.0" fitWidth="113.0" layoutX="77.0" layoutY="81.0" onMousePressed="#onClickButton00" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button00" fx:id="Button00" fitHeight="109.0" fitWidth="113.0" layoutX="70.0" layoutY="71.0" onMousePressed="#onClickButton00" pickOnBounds="true" preserveRatio="true">
             	<image>
             		<Image url="@Blanc.png" />
             	</image>
             </ImageView>
-            <ImageView id="Button01" fx:id="Button01" fitHeight="109.0" fitWidth="113.0" layoutX="203.0" layoutY="81.0" onMousePressed="#onClickButton01" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button01" fx:id="Button01" fitHeight="109.0" fitWidth="113.0" layoutX="200.0" layoutY="73.0" onMousePressed="#onClickButton01" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button02" fx:id="Button02" fitHeight="109.0" fitWidth="113.0" layoutX="328.0" layoutY="82.0" onMousePressed="#onClickButton02" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button02" fx:id="Button02" fitHeight="109.0" fitWidth="113.0" layoutX="347.865966796875" layoutY="75.0" onMousePressed="#onClickButton02" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="82.36083984375">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button10" fx:id="Button10" fitHeight="109.0" fitWidth="113.0" layoutX="77.0" layoutY="206.0" onMousePressed="#onClickButton10" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button10" fx:id="Button10" fitHeight="109.0" fitWidth="113.0" layoutX="66.0" layoutY="204.0" onMousePressed="#onClickButton10" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button11" fx:id="Button11" fitHeight="109.0" fitWidth="113.0" layoutX="203.0" layoutY="206.0" onMousePressed="#onClickButton11" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button11" fx:id="Button11" fitHeight="109.0" fitWidth="113.0" layoutX="200.0" layoutY="206.0" onMousePressed="#onClickButton11" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button12" fx:id="Button12" fitHeight="109.0" fitWidth="113.0" layoutX="328.0" layoutY="206.0" onMousePressed="#onClickButton12" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button12" fx:id="Button12" fitHeight="109.0" fitWidth="113.0" layoutX="348.0" layoutY="206.0" onMousePressed="#onClickButton12" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="82.0">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button20" fx:id="Button20" fitHeight="109.0" fitWidth="113.0" layoutX="77.0" layoutY="327.0" onMousePressed="#onClickButton20" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button20" fx:id="Button20" fitHeight="109.0" fitWidth="113.0" layoutX="69.0" layoutY="332.0" onMousePressed="#onClickButton20" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="69.0">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button21" fx:id="Button21" fitHeight="109.0" fitWidth="113.0" layoutX="203.0" layoutY="327.0" onMousePressed="#onClickButton21" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button21" fx:id="Button21" fitHeight="109.0" fitWidth="113.0" layoutX="198.0" layoutY="335.0" onMousePressed="#onClickButton21" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button22" fx:id="Button22" fitHeight="109.0" fitWidth="113.0" layoutX="328.0" layoutY="327.0" onMousePressed="#onClickButton22" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button22" fx:id="Button22" fitHeight="109.0" fitWidth="113.0" layoutX="347.54638671875" layoutY="335.0" onMousePressed="#onClickButton22" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="82.680419921875">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="21.0" fitWidth="30.0" layoutX="48.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true" />
-            <Polygon fill="#455a64" layoutX="67.0" layoutY="-30.0" points="-16.0, 40.0, 11.0, 40.0, -3.0, 17.0" stroke="TRANSPARENT" strokeType="INSIDE" />
             <Text id="TourJoueur" layoutX="171.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tour du joueur" wrappingWidth="156.7294921875" />
-            <TextField layoutX="270.0" layoutY="23.0" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #455A64;" />
+            <TextField layoutX="270.0" layoutY="23.0" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #009cfc;" />
+            <ImageView fitHeight="11.0" fitWidth="386.0" layoutX="58.0" layoutY="193.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Images/separateur.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="11.0" fitWidth="386.0" layoutX="58.0" layoutY="317.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Images/separateur.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="11.0" fitWidth="386.0" layoutX="-6.0" layoutY="257.0" pickOnBounds="true" rotate="90.0">
+               <image>
+                  <Image url="@../Images/separateur.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="11.0" fitWidth="386.0" layoutX="126.0" layoutY="255.0" pickOnBounds="true" rotate="90.0">
+               <image>
+                  <Image url="@../Images/separateur.png" />
+               </image>
+            </ImageView>
+            <Polygon fill="#009cfc" layoutX="190.0" layoutY="-28.0" points="-16.0, 40.0, 11.0, 40.0, -3.0, 17.0" stroke="TRANSPARENT" strokeType="INSIDE" />
          </children>
       </AnchorPane>
    </children>
