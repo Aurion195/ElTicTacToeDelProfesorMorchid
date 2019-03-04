@@ -63,7 +63,7 @@ public class Launcher extends Application
             
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
-           
+            primaryStage.setResizable(false);
             primaryStage.setScene(scene);
             primaryStage.show();
         }
