@@ -24,7 +24,7 @@ public class MenuViewController extends ToolsBarController
     		Scene scene = new Scene(main.getRootLayout());
     		main.getPrimaryStage().setScene(scene);
     		main.getPrimaryStage().show();
-    	}
+    	} 
     	catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
