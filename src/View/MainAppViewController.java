@@ -39,7 +39,7 @@ public class MainAppViewController
 		this.Button00.setDisable(true);
 		this.Button00.setImage((this.game.turnPlayer(0) ? cercle : croix)) ;
 		this.click++;
-		if(this.game.win())
+		if(this.click > 4 && this.game.win())
 		{
 			this.win() ;
 		}
@@ -56,7 +56,7 @@ public class MainAppViewController
 		this.Button01.setDisable(true);
 		this.Button01.setImage((this.game.turnPlayer(1) ? cercle : croix)) ;
 		this.click++;
-		if(this.game.win())
+		if(this.click > 4 && this.game.win())
 		{
 			this.win() ;
 		}
@@ -72,7 +72,7 @@ public class MainAppViewController
 		this.Button02.setDisable(true);
 		this.Button02.setImage((this.game.turnPlayer(2) ? cercle : croix)) ;
 		this.click++;
-		if(this.game.win())
+		if(this.click > 4 && this.game.win())
 		{
 			this.win() ;
 		}
@@ -120,7 +120,7 @@ public class MainAppViewController
 		this.Button12.setDisable(true);
 		this.Button12.setImage((this.game.turnPlayer(5) ? cercle : croix)) ;
 		this.click++;
-		if(this.game.win())
+		if(this.click > 4 && this.game.win())
 		{
 			this.win() ;
 		}
@@ -136,7 +136,7 @@ public class MainAppViewController
 		this.Button20.setDisable(true);
 		this.Button20.setImage((this.game.turnPlayer(6) ? cercle : croix)) ;
 		this.click++;
-		if(this.game.win())
+		if(this.click > 4 && this.game.win())
 		{
 			this.win() ;
 		}
@@ -152,7 +152,7 @@ public class MainAppViewController
 		this.Button21.setDisable(true);
 		this.Button21.setImage((this.game.turnPlayer(7) ? cercle : croix)) ;
 		this.click++;
-		if(this.game.win())
+		if(this.click > 4 && this.game.win())
 		{
 			this.win() ;
 		}
@@ -168,7 +168,7 @@ public class MainAppViewController
 		this.Button22.setDisable(true);
 		this.Button22.setImage((this.game.turnPlayer(8) ? cercle : croix)) ;
 		this.click++;
-		if(this.game.win())
+		if(this.click > 4 && this.game.win())
 		{
 			this.win() ;
 		}
