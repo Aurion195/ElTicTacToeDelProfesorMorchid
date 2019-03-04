@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.image.Image?> 
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Polygon?> 
+<?import javafx.scene.shape.Polygon?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="519.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainAppViewController">
    <children>
@@ -36,7 +36,7 @@
             <ImageView fitHeight="21.0" fitWidth="30.0" layoutX="48.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true" />
             <Polygon fill="#009cfc" layoutX="64.0" layoutY="-28.0" points="-16.0, 40.0, 11.0, 40.0, -3.0, 17.0" stroke="TRANSPARENT" strokeType="INSIDE" />
             <JFXButton layoutX="124.0" layoutY="279.0" prefHeight="107.0" prefWidth="269.0" style="-fx-background-color: #e9ebec;" text="DUO" />
-            <JFXButton layoutX="124.0" layoutY="84.0" prefHeight="107.0" prefWidth="269.0" style="-fx-background-color: #e9ebec;" text="SOLO" />
+            <JFXButton fx:id="ButtonSolo" layoutX="124.0" layoutY="84.0" prefHeight="107.0" prefWidth="269.0" style="-fx-background-color: #e9ebec;" text="SOLO" />
          </children>
       </AnchorPane>
    </children>
