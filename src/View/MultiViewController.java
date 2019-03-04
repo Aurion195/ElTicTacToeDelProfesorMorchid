@@ -1,7 +1,6 @@
 package View;
 
 import java.util.Optional;
-import java.util.Vector;
 
 import Game.Game;
 import Game.Launcher;
@@ -16,7 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 
-public class MainAppViewController
+public class MultiViewController
 {
 	@FXML private ImageView Button00;
 	@FXML private ImageView Button01;

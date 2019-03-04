@@ -8,7 +8,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="519.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MenuViewController">
    <children>
-      <AnchorPane layoutX="-8.0" prefHeight="66.0" prefWidth="527.0" style="-fx-background-color: #ffff;">
+      <AnchorPane layoutX="-8.0" prefHeight="66.0" prefWidth="519.0" style="-fx-background-color: #ffff;">
          <children>
             <ImageView fx:id="ButtonHome" accessibleRole="BUTTON" fitHeight="54.0" fitWidth="54.0" layoutX="39.0" layoutY="5.0" onMouseClicked="#onClickHomeButton" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="3.0">
                <image>
@@ -25,7 +25,7 @@
                   <Image url="@../Images/game-icon-png-4487.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="420.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="13.0">
+            <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="437.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="13.0">
                <image>
                   <Image url="@../Images/iconfinder_power_926636.png" />
                </image>
@@ -35,7 +35,7 @@
          <children>
             <ImageView fitHeight="21.0" fitWidth="30.0" layoutX="48.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true" />
             <Polygon fill="#009cfc" layoutX="64.0" layoutY="-28.0" points="-16.0, 40.0, 11.0, 40.0, -3.0, 17.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-            <JFXButton layoutX="124.0" layoutY="279.0" prefHeight="107.0" prefWidth="269.0" style="-fx-background-color: #e9ebec;" text="DUO" />
+            <JFXButton fx:id="ButtonDuo" layoutX="124.0" layoutY="279.0" onAction="#onClickMultiButton" onMouseClicked="#onClickMultiButton" prefHeight="107.0" prefWidth="269.0" style="-fx-background-color: #e9ebec;" text="DUO" />
             <JFXButton fx:id="ButtonSolo" layoutX="124.0" layoutY="84.0" onAction="#onClickSoloButton" onMouseClicked="#onClickSoloButton" prefHeight="107.0" prefWidth="269.0" style="-fx-background-color: #e9ebec;" text="SOLO" />
          </children>
       </AnchorPane>

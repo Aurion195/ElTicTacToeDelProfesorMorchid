@@ -17,8 +17,25 @@ public class MenuViewController
 		Launcher main = Launcher.getInstance();
     	FXMLLoader loader = new FXMLLoader();
     	try {
-    		loader.setLocation(getClass().getResource("MainAppView.fxml"));
-    		//loader.setLocation(getClass().getResource("winner.fxml"));
+    		loader.setLocation(getClass().getResource("SoloView.fxml"));
+    		main.setRootLayout(loader.load());
+
+    		Scene scene = new Scene(main.getRootLayout());
+    		main.getPrimaryStage().setScene(scene);
+    		main.getPrimaryStage().show();
+    	}
+    	catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	@FXML
+	void onClickMultiButton(ActionEvent actionEvent)
+	{
+		Launcher main = Launcher.getInstance();
+    	FXMLLoader loader = new FXMLLoader();
+    	try {
+    		loader.setLocation(getClass().getResource("MultiView.fxml"));
     		main.setRootLayout(loader.load());
 
     		Scene scene = new Scene(main.getRootLayout());
@@ -33,7 +50,6 @@ public class MenuViewController
 	@FXML
 	void onClickHomeButton()
 	{
-		System.out.println("erhrereahreghr");
 		Launcher main = Launcher.getInstance();
     	FXMLLoader loader = new FXMLLoader();
     	try {
