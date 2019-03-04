@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Polygon?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="519.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainAppViewController">
+   <children>
+      <AnchorPane layoutX="-8.0" prefHeight="66.0" prefWidth="519.0" style="-fx-background-color: #ffff;">
+         <children>
+            <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="39.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="3.0">
+               <image>
+                  <Image url="@../Images/places-home-3_icon-icons.com_48499.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="405.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="170.0" AnchorPane.topAnchor="13.0">
+               <image>
+                  <Image url="@../Images/1486564730-gears-cogs_81537.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="239.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="170.0" AnchorPane.topAnchor="3.0">
+               <image>
+                  <Image url="@../Images/game-icon-png-4487.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="437.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="13.0">
+               <image>
+                  <Image url="@../Images/iconfinder_power_926636.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <AnchorPane layoutY="77.0" prefHeight="494.0" prefWidth="519.0" style="-fx-background-color: #009cfc;">
+         <children>
+            <ImageView fitHeight="21.0" fitWidth="30.0" layoutX="48.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true" />
+            <Polygon fill="#009cfc" layoutX="64.0" layoutY="-28.0" points="-16.0, 40.0, 11.0, 40.0, -3.0, 17.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <JFXTextField layoutX="182.0" layoutY="141.0" promptText="Pseudo" />
+            <JFXButton layoutX="179.0" layoutY="206.0" prefHeight="45.0" prefWidth="165.0" style="-fx-background-color: #ffff;" text="Go !!" />
+            <JFXProgressBar layoutX="168.0" layoutY="398.0" />
+         </children>
+      </AnchorPane> 
+   </children>
+</AnchorPane>
