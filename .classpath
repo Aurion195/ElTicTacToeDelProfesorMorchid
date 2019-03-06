@@ -1,11 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-<<<<<<< HEAD
-	<classpathentry kind="lib" path="/home/nas02a/etudiants/inf/uapv1703778/Téléchargements/jfoenix-8.0.8.jar"/>
-=======
-	<classpathentry kind="lib" path="/home/nas02a/etudiants/inf/uapv1300579/eclipse-workspace/ElTicTacToeDelProfesorMorchid/jfoenix-8.0.8.jar"/>
->>>>>>> branch 'master' of https://github.com/Aurion195/ElTicTacToeDelProfesorMorchid
-	<classpathentry kind="output" path="bin"/>
-</classpath>
+
