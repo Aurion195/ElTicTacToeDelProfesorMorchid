@@ -8,16 +8,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Polygon?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="519.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="519.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.SoloViewController">
    <children>
       <AnchorPane layoutX="-8.0" prefHeight="66.0" prefWidth="519.0" style="-fx-background-color: #ffff;">
          <children>
-            <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="39.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="3.0">
+            <ImageView accessibleRole="BUTTON" fitHeight="54.0" fitWidth="54.0" layoutX="39.0" layoutY="5.0" onMouseClicked="#onClickHomeButton" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="3.0">
                <image>
                   <Image url="@../Images/places-home-3_icon-icons.com_48499.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="405.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="170.0" AnchorPane.topAnchor="13.0">
+            <ImageView accessibleRole="BUTTON" fitHeight="45.0" fitWidth="45.0" layoutX="405.0" layoutY="12.0" onMouseClicked="#onClickSetttingButton" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="170.0" AnchorPane.topAnchor="13.0">
                <image>
                   <Image url="@../Images/1486564730-gears-cogs_81537.png" />
                </image>
@@ -27,7 +27,7 @@
                   <Image url="@../Images/game-icon-png-4487.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="437.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="13.0">
+            <ImageView accessibleRole="BUTTON" fitHeight="45.0" fitWidth="45.0" layoutX="437.0" layoutY="8.0" onMouseClicked="#onClickQuitButton" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="13.0">
                <image>
                   <Image url="@../Images/iconfinder_power_926636.png" />
                </image>
