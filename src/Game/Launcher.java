@@ -1,12 +1,31 @@
 package Game;
+import javafx.util.Duration;  
+import javafx.scene.media.Media;  
+import javafx.scene.media.MediaPlayer;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URL;
+
+
+
+import com.sun.media.jfxmediaimpl.platform.Platform;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.* ;
+import javafx.scene.media.*;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import sun.audio.AudioData;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
+import sun.audio.ContinuousAudioDataStream;
 import sun.launcher.resources.launcher;
+
+
 
 public class Launcher extends Application 
 {
@@ -14,6 +33,7 @@ public class Launcher extends Application
     private Stage primaryStage;
     private AnchorPane rootLayout;
 	private static volatile Launcher instance = null;
+	private static AudioClip mediaPlayer ;
 
 	public Launcher()
 	{
@@ -31,7 +51,7 @@ public class Launcher extends Application
 		if(Launcher.instance == null)
 		{
 			synchronized(Launcher.class)
-			{
+			{ 
 				if(Launcher.instance == null)
 				{
 					Launcher.instance = new Launcher();
@@ -41,13 +61,30 @@ public class Launcher extends Application
 		return Launcher.instance;
 	}
 	
+	public void playMusic()
+	{
+		Media sound=new Media(new File("src/Son/Take_On_Me.wav").toURI().toString());
+        this.mediaPlayer=new AudioClip(sound.getSource());
+        this.mediaPlayer.setVolume(0.8);
+      
+        this.mediaPlayer.play();
+	}
+	
+	public void stopMusic(AudioClip mediaPlayer)
+	{  
+        mediaPlayer.stop();
+	}
+	
     @Override
-    public void start(Stage primaryStage) 
+    public void start(Stage primaryStage)  
     {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Morprion");
-
+        
+        this.playMusic();
+       
         initRootLayout();
+     
     }
     
     /**
@@ -61,16 +98,20 @@ public class Launcher extends Application
             loader.setLocation(Launcher.class.getClassLoader().getResource("View/MenuView.fxml"));
             rootLayout = (AnchorPane) loader.load();
             
+        
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
             primaryStage.setResizable(false);
             primaryStage.setScene(scene);
             primaryStage.show();
+       
+           
         }
         catch (IOException e) 
         {
             e.printStackTrace();
         }
+        
     }
 
     /**
@@ -117,5 +158,10 @@ public class Launcher extends Application
     public static void main(String[] args) 
     {
         launch(args);
+    }
+    
+    public AudioClip getMedia()
+    {
+    	return this.mediaPlayer ;
     }
 }
