@@ -29,4 +29,6 @@ public class SoloViewController extends ToolsBarController
 	{
 		super.onClickSettingButton();
 	}
+	
+	
 }
