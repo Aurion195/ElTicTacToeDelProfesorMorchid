@@ -16,7 +16,7 @@ public class ToolViewController extends ToolsBarController  implements Initializ
 {
 
 	@FXML JFXSlider volume;
-	@FXML JFXToggleButton toggleButton;
+	@FXML JFXToggleButton toggleButton ;
 
 	public void onClickHomeButton()
 	{
@@ -45,8 +45,11 @@ public class ToolViewController extends ToolsBarController  implements Initializ
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-
+		
+		
 		Launcher main = Launcher.getInstance();
+		
+		
 		toggleButton.setOnAction(event -> {
             
             if(toggleButton.isSelected()){

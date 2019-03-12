@@ -9,8 +9,6 @@ import javafx.scene.image.ImageView;
 
 public class MenuViewController extends ToolsBarController
 {
-	@FXML ImageView ButtonHome ;
-	@FXML ImageView ButtonQuit ;
 	
 	@FXML
 	void onClickSoloButton(ActionEvent actionEvent)

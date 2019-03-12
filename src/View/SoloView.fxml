@@ -10,29 +10,6 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="519.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.SoloViewController">
    <children>
-      <AnchorPane layoutX="-8.0" prefHeight="66.0" prefWidth="519.0" style="-fx-background-color: #ffff;">
-         <children>
-            <ImageView accessibleRole="BUTTON" fitHeight="54.0" fitWidth="54.0" layoutX="39.0" layoutY="5.0" onMouseClicked="#onClickHomeButton" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="3.0">
-               <image>
-                  <Image url="@../Images/places-home-3_icon-icons.com_48499.png" />
-               </image>
-            </ImageView>
-            <ImageView accessibleRole="BUTTON" fitHeight="45.0" fitWidth="45.0" layoutX="405.0" layoutY="12.0" onMouseClicked="#onClickSetttingButton" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="170.0" AnchorPane.topAnchor="13.0">
-               <image>
-                  <Image url="@../Images/1486564730-gears-cogs_81537.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="239.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="170.0" AnchorPane.topAnchor="3.0">
-               <image>
-                  <Image url="@../Images/game-icon-png-4487.png" />
-               </image>
-            </ImageView>
-            <ImageView accessibleRole="BUTTON" fitHeight="45.0" fitWidth="45.0" layoutX="437.0" layoutY="8.0" onMouseClicked="#onClickQuitButton" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="13.0">
-               <image>
-                  <Image url="@../Images/iconfinder_power_926636.png" />
-               </image>
-            </ImageView>
-         </children></AnchorPane>
       <AnchorPane layoutY="77.0" prefHeight="494.0" prefWidth="519.0" style="-fx-background-color: #009cfc;">
          <children>
             <ImageView fitHeight="21.0" fitWidth="30.0" layoutX="48.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true" />
@@ -40,6 +17,46 @@
             <JFXTextField layoutX="182.0" layoutY="141.0" promptText="Pseudo" />
             <JFXButton fx:id="ButonGo" layoutX="179.0" layoutY="206.0" prefHeight="45.0" prefWidth="165.0" style="-fx-background-color: #ffff;" text="Go !!" />
             <JFXProgressBar layoutX="168.0" layoutY="398.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="-3.0" prefHeight="65.0" prefWidth="520.0" style="-fx-background-color: #ffff;">
+         <children>
+            <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="418.0" layoutY="6.0" onMouseClicked="#onClickQuitButton" prefHeight="55.0" prefWidth="45.0" ripplerFill="WHITE" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="6.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onClickQuitButton" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/iconfinder_power_926636.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="42.0" layoutY="6.0" onMouseClicked="#onClickHomeButton" prefHeight="55.0" prefWidth="45.0" ripplerFill="WHITE" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="6.0">
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onClickHomeButton" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/places-home-3_icon-icons.com_48499.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="299.0" layoutY="8.0" onMouseClicked="#onClickSetttingButton" prefHeight="55.0" prefWidth="45.0" ripplerFill="WHITE" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="8.0">
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onClickSetttingButton" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/1486564730-gears-cogs_81537.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="165.0" layoutY="5.0" onMouseClicked="#onClickHomeButton" prefHeight="55.0" prefWidth="45.0" ripplerFill="WHITE" AnchorPane.rightAnchor="274.0" AnchorPane.topAnchor="5.0">
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onClickQuitButton" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/game-icon-png-4487.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
          </children>
       </AnchorPane>
    </children>

@@ -33,7 +33,18 @@ public class MultiViewController extends ToolsBarController
 	Image base = new Image("Images/Blanc.png") ;
 	Game game = new Game();
 	
-
+	@FXML
+	public void onClickQuitButton()
+	{
+		super.onClickQuitButton();
+	}
+	
+	@FXML
+	public void onClickSetttingButton()
+	{
+		super.onClickSettingButton();
+	}
+	
 	@FXML
 	void onClickButton00()
 	{
