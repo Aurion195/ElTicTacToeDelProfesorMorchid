@@ -1,29 +1,14 @@
 package Game;
-import javafx.util.Duration;  
-import javafx.scene.media.Media;  
-import javafx.scene.media.MediaPlayer;
-
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.net.URL;
-
-
-
-import com.sun.media.jfxmediaimpl.platform.Platform;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.* ;
-import javafx.scene.media.*;
-import javafx.stage.FileChooser;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-import sun.audio.AudioData;
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
-import sun.audio.ContinuousAudioDataStream;
-import sun.launcher.resources.launcher;
 
 
 
@@ -33,11 +18,13 @@ public class Launcher extends Application
     private Stage primaryStage;
     private AnchorPane rootLayout;
 	private static volatile Launcher instance = null;
-	private static AudioClip mediaPlayer ;
+	private static MediaPlayer mediaPlayer ;
+	
 
 	public Launcher()
 	{
 	    super();
+	    
 	    synchronized(Launcher.class)
 	    {
 	        if(instance != null) throw new UnsupportedOperationException(
@@ -64,15 +51,25 @@ public class Launcher extends Application
 	public void playMusic()
 	{
 		Media sound=new Media(new File("src/Son/Take_On_Me.wav").toURI().toString());
-        this.mediaPlayer=new AudioClip(sound.getSource());
-        this.mediaPlayer.setVolume(0.8);
-      
+		this.mediaPlayer = new MediaPlayer(sound);
+		
         this.mediaPlayer.play();
+        
+      
 	}
 	
-	public void stopMusic(AudioClip mediaPlayer)
+	/**
+	 * @param mediaPlayer
+	 */
+	public void stopMusic(MediaPlayer mediaPlayer)
 	{  
-        mediaPlayer.stop();
+       mediaPlayer.pause();
+	}
+	
+	
+	public void setVolume(MediaPlayer mediaPlayer, double v)
+	{  
+       mediaPlayer.setVolume(v);
 	}
 	
     @Override
@@ -84,6 +81,7 @@ public class Launcher extends Application
         this.playMusic();
        
         initRootLayout();
+    
      
     }
     
@@ -104,7 +102,7 @@ public class Launcher extends Application
             primaryStage.setResizable(false);
             primaryStage.setScene(scene);
             primaryStage.show();
-       
+           
            
         }
         catch (IOException e) 
@@ -160,7 +158,7 @@ public class Launcher extends Application
         launch(args);
     }
     
-    public AudioClip getMedia()
+    public MediaPlayer getMedia()
     {
     	return this.mediaPlayer ;
     }
