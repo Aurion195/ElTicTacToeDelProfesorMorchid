@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 
@@ -49,13 +50,14 @@ public class Launcher extends Application
 	}
 	
 	public void playMusic()
-	{
+	{	
+		
 		Media sound=new Media(new File("src/Son/Take_On_Me.wav").toURI().toString());
 		this.mediaPlayer = new MediaPlayer(sound);
-		
-        this.mediaPlayer.play();
-        
-      
+
+		this.mediaPlayer.play();
+
+
 	}
 	
 	/**
