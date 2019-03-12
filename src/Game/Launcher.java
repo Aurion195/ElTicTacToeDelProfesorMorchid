@@ -21,6 +21,8 @@ public class Launcher extends Application
     private AnchorPane rootLayout;
 	private static volatile Launcher instance = null;
 	private static MediaPlayer mediaPlayer ;
+	private static Player player00 ;
+	private static Player player01 ;
 	
 
 	public Launcher()
@@ -55,14 +57,7 @@ public class Launcher extends Application
 		
 		Media sound=new Media(new File("src/Son/Take_On_Me.wav").toURI().toString());
 		this.mediaPlayer = new MediaPlayer(sound);
-		 
 		this.mediaPlayer.play();
-	
-		
-		
-		
-	
-
 	}
 
 	/**
@@ -88,8 +83,6 @@ public class Launcher extends Application
         this.playMusic();
        
         initRootLayout();
-    
-     
     }
     
     /**
@@ -168,5 +161,25 @@ public class Launcher extends Application
     public MediaPlayer getMedia()
     {
     	return this.mediaPlayer ;
+    }
+    
+    public void setPlayer00(String name)
+    {
+    	this.player00.setName(name) ;
+    }
+    
+    public void setPLayer01(String name)
+    {
+    	this.player01.setName(name);
+    }
+    
+    public String getPlayer00Name()
+    {
+    	return this.player00.getName() ;
+    }
+    
+    public String getPlayer01Name()
+    {
+    	return this.player01.getName() ;
     }
 }
