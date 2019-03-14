@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 
 public abstract class ToolsBarController 
-
 {
 	@FXML
 	protected void onClickHomeButton()

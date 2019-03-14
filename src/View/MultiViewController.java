@@ -17,6 +17,7 @@ import javafx.scene.image.ImageView;
 
 public class MultiViewController extends ToolsBarController
 {
+	
 	@FXML private ImageView Button00;
 	@FXML private ImageView Button01;
 	@FXML private ImageView Button02;

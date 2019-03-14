@@ -11,7 +11,7 @@ public class MenuViewController extends ToolsBarController
 {
 	
 	@FXML
-	void onClickSoloButton(ActionEvent actionEvent)
+	void onClickSoloButton()
 	{
 		Launcher main = Launcher.getInstance();
     	FXMLLoader loader = new FXMLLoader();
@@ -29,7 +29,7 @@ public class MenuViewController extends ToolsBarController
 	}
 	
 	@FXML
-	void onClickMultiButton(ActionEvent actionEvent)
+	void onClickMultiButton()
 	{
 		Launcher main = Launcher.getInstance();
     	FXMLLoader loader = new FXMLLoader();
