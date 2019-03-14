@@ -1,17 +1,29 @@
 package Game;
 import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaPlayer.Status;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-
+import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.*;
+import javafx.scene.media.MediaView;
 
 
 public class Launcher extends Application 
@@ -58,7 +70,67 @@ public class Launcher extends Application
 		Media sound=new Media(new File("src/Son/Take_On_Me.wav").toURI().toString());
 		this.mediaPlayer = new MediaPlayer(sound);
 		this.mediaPlayer.play();
+
+		final Label currentlyPlaying = new Label();
+		  final ProgressBar progress = new ProgressBar();
+		final ChangeListener<? super javafx.util.Duration> progressChangeListener = null;
+
+		
+
+		  
+		    final StackPane layout = new StackPane();
+
+		    // determine the source directory for the playlist (either the first parameter to the program or a 
+		    final List<String> params = getParameters().getRaw();
+		    final File dir = (params.size() > 0)
+		      ? new File(params.get(0))
+		      : new File("src/Son/");
+		    if (!dir.exists() && dir.isDirectory()) {
+		      System.out.println("Cannot find audio source directory: " + dir);
+		    }
+
+		    // create some media players.
+		    final List<MediaPlayer> players = new ArrayList<MediaPlayer>();
+		    for (String file : dir.list(new FilenameFilter() {
+		      @Override public boolean accept(File dir, String name) {
+		        return name.endsWith(".wav");
+		      }
+		    }))try { players.add(createPlayer((dir + "/" + file)));}catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		    if (players.isEmpty()) {
+		      System.out.println("No audio found in " + dir);
+		      return;
+		    }
+		    
+		    // play each audio file in turn.
+		    
+		    for (int i = 0; i < players.size(); i++) {
+		      final MediaPlayer player     = players.get(i);
+		      final MediaPlayer nextPlayer = players.get((i + 1) % players.size());
+		      player.setOnEndOfMedia(new Runnable() {
+		        @Override public void run() {
+		          player.currentTimeProperty().removeListener(progressChangeListener);
+		         
+		          nextPlayer.play();
+		        }
+		      });
+		    }
 	}
+		 
+
+		  /** @return a MediaPlayer for the given source which will report any errors it encounters */
+		  private MediaPlayer createPlayer(String aMediaSrc) {
+		    final MediaPlayer player = new MediaPlayer(new Media(aMediaSrc));
+		    player.setOnError(new Runnable() {
+		      @Override public void run() {
+		        System.out.println("Media error occurred: " + player.getError());
+		      }
+		    });
+		    return player;
+		  }
+		
+	
 
 	/**
 	 * @param mediaPlayer
