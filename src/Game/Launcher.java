@@ -65,11 +65,10 @@ public class Launcher extends Application
 
 	public void playMusic()
 	{	
-
 		Media sound=new Media(new File("src/Son/Take_On_Me.wav").toURI().toString());
 		this.mediaPlayer = new MediaPlayer(sound);
 		this.mediaPlayer.play();
-
+		
 		final Label currentlyPlaying = new Label();
 		final ProgressBar progress = new ProgressBar();
 		final ChangeListener<? super javafx.util.Duration> progressChangeListener = null;

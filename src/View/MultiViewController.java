@@ -2,6 +2,10 @@ package View;
 
 import java.util.Optional;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXSlider;
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import Game.Game;
 import Game.Launcher;
 import javafx.fxml.FXML;
@@ -13,6 +17,7 @@ import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.MediaPlayer.Status;
 
 
 public class MultiViewController extends ToolsBarController
@@ -27,12 +32,15 @@ public class MultiViewController extends ToolsBarController
 	@FXML private ImageView Button20;
 	@FXML private ImageView Button21;
 	@FXML private ImageView Button22;
-	
+	@FXML private ImageView Speaker;
+
 	int click = 0 ;
 	Image cercle = new Image("Images/perfect-circle_icon-icons.com_53928.png") ;
 	Image croix = new Image("Images/1487086345-cross_81577.png") ;
 	Image base = new Image("Images/Blanc.png") ;
 	Game game = new Game();
+	Image speakerOff=new Image("Images/speakerOff.png");
+	Image speakerOn=new Image("Images/speakerOn.png");
 	
 	@FXML
 	public void onClickQuitButton()
@@ -302,5 +310,26 @@ public class MultiViewController extends ToolsBarController
 			}
 		}
 	}
+	
+	@FXML
+	 void onClickStopMusic()
+	{
+		Launcher launcher = Launcher.getInstance();
+		 Status status =launcher.getMedia().getStatus(); 
+         if (status == status.PLAYING) { 
+		
+        	 launcher.getMedia().pause(); 
+        	 this.Speaker.setImage(speakerOff);
+        
+         }
+         else {
+        	 
+
+        	 launcher.getMedia().play(); 
+        	 this.Speaker.setImage(speakerOn);
+        	 
+         }
+	}
+	
 	
 }
