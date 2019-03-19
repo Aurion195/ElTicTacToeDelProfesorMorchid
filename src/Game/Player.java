@@ -3,10 +3,12 @@ package Game;
 public class Player 
 {
 	String name ;
+	String pion ;
 
-	public Player(String name) 
+	public Player(String name, String pion) 
 	{
 		this.name = name;
+		this.pion = pion ;
 	}
 
 	/**
@@ -25,5 +27,13 @@ public class Player
 		this.name = name;
 	}
 	
+	public String getPion()
+	{
+		return this.pion ;
+	}
 	
+	public void setPion(String pion)
+	{
+		this.pion = pion ;
+	}
 }

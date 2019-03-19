@@ -249,16 +249,6 @@ public class Launcher extends Application
 		return this.mediaPlayer ;
 	}
 
-	public void setPlayerName00(String name)
-	{
-		this.player00.setName(name) ;
-	}
-
-	public void setPLayerName01(String name)
-	{
-		this.player01.setName(name);
-	}
-
 	public String getPlayer00Name()
 	{
 		return this.player00.getName() ;
@@ -267,5 +257,25 @@ public class Launcher extends Application
 	public String getPlayer01Name()
 	{
 		return this.player01.getName() ;
+	}
+	
+	public void setPlayerName00(String name)
+	{
+		this.player00.setName(name) ;
+	}
+
+	public void setPlayerPion00(String pion)
+	{
+		this.player00.setPion(pion);
+	}
+	
+	public void setPLayerName01(String name)
+	{
+		this.player01.setName(name);
+	}
+	
+	public void setPlayerPion01(String pion)
+	{
+		this.player01.setPion(pion);
 	}
 }
