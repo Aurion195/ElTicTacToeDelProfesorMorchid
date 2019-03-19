@@ -25,7 +25,6 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.media.MediaView;
 
-
 public class Launcher extends Application 
 {
 
@@ -66,57 +65,66 @@ public class Launcher extends Application
 
 	public void playMusic()
 	{	
-		
 
-		//Media sound=new Media(new File("src/Son/Take_On_Me.wav").toURI().toString());
-		//this.mediaPlayer = new MediaPlayer(sound);
-		//this.mediaPlayer.play();
-		
+		Media sound=new Media(new File("src/Son/Take_On_Me.wav").toURI().toString());
+		this.mediaPlayer = new MediaPlayer(sound);
+		this.mediaPlayer.play();
+
 		final Label currentlyPlaying = new Label();
-		  final ProgressBar progress = new ProgressBar();
+		final ProgressBar progress = new ProgressBar();
 		final ChangeListener<? super javafx.util.Duration> progressChangeListener = null;
 
-		
-		    // determine the source directory for the playlist (either the first parameter to the program or a 
-		    
-		    final File dir = new File("src/Son/");
-		     System.out.println("ici");
-		    if (!dir.exists() && dir.isDirectory()) {
-		      System.out.println("Cannot find audio source directory: " + dir);
-		    }
 
-		     System.out.println("ici");
-		    final List<MediaPlayer> players = new ArrayList<MediaPlayer>();
-		    for (String file : dir.list(new FilenameFilter() {
-		      @Override public boolean accept(File dir, String name) {
-		        return name.endsWith(".wav");
-		      }
-		    }))players.add(createPlayer((dir + "/" + file)));
-		    if (players.isEmpty()) {
-		      System.out.println("No audio found in " + dir);
-		      return;
-		    }
-		     System.out.println("ici");
-		    // play each audio file in turn.
-		    
-		    for (int i = 0; i < players.size(); i++) { 
-		      final MediaPlayer player     = players.get(i);
-		
-		      final MediaPlayer nextPlayer = players.get((i + 1) % players.size());
-		      System.out.println("ici");
-		      players.get(0).play();; 
-		      player.setOnEndOfMedia(new Runnable() {
-		        @Override 
-		        public void run() {     
-		         player.currentTimeProperty().removeListener(progressChangeListener);
-		         System.out.println("iciiiii");
-		        nextPlayer.play();
-		        }
-		      }); 
-		   
-		    }  
-		    
-		   
+
+
+		final StackPane layout = new StackPane();
+
+		// determine the source directory for the playlist (either the first parameter to the program or a 
+		final List<String> params = getParameters().getRaw();
+		final File dir =  new File("src/Son/");
+
+		if(!dir.exists() && dir.isDirectory()) 
+		{
+			System.out.println("Cannot find audio source directory: " + dir);
+		}
+
+		// create some media players.
+		final List<MediaPlayer> players = new ArrayList<MediaPlayer>();
+		for(String file : dir.list(new FilenameFilter() 
+		{
+			@Override public boolean accept(File dir, String name) 
+			{
+				return name.endsWith(".wav");
+			}
+		}))
+
+			try {
+				players.add(createPlayer((dir + "/" + file)));
+			}
+		catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		if (players.isEmpty()) 
+		{
+			System.out.println("No audio found in " + dir);
+			return;
+		}
+
+		// play each audio file in turn.
+
+		for (int i = 0; i < players.size(); i++) 
+		{
+			final MediaPlayer player     = players.get(i);
+			final MediaPlayer nextPlayer = players.get((i + 1) % players.size());
+			player.setOnEndOfMedia(new Runnable() {
+				@Override public void run() {
+					player.currentTimeProperty().removeListener(progressChangeListener);
+
+					nextPlayer.play();
+				}
+			});
+		}
 	}
 
 

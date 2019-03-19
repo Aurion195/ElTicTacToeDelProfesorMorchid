@@ -22,7 +22,7 @@
             </ImageView>
          </graphic>
             </JFXButton>
-            <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="42.0" layoutY="6.0" onMouseClicked="#onClickHomeButton" prefHeight="55.0" prefWidth="45.0" ripplerFill="WHITE" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="6.0">
+            <JFXButton buttonType="RAISED"  focusTraversable="false" layoutX="42.0" layoutY="6.0" onMouseClicked="#onClickHomeButton" prefHeight="55.0" prefWidth="45.0" ripplerFill="WHITE" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="6.0">
             <graphic>
             <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onClickQuitButton" pickOnBounds="true" preserveRatio="true">
                <image>
