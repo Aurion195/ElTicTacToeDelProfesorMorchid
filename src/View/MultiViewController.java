@@ -23,6 +23,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.MediaPlayer.Status;
+import javafx.scene.shape.Line;
+import javafx.scene.shape.Rectangle;
 
 
 public class MultiViewController extends ToolsBarController implements Initializable
@@ -40,6 +42,14 @@ public class MultiViewController extends ToolsBarController implements Initializ
 	@FXML private ImageView Speaker;
 	@FXML private ImageView imagePlayer00 ;
 	@FXML private ImageView imagePlayer01 ;
+	@FXML public Rectangle rectangle00 ;
+	@FXML public Rectangle rectangle01 ;
+	@FXML public Rectangle rectangle02 ;
+	@FXML public Rectangle rectangle03 ;
+	@FXML public Rectangle rectangle04 ;
+	@FXML public Rectangle rectangle05 ;
+	@FXML public Rectangle rectangle06 ;
+	@FXML public Rectangle rectangle07 ;
 	@FXML private Button player00 ;
 	@FXML private Button player01 ;
 	
@@ -48,41 +58,48 @@ public class MultiViewController extends ToolsBarController implements Initializ
 	Image croix = new Image("Images/1487086345-cross_81577.png") ;
 	Image base = new Image("Images/Blanc.png") ;
 	Game game = new Game();
-	Image speakerOff=new Image("Images/speakerOff.png");
-	Image speakerOn=new Image("Images/speakerOn.png");
+	Image speakerOff = new Image("Images/speakerOff.png");
+	Image speakerOn = new Image("Images/speakerOn.png");
+	Launcher launcher = Launcher.getInstance() ;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) 
 	{
 		this.displayerPlayer00();
 		this.displayPlayer01();
+		this.alertJoueur1();
 	}
 	
+	public void alertJoueur1()
+	{
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Début du jeu !");
+		alert.setHeaderText(null);
+		alert.setContentText("Le joueur " + launcher.getPlayer00Name() + " commence");
+		alert.showAndWait();
+	}
+	
+	public void alertJoueur2()
+	{
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Début du jeu !");
+		alert.setHeaderText(null);
+		alert.setContentText("Le joueur " + launcher.getPlayer01Name() + " commence");
+		alert.showAndWait();
+	}
+
 	public void displayerPlayer00()
 	{
-		Launcher launcher = Launcher.getInstance() ;
 		this.player00.setText(launcher.getPlayer00Name());
-		if(launcher.getPion00().equals("Croix"))
-		{
-			this.imagePlayer00.setImage(croix);
-		}
-		else {
-			this.imagePlayer00.setImage(cercle);
-		}
+		this.imagePlayer00.setImage(croix);
 	}
 	
 	public void displayPlayer01()
 	{
-		Launcher launcher = Launcher.getInstance() ;
 		this.player01.setText(launcher.getPlayer01Name());
-		if(launcher.getPion01().equals("Croix"))
-		{
-			this.imagePlayer01.setImage(croix);
-		}
-		else {
-			this.imagePlayer01.setImage(cercle);
-		}
+		this.imagePlayer01.setImage(cercle);
 	}
+	
 	@FXML
 	public void onClickQuitButton()
 	{
@@ -95,15 +112,52 @@ public class MultiViewController extends ToolsBarController implements Initializ
 		super.onClickSettingButton();
 	}
 	
+	public void afficheTrait(int a)
+	{
+		
+		switch(a) {
+		case 1:
+			this.rectangle00.setVisible(true);
+			break;
+		case 2:
+			this.rectangle01.setVisible(true);
+			break ;
+		case 3:
+			this.rectangle02.setVisible(true);
+			break ;
+		case 4:
+			this.rectangle03.setVisible(true);
+			break ;
+		case 5:
+			this.rectangle04.setVisible(true);
+			break ;
+		case 6:
+			this.rectangle05.setVisible(true);
+			break ;
+		case 7:
+			this.rectangle06.setVisible(true);
+			break ;
+		case 8:
+			this.rectangle07.setVisible(true);
+			break ;
+		default:
+			break;
+		}
+	}
 	@FXML
 	void onClickButton00()
 	{
 		this.Button00.setDisable(true);
 		this.Button00.setImage((this.game.turnPlayer(0) ? cercle : croix)) ;
 		this.click++;
-		if(this.click > 4 && this.game.win())
+		if(this.click > 4)
 		{
-			this.win() ;
+			int a = this.game.win() ;
+			if(a != -1)
+			{
+				this.afficheTrait(a) ;
+				this.win() ;
+			}
 		}
 		else if(this.click == 9)
 		{
@@ -118,9 +172,14 @@ public class MultiViewController extends ToolsBarController implements Initializ
 		this.Button01.setDisable(true);
 		this.Button01.setImage((this.game.turnPlayer(1) ? cercle : croix)) ;
 		this.click++;
-		if(this.click > 4 && this.game.win())
+		if(this.click > 4)
 		{
-			this.win() ;
+			int a = this.game.win() ;
+			if(a != -1)
+			{
+				this.afficheTrait(a) ;
+				this.win() ;
+			}
 		}
 		else if(this.click == 9)
 		{
@@ -134,9 +193,14 @@ public class MultiViewController extends ToolsBarController implements Initializ
 		this.Button02.setDisable(true);
 		this.Button02.setImage((this.game.turnPlayer(2) ? cercle : croix)) ;
 		this.click++;
-		if(this.click > 4 && this.game.win())
+		if(this.click > 4)
 		{
-			this.win() ;
+			int a = this.game.win() ;
+			if(a != -1)
+			{
+				this.afficheTrait(a) ;
+				this.win() ;
+			}
 		}
 		else if(this.click == 9)
 		{
@@ -150,9 +214,14 @@ public class MultiViewController extends ToolsBarController implements Initializ
 		this.Button10.setDisable(true);
 		this.Button10.setImage((this.game.turnPlayer(3) ? cercle : croix)) ;
 		this.click++;
-		if(this.game.win())
+		if(this.click > 4)
 		{
-			this.win() ;
+			int a = this.game.win() ;
+			if(a != -1)
+			{
+				this.afficheTrait(a) ;
+				this.win() ;
+			}
 		}
 		else if(this.click == 9)
 		{
@@ -166,9 +235,14 @@ public class MultiViewController extends ToolsBarController implements Initializ
 		this.Button11.setDisable(true);
 		this.Button11.setImage((this.game.turnPlayer(4) ? cercle : croix)) ;
 		this.click++;
-		if(this.game.win())
+		if(this.click > 4)
 		{
-			this.win() ;
+			int a = this.game.win() ;
+			if(a != -1)
+			{
+				this.afficheTrait(a) ;
+				this.win() ;
+			}
 		}
 		else if(this.click == 9)
 		{
@@ -182,9 +256,14 @@ public class MultiViewController extends ToolsBarController implements Initializ
 		this.Button12.setDisable(true);
 		this.Button12.setImage((this.game.turnPlayer(5) ? cercle : croix)) ;
 		this.click++;
-		if(this.click > 4 && this.game.win())
+		if(this.click > 4)
 		{
-			this.win() ;
+			int a = this.game.win() ;
+			if(a != -1)
+			{
+				this.afficheTrait(a) ;
+				this.win() ;
+			}
 		}
 		else if(this.click == 9)
 		{
@@ -198,9 +277,14 @@ public class MultiViewController extends ToolsBarController implements Initializ
 		this.Button20.setDisable(true);
 		this.Button20.setImage((this.game.turnPlayer(6) ? cercle : croix)) ;
 		this.click++;
-		if(this.click > 4 && this.game.win())
+		if(this.click > 4)
 		{
-			this.win() ;
+			int a = this.game.win() ;
+			if(a != -1)
+			{
+				this.afficheTrait(a) ;
+				this.win() ;
+			}
 		}
 		else if(this.click == 9)
 		{
@@ -214,9 +298,14 @@ public class MultiViewController extends ToolsBarController implements Initializ
 		this.Button21.setDisable(true);
 		this.Button21.setImage((this.game.turnPlayer(7) ? cercle : croix)) ;
 		this.click++;
-		if(this.click > 4 && this.game.win())
+		if(this.click > 4)
 		{
-			this.win() ;
+			int a = this.game.win() ;
+			if(a != -1)
+			{
+				this.afficheTrait(a) ;
+				this.win() ;
+			}
 		}
 		else if(this.click == 9)
 		{
@@ -230,9 +319,14 @@ public class MultiViewController extends ToolsBarController implements Initializ
 		this.Button22.setDisable(true);
 		this.Button22.setImage((this.game.turnPlayer(8) ? cercle : croix)) ;
 		this.click++;
-		if(this.click > 4 && this.game.win())
+		if(this.click > 4)
 		{
-			this.win() ;
+			int a = this.game.win() ;
+			if(a != -1)
+			{
+				this.afficheTrait(a) ;
+				this.win() ;
+			}
 		}
 		else if(this.click == 9)
 		{
@@ -263,6 +357,15 @@ public class MultiViewController extends ToolsBarController implements Initializ
 		this.Button21.setImage(this.base);
 		this.Button22.setImage(this.base);
 		
+		this.rectangle00.setVisible(false);
+		this.rectangle01.setVisible(false);
+		this.rectangle02.setVisible(false);
+		this.rectangle03.setVisible(false);
+		this.rectangle04.setVisible(false);
+		this.rectangle05.setVisible(false);
+		this.rectangle06.setVisible(false);
+		this.rectangle07.setVisible(false);
+		
 		this.game.erasePion() ;
 	}
 	@FXML
@@ -271,15 +374,21 @@ public class MultiViewController extends ToolsBarController implements Initializ
 		Alert alert = new Alert(AlertType.CONFIRMATION);
 		alert.setTitle("Attention");
 		alert.setHeaderText("Voullez-vous vraiment quitter ?");
-		ButtonType buttonType = new ButtonType("Non") ;
 		
-		alert.getButtonTypes().addAll(buttonType) ;
+		ButtonType buttonTypeOne = new ButtonType("Non");
+		ButtonType buttonTypeThree = new ButtonType("Quit");
 		
+		alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeThree);
 		Optional<ButtonType> result = alert.showAndWait();
-		if(result.get() != buttonType)
+		
+		if(result.get() == buttonTypeThree)
 		{
 			this.eraseImage() ;
 			super.onClickHomeButton();
+		}
+		else 
+		{
+		
 		}
 	}
 	
@@ -291,59 +400,85 @@ public class MultiViewController extends ToolsBarController implements Initializ
 		alert.setContentText("Choose your option.");
 
 		ButtonType buttonTypeOne = new ButtonType("Recommencer");
-		ButtonType buttonTypeTwo = new ButtonType("Back");
 		ButtonType buttonTypeThree = new ButtonType("Quit");
-		ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonData.CANCEL_CLOSE);
 
-		alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo, buttonTypeThree, buttonTypeCancel);
-
+		alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeThree);
 		Optional<ButtonType> result = alert.showAndWait();
-		if (result.get() == buttonTypeOne)
+		
+		if(result.get() == buttonTypeOne)
 		{
-			this.eraseImage() ;
-		}
-		else if (result.get() == buttonTypeTwo) 
-		{
-			// ... user chose "Two"
-		} 
-		else if (result.get() == buttonTypeThree) 
-		{
-			// ... user chose "Three"
+			this.eraseImage();
+			if(this.game.turnPlayer1)
+			{
+				this.alertJoueur1();
+			}
+			else {
+				this.alertJoueur2();
+			}
 		}
 		else 
 		{
-			// ... user chose CANCEL or closed the dialog
+			Launcher main = Launcher.getInstance();
+			FXMLLoader loader = new FXMLLoader();
+			try {
+				loader.setLocation(getClass().getResource("MenuView.fxml"));
+				main.setRootLayout(loader.load());
+
+				Scene scene = new Scene(main.getRootLayout());
+				main.getPrimaryStage().setScene(scene);
+				main.getPrimaryStage().show();
+			} 
+			catch (Exception e) 
+			{
+				System.out.println(e.getMessage());
+			}
 		}
+
 	}
 	
 	public void win()
 	{
-		if(this.game.win())
+		Alert alert = new Alert(AlertType.CONFIRMATION);
+		alert.setTitle("Congratulations");
+		String tmpString = "" ;
+
+		if(!this.game.turnPlayer1) tmpString = launcher.getPlayer00Name() ;
+		else tmpString = launcher.getPlayer01Name() ;
+
+		alert.setHeaderText("Le joueur " + tmpString +" à gagner ");
+		alert.setContentText("Choose your option.");
+
+		ButtonType buttonTypeOne = new ButtonType("Recommencer");
+		ButtonType buttonTypeThree = new ButtonType("Quit");
+
+		alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeThree);
+		Optional<ButtonType> result = alert.showAndWait();
+
+		if(result.get() == buttonTypeOne)
 		{
-			Alert alert = new Alert(AlertType.CONFIRMATION);
-			alert.setTitle("Congratulations");
-			alert.setHeaderText("Le joueur 'x' à gagner ");
-			alert.setContentText("Choose your option.");
-
-			ButtonType buttonTypeOne = new ButtonType("Recommencer");
-			ButtonType buttonTypeTwo = new ButtonType("Back");
-			ButtonType buttonTypeThree = new ButtonType("Quit");
-			ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonData.CANCEL_CLOSE);
-
-			alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo, buttonTypeThree, buttonTypeCancel);
-
-			Optional<ButtonType> result = alert.showAndWait();
-			if (result.get() == buttonTypeOne)
+			this.eraseImage();
+			if(this.game.turnPlayer1)
 			{
-				this.eraseImage() ;
+				this.alertJoueur1();
 			}
-			else if (result.get() == buttonTypeTwo) 
-			{
-				
+			else {
+				this.alertJoueur2();
+			}
+		}
+		else 
+		{
+			FXMLLoader loader = new FXMLLoader();
+			try {
+				loader.setLocation(getClass().getResource("MenuView.fxml"));
+				launcher.setRootLayout(loader.load());
+
+				Scene scene = new Scene(launcher.getRootLayout());
+				launcher.getPrimaryStage().setScene(scene);
+				launcher.getPrimaryStage().show();
 			} 
-			else if (result.get() == buttonTypeThree) 
+			catch (Exception e) 
 			{
-				// ... user chose "Three"
+				System.out.println(e.getMessage());
 			}
 		}
 	}

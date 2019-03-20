@@ -2,9 +2,15 @@ package Game;
 
 import java.util.Vector;
 
+import org.w3c.dom.Element;
+
+import View.MultiViewController;
+
 public class Game 
 {
-	private boolean turnPlayer1 = true ;
+	public boolean turnPlayer1 = true ;
+	private String player00 ;
+	private String player01 ;
 	private Vector<String> choicePlayeurStrings = new Vector<String>() ;
 	
 	public Game()
@@ -15,49 +21,79 @@ public class Game
 		}
 	}
 	
-	private boolean crossWin(Vector<String> c)
+	private int crossWin(Vector<String> c)
 	{
-		if((c.elementAt(0).toString().equals(c.elementAt(4).toString()) && c.elementAt(4).toString().equals(c.elementAt(8).toString()) ||
-		(c.elementAt(2).toString().equals(c.elementAt(4).toString()) && c.elementAt(4).toString().equals(c.elementAt(6).toString()))))
+		if((c.elementAt(0).toString().equals(c.elementAt(4).toString()) && c.elementAt(4).toString().equals(c.elementAt(8).toString())))
 		{
-			return true ;
+			return 7 ;
+		}
+		else if(c.elementAt(2).toString().equals(c.elementAt(4).toString()) && c.elementAt(4).toString().equals(c.elementAt(6).toString()))
+		{
+			return 8 ;
 		}
 		
-		return false ;
+		return -1 ;
 	}
 	
-	private boolean horizontalWin(Vector<String> c)
+	private int horizontalWin(Vector<String> c)
 	{
-		if((c.elementAt(0).toString().equals(c.elementAt(1).toString()) && c.elementAt(1).toString().equals(c.elementAt(2).toString())) ||
-		   (c.elementAt(3).toString().equals(c.elementAt(4).toString()) && c.elementAt(4).toString().equals(c.elementAt(5).toString())) ||
-		   (c.elementAt(6).toString().equals(c.elementAt(7).toString()) && c.elementAt(7).toString().equals(c.elementAt(8).toString())))
+		if((c.elementAt(0).toString().equals(c.elementAt(1).toString()) && c.elementAt(1).toString().equals(c.elementAt(2).toString())))
 		{
-			return true ;
+			return 1 ;
+		}
+		else if(c.elementAt(3).toString().equals(c.elementAt(4).toString()) && c.elementAt(4).toString().equals(c.elementAt(5).toString()))
+		{
+			return 2 ;
+		}
+		else if(c.elementAt(6).toString().equals(c.elementAt(7).toString()) && c.elementAt(7).toString().equals(c.elementAt(8).toString()))
+		{
+			return 3 ;
 		}
 		
-		return false ;
+		return -1 ;
 	}
 	
-	private boolean verticaleWin(Vector<String> c)
+	private int verticaleWin(Vector<String> c)
 	{
-		if((c.elementAt(0).toString().equals(c.elementAt(3).toString()) && c.elementAt(3).toString().equals(c.elementAt(6).toString())) ||
-		   (c.elementAt(1).toString().equals(c.elementAt(4).toString()) && c.elementAt(4).toString().equals(c.elementAt(7).toString())) ||
-		   (c.elementAt(2).toString().equals(c.elementAt(4).toString()) && c.elementAt(4).toString().equals(c.elementAt(6).toString())))
+		if((c.elementAt(0).toString().equals(c.elementAt(3).toString()) && c.elementAt(3).toString().equals(c.elementAt(6).toString())))
 		{
-			return true ;
+			return 4 ;
+		}
+		else if(c.elementAt(1).toString().equals(c.elementAt(4).toString()) && c.elementAt(4).toString().equals(c.elementAt(7).toString()))
+		{
+			return 5 ;
+		}
+		else if(c.elementAt(2).toString().equals(c.elementAt(5).toString()) && c.elementAt(5).toString().equals(c.elementAt(8).toString()))
+		{
+			return 6 ;
 		}
 		
-		return false ;
+		return -1 ;
 	}
 	
-	public boolean win()
+	public int win()
 	{
-		if(this.crossWin(this.choicePlayeurStrings) || this.horizontalWin(this.choicePlayeurStrings) || this.verticaleWin(this.choicePlayeurStrings))
+		int a = this.horizontalWin(this.choicePlayeurStrings) ;
+		int b = this.crossWin(this.choicePlayeurStrings) ;
+		int c = this.verticaleWin(this.choicePlayeurStrings) ;
+		
+		if(a != -1)
 		{
-			return true ;
+			return a ;  
+		}
+		else if(b != -1)
+		{
+			return b ;
+		}
+		else if(c != -1) 
+		{
+			return c ;
+		}
+		else 
+		{
+			return -1 ;
 		}
 		
-		return false ;
 	}
 	
 	public void erasePion()
