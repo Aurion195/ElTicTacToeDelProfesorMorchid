@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -83,18 +83,18 @@
                   <Image url="@../Images/speakerOn.png" />
                </image>
             </ImageView>
-            <TextArea layoutX="84.0" layoutY="484.0" prefHeight="23.0" prefWidth="101.0" />
-            <TextArea layoutX="325.0" layoutY="484.0" prefHeight="23.0" prefWidth="101.0" />
-            <ImageView id="Button01" fx:id="Button011" fitHeight="55.0" fitWidth="66.0" layoutX="112.0" layoutY="540.0" onMousePressed="#onClickButton01" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button01" fx:id="imagePlayer00" fitHeight="65.0" fitWidth="62.0" layoutX="72.0" layoutY="527.0" onMousePressed="#onClickButton01" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button01" fx:id="Button0111" fitHeight="55.0" fitWidth="66.0" layoutX="354.0" layoutY="537.0" onMousePressed="#onClickButton01" pickOnBounds="true" preserveRatio="true">
+            <Button fx:id="player00" accessibleRole="TEXT" layoutX="48.0" layoutY="476.0" mnemonicParsing="false" onAction="#displayerPlayer00" prefHeight="30.0" prefWidth="100.0" text="Button" />
+            <ImageView id="Button01" fx:id="imagePlayer01" fitHeight="65.0" fitWidth="62.0" layoutX="389.0" layoutY="528.0" onMousePressed="#onClickButton01" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
+            <Button fx:id="player01" accessibleRole="TEXT" layoutX="369.0" layoutY="474.0" mnemonicParsing="false" mouseTransparent="true" onAction="#displayPlayer01" prefHeight="30.0" prefWidth="100.0" text="Button" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="520.0" style="-fx-background-color: #ffff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

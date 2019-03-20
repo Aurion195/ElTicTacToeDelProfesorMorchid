@@ -257,6 +257,16 @@ public class Launcher extends Application
 		return this.player01.getName() ;
 	}
 	
+	public String getPion00()
+	{
+		return this.player00.getPion() ;
+	}
+	
+	public String getPion01()
+	{
+		return this.player01.getPion() ;
+	}
+	
 	public void setPlayerName00(String name)
 	{
 		this.player00.setName(name) ;

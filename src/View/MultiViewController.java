@@ -1,6 +1,8 @@
 package View;
 
+import java.net.URL;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXSlider;
@@ -10,9 +12,11 @@ import Game.Game;
 import Game.Launcher;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
@@ -21,7 +25,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.media.MediaPlayer.Status;
 
 
-public class MultiViewController extends ToolsBarController
+public class MultiViewController extends ToolsBarController implements Initializable
 {
 	
 	@FXML private ImageView Button00;
@@ -34,9 +38,11 @@ public class MultiViewController extends ToolsBarController
 	@FXML private ImageView Button21;
 	@FXML private ImageView Button22;
 	@FXML private ImageView Speaker;
-	@FXML private TextField turnPlayer ;
+	@FXML private ImageView imagePlayer00 ;
+	@FXML private ImageView imagePlayer01 ;
+	@FXML private Button player00 ;
+	@FXML private Button player01 ;
 	
-	Boolean turnPlayer1 = true ;
 	int click = 0 ;
 	Image cercle = new Image("Images/perfect-circle_icon-icons.com_53928.png") ;
 	Image croix = new Image("Images/1487086345-cross_81577.png") ;
@@ -45,6 +51,38 @@ public class MultiViewController extends ToolsBarController
 	Image speakerOff=new Image("Images/speakerOff.png");
 	Image speakerOn=new Image("Images/speakerOn.png");
 	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) 
+	{
+		this.displayerPlayer00();
+		this.displayPlayer01();
+	}
+	
+	public void displayerPlayer00()
+	{
+		Launcher launcher = Launcher.getInstance() ;
+		this.player00.setText(launcher.getPlayer00Name());
+		if(launcher.getPion00().equals("Croix"))
+		{
+			this.imagePlayer00.setImage(croix);
+		}
+		else {
+			this.imagePlayer00.setImage(cercle);
+		}
+	}
+	
+	public void displayPlayer01()
+	{
+		Launcher launcher = Launcher.getInstance() ;
+		this.player01.setText(launcher.getPlayer01Name());
+		if(launcher.getPion01().equals("Croix"))
+		{
+			this.imagePlayer01.setImage(croix);
+		}
+		else {
+			this.imagePlayer01.setImage(cercle);
+		}
+	}
 	@FXML
 	public void onClickQuitButton()
 	{
@@ -329,6 +367,4 @@ public class MultiViewController extends ToolsBarController
         	 
          }
 	}
-	
-	
 }
