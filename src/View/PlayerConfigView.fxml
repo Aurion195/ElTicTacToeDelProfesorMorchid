@@ -16,16 +16,16 @@
          <children>
             <ImageView fitHeight="21.0" fitWidth="30.0" layoutX="48.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true" />
             <Polygon fill="#009cfc" layoutX="199.0" layoutY="-28.0" points="-16.0, 40.0, 11.0, 40.0, -3.0, 17.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-            <JFXTextField id="Pseudo00" layoutX="181.0" layoutY="100.0" promptText="Pseudo" />
-            <JFXButton id="ButtonGo" fx:id="ButtonGo" layoutX="176.0" layoutY="312.0" prefHeight="45.0" prefWidth="165.0" style="-fx-background-color: #ffff;" text="Go !!" />
+            <JFXTextField id="Pseudo00" fx:id="Pseudo00" layoutX="181.0" layoutY="100.0" promptText="Pseudo" />
+            <JFXButton id="ButtonGo" fx:id="ButtonGo" layoutX="176.0" layoutY="312.0" onMouseClicked="#onClickGoButton" prefHeight="45.0" prefWidth="165.0" style="-fx-background-color: #ffff;" text="Go !!" />
             <JFXProgressBar layoutX="168.0" layoutY="398.0" />
             <Label layoutX="73.0" layoutY="110.0" text="Joueur 1" />
-            <JFXTextField id="Pseudo01" layoutX="181.0" layoutY="212.0" promptText="Pseudo" />
+            <JFXTextField id="Pseudo01" fx:id="Pseudo01" layoutX="181.0" layoutY="212.0" promptText="Pseudo" />
             <Label layoutX="74.0" layoutY="219.0" text="Joueur 2" />
-            <RadioButton id="croix00" layoutX="368.0" layoutY="69.0" mnemonicParsing="false" text="Croix" />
-            <RadioButton id="rond00" layoutX="367.0" layoutY="113.0" mnemonicParsing="false" text="Rond" />
-            <RadioButton id="croix01" layoutX="367.0" layoutY="179.0" mnemonicParsing="false" text="Croix" />
-            <RadioButton id="rond01" layoutX="366.0" layoutY="223.0" mnemonicParsing="false" text="Rond" />
+            <RadioButton id="croix00" fx:id="croix00" layoutX="368.0" layoutY="69.0" mnemonicParsing="false" text="Croix" />
+            <RadioButton id="rond00" fx:id="rond00" layoutX="367.0" layoutY="113.0" mnemonicParsing="false" text="Rond" />
+            <RadioButton id="croix01" fx:id="croix01" layoutX="367.0" layoutY="179.0" mnemonicParsing="false" text="Croix" />
+            <RadioButton id="rond01" fx:id="rond01" layoutX="366.0" layoutY="223.0" mnemonicParsing="false" text="Rond" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="-1.0" prefHeight="65.0" prefWidth="520.0" style="-fx-background-color: #ffff;">
