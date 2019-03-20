@@ -298,15 +298,11 @@ public class MultiViewController extends ToolsBarController
 			}
 			else if (result.get() == buttonTypeTwo) 
 			{
-				// ... user chose "Two"
+				
 			} 
 			else if (result.get() == buttonTypeThree) 
 			{
 				// ... user chose "Three"
-			}
-			else 
-			{
-				// ... user chose CANCEL or closed the dialog
 			}
 		}
 	}

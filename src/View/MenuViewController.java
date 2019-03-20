@@ -34,7 +34,7 @@ public class MenuViewController extends ToolsBarController
 		Launcher main = Launcher.getInstance();
     	FXMLLoader loader = new FXMLLoader();
     	try {
-    		loader.setLocation(getClass().getResource("MultiView.fxml"));
+    		loader.setLocation(getClass().getResource("PlayerConfigView.fxml"));
     		main.setRootLayout(loader.load());
 
     		Scene scene = new Scene(main.getRootLayout());
