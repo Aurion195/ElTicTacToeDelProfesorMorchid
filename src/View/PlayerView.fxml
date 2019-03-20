@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Polygon?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="519.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.PlayerConfigViewController">
+   <children>
+      <AnchorPane layoutY="77.0" prefHeight="494.0" prefWidth="519.0" style="-fx-background-color: #009cfc;">
+         <children>
+            <ImageView fitHeight="21.0" fitWidth="30.0" layoutX="48.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true" />
+            <Polygon fill="#009cfc" layoutX="199.0" layoutY="-28.0" points="-16.0, 40.0, 11.0, 40.0, -3.0, 17.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <JFXTextField id="Pseudo00" layoutX="181.0" layoutY="100.0" promptText="Pseudo" />
+            <JFXButton id="ButtonGo" fx:id="ButtonGo" layoutX="176.0" layoutY="312.0" prefHeight="45.0" prefWidth="165.0" style="-fx-background-color: #ffff;" text="Go !!" />
+            <JFXProgressBar layoutX="168.0" layoutY="398.0" />
+            <Label layoutX="73.0" layoutY="110.0" text="Joueur 1" />
+            <JFXTextField id="Pseudo01" layoutX="181.0" layoutY="212.0" promptText="Pseudo" />
+            <Label layoutX="74.0" layoutY="219.0" text="Joueur 2" />
+            <RadioButton id="croix00" layoutX="368.0" layoutY="69.0" mnemonicParsing="false" text="Croix" />
+            <RadioButton id="rond00" layoutX="367.0" layoutY="113.0" mnemonicParsing="false" text="Rond" />
+            <RadioButton id="croix01" layoutX="367.0" layoutY="179.0" mnemonicParsing="false" text="Croix" />
+            <RadioButton id="rond01" layoutX="366.0" layoutY="223.0" mnemonicParsing="false" text="Rond" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-1.0" prefHeight="65.0" prefWidth="520.0" style="-fx-background-color: #ffff;">
+         <children>
+            <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="418.0" layoutY="6.0" onMouseClicked="#onClickQuitButton" prefHeight="55.0" prefWidth="45.0" ripplerFill="WHITE" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="6.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onClickQuitButton" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/iconfinder_power_926636.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="43.0" layoutY="6.0" onMouseClicked="#onClickHomeButton" prefHeight="55.0" prefWidth="45.0" ripplerFill="WHITE" AnchorPane.leftAnchor="43.0" AnchorPane.topAnchor="6.0">
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onClickHomeButton" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/places-home-3_icon-icons.com_48499.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="299.0" layoutY="8.0" onMouseClicked="#onClickSetttingButton" prefHeight="55.0" prefWidth="45.0" ripplerFill="WHITE" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="8.0">
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onClickSettingButton" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/1486564730-gears-cogs_81537.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="165.0" layoutY="5.0" onMouseClicked="#onClickHomeButton" prefHeight="55.0" prefWidth="45.0" ripplerFill="WHITE" AnchorPane.rightAnchor="274.0" AnchorPane.topAnchor="5.0">
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onClickQuitButton" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/game-icon-png-4487.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
