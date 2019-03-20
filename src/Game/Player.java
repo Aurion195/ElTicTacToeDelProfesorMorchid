@@ -5,9 +5,9 @@ public class Player
 	String name ;
 	String pion ;
 
-	public Player(String name, String pion) 
+	public Player(String name, String pion)
 	{
-		this.name = name;
+		this.name = name ;
 		this.pion = pion ;
 	}
 

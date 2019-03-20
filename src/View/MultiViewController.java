@@ -15,6 +15,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.MediaPlayer.Status;
@@ -33,7 +34,9 @@ public class MultiViewController extends ToolsBarController
 	@FXML private ImageView Button21;
 	@FXML private ImageView Button22;
 	@FXML private ImageView Speaker;
-
+	@FXML private TextField turnPlayer ;
+	
+	Boolean turnPlayer1 = true ;
 	int click = 0 ;
 	Image cercle = new Image("Images/perfect-circle_icon-icons.com_53928.png") ;
 	Image croix = new Image("Images/1487086345-cross_81577.png") ;

@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Polygon?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="519.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MultiViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="697.0" prefWidth="518.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MultiViewController">
    <children>
-      <AnchorPane layoutY="77.0" prefHeight="494.0" prefWidth="519.0" style="-fx-background-color: #009cfc;">
+      <AnchorPane layoutX="-1.0" layoutY="77.0" prefHeight="620.0" prefWidth="520.0" style="-fx-background-color: #009cfc;">
          <children>
             <ImageView id="Button00" fx:id="Button00" fitHeight="109.0" fitWidth="113.0" layoutX="70.0" layoutY="71.0" onMousePressed="#onClickButton00" pickOnBounds="true" preserveRatio="true">
             	<image>
@@ -58,8 +57,6 @@
                </image>
             </ImageView>
             <ImageView fitHeight="21.0" fitWidth="30.0" layoutX="48.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true" />
-            <Text id="TourJoueur" layoutX="171.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tour du joueur" wrappingWidth="156.7294921875" />
-            <TextField layoutX="270.0" layoutY="23.0" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #009cfc;" />
             <ImageView fitHeight="11.0" fitWidth="386.0" layoutX="58.0" layoutY="193.0" pickOnBounds="true">
                <image>
                   <Image url="@../Images/separateur.png" />
@@ -84,6 +81,18 @@
             <ImageView fx:id="Speaker" fitHeight="48.0" fitWidth="30.0" layoutX="406.0" layoutY="21.0" onMouseClicked="#onClickStopMusic" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Images/speakerOn.png" />
+               </image>
+            </ImageView>
+            <TextArea layoutX="84.0" layoutY="484.0" prefHeight="23.0" prefWidth="101.0" />
+            <TextArea layoutX="325.0" layoutY="484.0" prefHeight="23.0" prefWidth="101.0" />
+            <ImageView id="Button01" fx:id="Button011" fitHeight="55.0" fitWidth="66.0" layoutX="112.0" layoutY="540.0" onMousePressed="#onClickButton01" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Blanc.png" />
+               </image>
+            </ImageView>
+            <ImageView id="Button01" fx:id="Button0111" fitHeight="55.0" fitWidth="66.0" layoutX="354.0" layoutY="537.0" onMousePressed="#onClickButton01" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Blanc.png" />
                </image>
             </ImageView>
          </children>

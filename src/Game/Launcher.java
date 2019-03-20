@@ -32,8 +32,8 @@ public class Launcher extends Application
 	private AnchorPane rootLayout;
 	private static volatile Launcher instance = null;
 	private static MediaPlayer mediaPlayer ;
-	private Player player00 ;
-	private Player player01 ;
+	private Player player00 = new Player("", "");
+	private Player player01 = new Player("", "");
 
 
 	public Launcher()
