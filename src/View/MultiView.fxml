@@ -98,12 +98,12 @@
             <Button fx:id="player01" accessibleRole="TEXT" layoutX="369.0" layoutY="474.0" mnemonicParsing="false" mouseTransparent="true" onAction="#displayPlayer01" prefHeight="30.0" prefWidth="100.0" text="Button" />
             <Rectangle fx:id="rectangle00" arcHeight="5.0" arcWidth="5.0" fill="#ff0404" height="11.0" layoutX="71.0" layoutY="124.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="363.0" />
             <Rectangle fx:id="rectangle02" arcHeight="5.0" arcWidth="5.0" fill="#ff0404" height="11.0" layoutX="72.0" layoutY="388.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="363.0" />
-            <Rectangle fx:id="rectangle03" arcHeight="5.0" arcWidth="5.0" fill="#f50101" height="365.0" layoutX="107.0" layoutY="72.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="11.0" />
+            <Rectangle fx:id="rectangle03" arcHeight="5.0" arcWidth="5.0" fill="#f50101" height="365.0" layoutX="120.0" layoutY="72.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="11.0" />
             <Rectangle fx:id="rectangle04" arcHeight="5.0" arcWidth="5.0" fill="#e8060e" height="365.0" layoutX="248.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="11.0" />
-            <Rectangle fx:id="rectangle01" arcHeight="5.0" arcWidth="5.0" fill="#ff0404" height="11.0" layoutX="80.0" layoutY="269.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="363.0" />
-            <Rectangle fx:id="rectangle06" arcHeight="5.0" arcWidth="5.0" fill="#ff0404" height="11.0" layoutX="8.0" layoutY="254.0" rotate="42.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="497.0" />
-            <Rectangle fx:id="rectangle05" arcHeight="5.0" arcWidth="5.0" fill="#f50101" height="365.0" layoutX="386.0" layoutY="76.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="11.0" />
-            <Rectangle fx:id="rectangle07" arcHeight="5.0" arcWidth="5.0" fill="#ff0404" height="11.0" layoutX="-5.0" layoutY="260.0" rotate="-47.1" stroke="BLACK" strokeType="INSIDE" visible="false" width="518.0" />
+            <Rectangle fx:id="rectangle01" arcHeight="5.0" arcWidth="5.0" fill="#ff0404" height="11.0" layoutX="79.0" layoutY="255.0" stroke="BLACK" strokeType="INSIDE" width="363.0" />
+            <Rectangle fx:id="rectangle06" arcHeight="5.0" arcWidth="5.0" fill="#ff0404" height="11.0" layoutX="8.0" layoutY="254.0" rotate="44.6" stroke="BLACK" strokeType="INSIDE" visible="false" width="497.0" />
+            <Rectangle fx:id="rectangle05" arcHeight="5.0" arcWidth="5.0" fill="#f50101" height="365.0" layoutX="378.0" layoutY="76.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="11.0" />
+            <Rectangle fx:id="rectangle07" arcHeight="5.0" arcWidth="5.0" fill="#ff0404" height="11.0" layoutX="-8.0" layoutY="260.0" rotate="-44.6" stroke="BLACK" strokeType="INSIDE" visible="false" width="518.0" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="520.0" style="-fx-background-color: #ffff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

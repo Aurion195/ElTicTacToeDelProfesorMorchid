@@ -10,6 +10,12 @@ import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import Game.Game;
 import Game.Launcher;
+import javafx.animation.FadeTransition;
+import javafx.animation.Interpolator;
+import javafx.animation.RotateTransition;
+import javafx.animation.TranslateTransition;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -25,6 +31,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.media.MediaPlayer.Status;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
+import javafx.util.Duration;
 
 
 public class MultiViewController extends ToolsBarController implements Initializable
@@ -112,33 +119,72 @@ public class MultiViewController extends ToolsBarController implements Initializ
 		super.onClickSettingButton();
 	}
 	
+	private void annimationLine(Rectangle rectangle)
+	{
+		final TranslateTransition translateAnimation = new TranslateTransition(Duration.seconds(1), rectangle); 
+		translateAnimation.setCycleCount(TranslateTransition.INDEFINITE); 
+		translateAnimation.setAutoReverse(true); 
+		translateAnimation.setByX(70); 
+		translateAnimation.setByY(0); 
+		translateAnimation.setInterpolator(Interpolator.LINEAR);
+		translateAnimation.play();
+	}
+	
+	private void annimationVerticale(Rectangle rectangle)
+	{
+		final TranslateTransition translateAnimation = new TranslateTransition(Duration.seconds(1), rectangle); 
+		translateAnimation.setCycleCount(TranslateTransition.INDEFINITE); 
+		translateAnimation.setAutoReverse(true); 
+		translateAnimation.setByX(0); 
+		translateAnimation.setByY(70); 
+		translateAnimation.setInterpolator(Interpolator.LINEAR);
+		translateAnimation.play();
+	}
+	
+	private void annimationDiagonale(Rectangle rectangle)
+	{
+		final TranslateTransition translateAnimation = new TranslateTransition(Duration.seconds(1), rectangle); 
+		translateAnimation.setCycleCount(TranslateTransition.INDEFINITE); 
+		translateAnimation.setAutoReverse(true); 
+		translateAnimation.setByX(70); 
+		translateAnimation.setByY(70); 
+		translateAnimation.setInterpolator(Interpolator.LINEAR);
+		translateAnimation.play();
+	}
 	public void afficheTrait(int a)
 	{
-		
 		switch(a) {
 		case 1:
 			this.rectangle00.setVisible(true);
+			this.annimationLine(rectangle00);
 			break;
 		case 2:
 			this.rectangle01.setVisible(true);
+			this.annimationLine(rectangle01);
 			break ;
 		case 3:
 			this.rectangle02.setVisible(true);
+			this.annimationLine(rectangle02);
 			break ;
 		case 4:
 			this.rectangle03.setVisible(true);
+			this.annimationVerticale(rectangle03);
 			break ;
 		case 5:
 			this.rectangle04.setVisible(true);
+			this.annimationVerticale(rectangle04);
 			break ;
 		case 6:
 			this.rectangle05.setVisible(true);
+			this.annimationVerticale(rectangle05);
 			break ;
 		case 7:
 			this.rectangle06.setVisible(true);
+			this.annimationDiagonale(rectangle06);
 			break ;
 		case 8:
 			this.rectangle07.setVisible(true);
+			this.annimationDiagonale(rectangle07);
 			break ;
 		default:
 			break;
@@ -157,9 +203,10 @@ public class MultiViewController extends ToolsBarController implements Initializ
 			{
 				this.afficheTrait(a) ;
 				this.win() ;
+				return ;
 			}
 		}
-		else if(this.click == 9)
+		if(this.click == 9)
 		{
 			this.gameNull() ;
 		}
@@ -179,9 +226,10 @@ public class MultiViewController extends ToolsBarController implements Initializ
 			{
 				this.afficheTrait(a) ;
 				this.win() ;
+				return ;
 			}
 		}
-		else if(this.click == 9)
+		if(this.click == 9)
 		{
 			this.gameNull() ;
 		}
@@ -200,9 +248,10 @@ public class MultiViewController extends ToolsBarController implements Initializ
 			{
 				this.afficheTrait(a) ;
 				this.win() ;
+				return ;
 			}
 		}
-		else if(this.click == 9)
+		if(this.click == 9)
 		{
 			this.gameNull() ;
 		}
@@ -221,9 +270,10 @@ public class MultiViewController extends ToolsBarController implements Initializ
 			{
 				this.afficheTrait(a) ;
 				this.win() ;
+				return ;
 			}
 		}
-		else if(this.click == 9)
+		if(this.click == 9)
 		{
 			this.gameNull() ;
 		}
@@ -242,9 +292,10 @@ public class MultiViewController extends ToolsBarController implements Initializ
 			{
 				this.afficheTrait(a) ;
 				this.win() ;
+				return ;
 			}
 		}
-		else if(this.click == 9)
+		if(this.click == 9)
 		{
 			this.gameNull() ;
 		}
@@ -263,9 +314,10 @@ public class MultiViewController extends ToolsBarController implements Initializ
 			{
 				this.afficheTrait(a) ;
 				this.win() ;
+				return ;
 			}
 		}
-		else if(this.click == 9)
+		if(this.click == 9)
 		{
 			this.gameNull() ;
 		}
@@ -284,9 +336,10 @@ public class MultiViewController extends ToolsBarController implements Initializ
 			{
 				this.afficheTrait(a) ;
 				this.win() ;
+				return ;
 			}
 		}
-		else if(this.click == 9)
+		if(this.click == 9)
 		{
 			this.gameNull() ;
 		}
@@ -305,9 +358,10 @@ public class MultiViewController extends ToolsBarController implements Initializ
 			{
 				this.afficheTrait(a) ;
 				this.win() ;
+				return ;
 			}
 		}
-		else if(this.click == 9)
+		if(this.click == 9)
 		{
 			this.gameNull() ;
 		}
@@ -326,9 +380,10 @@ public class MultiViewController extends ToolsBarController implements Initializ
 			{
 				this.afficheTrait(a) ;
 				this.win() ;
+				return ;
 			}
 		}
-		else if(this.click == 9)
+		if(this.click == 9)
 		{
 			this.gameNull() ;
 		}
@@ -418,22 +473,39 @@ public class MultiViewController extends ToolsBarController implements Initializ
 		}
 		else 
 		{
-			Launcher main = Launcher.getInstance();
-			FXMLLoader loader = new FXMLLoader();
-			try {
-				loader.setLocation(getClass().getResource("MenuView.fxml"));
-				main.setRootLayout(loader.load());
-
-				Scene scene = new Scene(main.getRootLayout());
-				main.getPrimaryStage().setScene(scene);
-				main.getPrimaryStage().show();
-			} 
-			catch (Exception e) 
-			{
-				System.out.println(e.getMessage());
-			}
+			this.makeOnFadeOut();
 		}
 
+	}
+	
+	private void makeOnFadeOut() 
+	{
+		Launcher laucher = Launcher.getInstance() ;
+		FadeTransition fadeTransition = new FadeTransition() ;
+		fadeTransition.setDuration(Duration.millis(1000));
+		fadeTransition.setNode(laucher.getRootLayout());
+		fadeTransition.setFromValue(1);
+		fadeTransition.setToValue(0);
+		fadeTransition.play();
+		fadeTransition.setOnFinished(new EventHandler<ActionEvent>() {
+			
+			@Override
+			public void handle(ActionEvent event) {
+				FXMLLoader loader = new FXMLLoader();
+				try {
+					loader.setLocation(getClass().getResource("MenuView.fxml"));
+					launcher.setRootLayout(loader.load());
+
+					Scene scene = new Scene(launcher.getRootLayout());
+					launcher.getPrimaryStage().setScene(scene);
+					launcher.getPrimaryStage().show();
+				} 
+				catch (Exception e) 
+				{
+					System.out.println(e.getMessage());
+				}
+			}
+		});
 	}
 	
 	public void win()
@@ -456,6 +528,7 @@ public class MultiViewController extends ToolsBarController implements Initializ
 
 		if(result.get() == buttonTypeOne)
 		{
+			
 			this.eraseImage();
 			if(this.game.turnPlayer1)
 			{
@@ -467,19 +540,7 @@ public class MultiViewController extends ToolsBarController implements Initializ
 		}
 		else 
 		{
-			FXMLLoader loader = new FXMLLoader();
-			try {
-				loader.setLocation(getClass().getResource("MenuView.fxml"));
-				launcher.setRootLayout(loader.load());
-
-				Scene scene = new Scene(launcher.getRootLayout());
-				launcher.getPrimaryStage().setScene(scene);
-				launcher.getPrimaryStage().show();
-			} 
-			catch (Exception e) 
-			{
-				System.out.println(e.getMessage());
-			}
+			this.makeOnFadeOut();
 		}
 	}
 	
