@@ -8,28 +8,41 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="519.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.PlayerConfigViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="519.0" style="-fx-background-color: #F44336;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.PlayerConfigViewController">
    <children>
-      <AnchorPane layoutY="77.0" prefHeight="494.0" prefWidth="519.0" style="-fx-background-color: #009cfc;">
+      <AnchorPane layoutY="77.0" prefHeight="494.0" prefWidth="519.0" style="-fx-background-color: #212121;" stylesheets="@Style.css">
          <children>
             <ImageView fitHeight="21.0" fitWidth="30.0" layoutX="48.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true" />
-            <Polygon fill="#009cfc" layoutX="199.0" layoutY="-28.0" points="-16.0, 40.0, 11.0, 40.0, -3.0, 17.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-            <JFXTextField id="Pseudo00" fx:id="Pseudo00" layoutX="181.0" layoutY="100.0" promptText="Pseudo" />
+            <Polygon fill="#212121" layoutX="217.0" layoutY="-28.0" points="-16.0, 40.0, 11.0, 40.0, -3.0, 17.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <JFXTextField id="Pseudo00" fx:id="Pseudo00" focusColor="#f44336" layoutX="181.0" layoutY="100.0" promptText="Pseudo" stylesheets="@Style.css" unFocusColor="#f44336">
+               <font>
+                  <Font name="Roboto Mono Medium for Powerline" size="13.0" />
+               </font></JFXTextField>
             <JFXButton id="ButtonGo" fx:id="ButtonGo" layoutX="176.0" layoutY="312.0" onMouseClicked="#onClickGoButton" prefHeight="45.0" prefWidth="165.0" style="-fx-background-color: #ffff;" text="Go !!" />
             <JFXProgressBar layoutX="168.0" layoutY="398.0" />
-            <Label layoutX="73.0" layoutY="110.0" text="Joueur 1" />
-            <JFXTextField id="Pseudo01" fx:id="Pseudo01" layoutX="181.0" layoutY="212.0" promptText="Pseudo" />
-            <Label layoutX="74.0" layoutY="219.0" text="Joueur 2" />
+            <Label layoutX="73.0" layoutY="110.0" text="Joueur 1" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Mono Medium for Powerline" size="13.0" />
+               </font></Label>
+            <JFXTextField id="Pseudo01" fx:id="Pseudo01" focusColor="#f44336" layoutX="181.0" layoutY="212.0" promptText="Pseudo" unFocusColor="#f44336">
+               <font>
+                  <Font name="Roboto Mono Medium for Powerline" size="13.0" />
+               </font></JFXTextField>
+            <Label layoutX="74.0" layoutY="219.0" text="Joueur 2" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Mono Medium for Powerline" size="13.0" />
+               </font></Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="-1.0" prefHeight="65.0" prefWidth="520.0" style="-fx-background-color: #ffff;">
+      <AnchorPane layoutX="-1.0" prefHeight="65.0" prefWidth="520.0" style="-fx-background-color: #0091EA;">
          <children>
             <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="418.0" layoutY="6.0" onMouseClicked="#onClickQuitButton" prefHeight="55.0" prefWidth="45.0" ripplerFill="WHITE" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="6.0">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onClickQuitButton" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Images/iconfinder_power_926636.png" />
+                        <Image url="@../Images/exit.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -38,7 +51,7 @@
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onClickHomeButton" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Images/places-home-3_icon-icons.com_48499.png" />
+                        <Image url="@../Images/home.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -47,7 +60,7 @@
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onClickSettingButton" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Images/1486564730-gears-cogs_81537.png" />
+                        <Image url="@../Images/settings.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -56,7 +69,7 @@
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Images/game-icon-png-4487.png" />
+                        <Image url="@../Images/videogame.png" />
                      </image>
                   </ImageView>
                </graphic>

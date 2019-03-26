@@ -163,7 +163,7 @@ public class Launcher extends Application
 	{
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("Morprion");
-
+		
 		this.playMusic();
 
 		initRootLayout();
@@ -183,6 +183,7 @@ public class Launcher extends Application
 
 			// Show the scene containing the root layout.
 			Scene scene = new Scene(rootLayout);
+			scene.getStylesheets().add("View/Style.css");
 			primaryStage.setResizable(false);
 			primaryStage.setScene(scene);
 			primaryStage.show();

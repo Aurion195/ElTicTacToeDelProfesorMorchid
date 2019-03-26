@@ -8,9 +8,9 @@
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="697.0" prefWidth="518.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MultiViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="697.0" prefWidth="518.0" style="-fx-background-color: #F44336;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MultiViewController">
    <children>
-      <AnchorPane layoutX="-1.0" layoutY="77.0" prefHeight="620.0" prefWidth="520.0" style="-fx-background-color: #009cfc;">
+      <AnchorPane layoutX="-1.0" layoutY="77.0" prefHeight="620.0" prefWidth="520.0" style="-fx-background-color: #212121;">
          <children>
             <ImageView id="Button00" fx:id="Button00" fitHeight="109.0" fitWidth="113.0" layoutX="70.0" layoutY="71.0" onMousePressed="#onClickButton00" pickOnBounds="true" preserveRatio="true">
             	<image>
@@ -78,7 +78,7 @@
                   <Image url="@../Images/separateur.png" />
                </image>
             </ImageView>
-            <Polygon fill="#009cfc" layoutX="217.0" layoutY="-28.0" points="-16.0, 40.0, 11.0, 40.0, -3.0, 17.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <Polygon fill="#212121" layoutX="217.0" layoutY="-28.0" points="-16.0, 40.0, 11.0, 40.0, -3.0, 17.0" stroke="TRANSPARENT" strokeType="INSIDE" />
             <ImageView fx:id="Speaker" fitHeight="48.0" fitWidth="30.0" layoutX="406.0" layoutY="21.0" onMouseClicked="#onClickStopMusic" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Images/speakerOn.png" />
@@ -106,13 +106,13 @@
             <Rectangle fx:id="rectangle07" arcHeight="5.0" arcWidth="5.0" fill="#ff0404" height="11.0" layoutX="-8.0" layoutY="260.0" rotate="-44.6" stroke="BLACK" strokeType="INSIDE" visible="false" width="518.0" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="520.0" style="-fx-background-color: #ffff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="520.0" style="-fx-background-color: #0091EA;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="418.0" layoutY="6.0" onMouseClicked="#onClickQuitButton" prefHeight="55.0" prefWidth="45.0" ripplerFill="WHITE" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="6.0">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onClickQuitButton" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Images/iconfinder_power_926636.png" />
+                        <Image url="@../Images/exit.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -121,7 +121,7 @@
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onClickHomeButton" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Images/places-home-3_icon-icons.com_48499.png" />
+                        <Image url="@../Images/home.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -130,7 +130,7 @@
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onClickSetttingButton" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Images/1486564730-gears-cogs_81537.png" />
+                        <Image url="@../Images/settings.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -139,7 +139,7 @@
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onClickQuitButton" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Images/game-icon-png-4487.png" />
+                        <Image url="@../Images/videogame.png" />
                      </image>
                   </ImageView>
                </graphic>

@@ -5,24 +5,28 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="519.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MenuViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="519.0" style="-fx-background-color: #F44336;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MenuViewController">
    <children>
-      <AnchorPane layoutY="77.0" prefHeight="494.0" prefWidth="519.0" style="-fx-background-color: #009cfc;">
+      <AnchorPane layoutY="77.0" prefHeight="494.0" prefWidth="519.0" style="-fx-background-color: #212121;">
          <children>
             <ImageView fitHeight="21.0" fitWidth="30.0" layoutX="48.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true" />
-            <Polygon fill="#009cfc" layoutX="76.0" layoutY="-28.0" points="-16.0, 40.0, 11.0, 40.0, -3.0, 17.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <Polygon fill="#212121" layoutX="76.0" layoutY="-28.0" points="-16.0, 40.0, 11.0, 40.0, -3.0, 17.0" stroke="TRANSPARENT" strokeType="INSIDE" />
             <JFXButton fx:id="ButtonDuo" layoutX="124.0" layoutY="279.0" onAction="#onClickMultiButton" onMouseClicked="#onClickMultiButton" prefHeight="107.0" prefWidth="269.0" style="-fx-background-color: #e9ebec;" text="DUO" />
-            <JFXButton fx:id="ButtonSolo" layoutX="124.0" layoutY="84.0" onAction="#onClickSoloButton" onMouseClicked="#onClickSoloButton" prefHeight="107.0" prefWidth="269.0" style="-fx-background-color: #e9ebec;" text="SOLO" />
+            <JFXButton fx:id="ButtonSolo" layoutX="124.0" layoutY="84.0" onAction="#onClickSoloButton" onMouseClicked="#onClickSoloButton" prefHeight="107.0" prefWidth="269.0" style="-fx-background-color: #e9ebec;" text="SOLO" textOverrun="CLIP">
+               <font>
+                  <Font name="Roboto Mono Medium for Powerline" size="13.0" />
+               </font></JFXButton>
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="65.0" prefWidth="519.0" style="-fx-background-color: #ffff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane prefHeight="65.0" prefWidth="519.0" style="-fx-background-color: #0091EA;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="418.0" layoutY="6.0" onMouseClicked="#onClickQuitButton" prefHeight="55.0" prefWidth="45.0" ripplerFill="WHITE" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="6.0">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onClickQuitButton" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Images/iconfinder_power_926636.png" />
+                        <Image url="@../Images/exit.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -31,7 +35,7 @@
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onClickHomeButton" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Images/places-home-3_icon-icons.com_48499.png" />
+                        <Image url="@../Images/home.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -40,7 +44,7 @@
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onClickQuitButton" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Images/1486564730-gears-cogs_81537.png" />
+                        <Image url="@../Images/settings.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -49,7 +53,7 @@
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onClickQuitButton" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Images/game-icon-png-4487.png" />
+                        <Image url="@../Images/videogame.png" />
                      </image>
                   </ImageView>
                </graphic>

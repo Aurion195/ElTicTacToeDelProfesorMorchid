@@ -61,8 +61,8 @@ public class MultiViewController extends ToolsBarController implements Initializ
 	@FXML private Button player01 ;
 	
 	int click = 0 ;
-	Image cercle = new Image("Images/perfect-circle_icon-icons.com_53928.png") ;
-	Image croix = new Image("Images/1487086345-cross_81577.png") ;
+	Image cercle = new Image("Images/Circle.png") ;
+	Image croix = new Image("Images/Cross.png") ;
 	Image base = new Image("Images/Blanc.png") ;
 	Game game = new Game();
 	Image speakerOff = new Image("Images/speakerOff.png");
