@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXProgressBar?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,7 +13,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="519.0" style="-fx-background-color: #F44336;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.PlayerConfigViewController">
    <children>
-      <AnchorPane layoutY="77.0" prefHeight="494.0" prefWidth="519.0" style="-fx-background-color: #212121;" stylesheets="@Style.css">
+      <AnchorPane layoutY="77.0" prefHeight="494.0" prefWidth="519.0" style="-fx-background-color: #212121;">
          <children>
             <ImageView fitHeight="21.0" fitWidth="30.0" layoutX="48.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true" />
             <Polygon fill="#212121" layoutX="217.0" layoutY="-28.0" points="-16.0, 40.0, 11.0, 40.0, -3.0, 17.0" stroke="TRANSPARENT" strokeType="INSIDE" />
@@ -20,8 +21,11 @@
                <font>
                   <Font name="Roboto Mono Medium for Powerline" size="13.0" />
                </font></JFXTextField>
-            <JFXButton id="ButtonGo" fx:id="ButtonGo" layoutX="176.0" layoutY="312.0" onMouseClicked="#onClickGoButton" prefHeight="45.0" prefWidth="165.0" style="-fx-background-color: #ffff;" text="Go !!" />
-            <JFXProgressBar layoutX="168.0" layoutY="398.0" />
+            <JFXButton id="ButtonGo" fx:id="ButtonGo" layoutX="176.0" layoutY="312.0" onMouseClicked="#onClickGoButton" prefHeight="45.0" prefWidth="165.0" style="-fx-background-color: #ffff;" text="Go !!" AnchorPane.leftAnchor="176.0" AnchorPane.rightAnchor="176.0">
+               <font>
+                  <Font name="Roboto Mono Medium for Powerline" size="22.0" />
+               </font></JFXButton>
+            <JFXProgressBar layoutX="148.0" layoutY="399.0" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="160.0" />
             <Label layoutX="73.0" layoutY="110.0" text="Joueur 1" textFill="WHITE">
                <font>
                   <Font name="Roboto Mono Medium for Powerline" size="13.0" />
@@ -35,6 +39,10 @@
                   <Font name="Roboto Mono Medium for Powerline" size="13.0" />
                </font></Label>
          </children>
+         <stylesheets>
+            <URL value="@Style.css" />
+            <URL value="@Style.css" />
+         </stylesheets>
       </AnchorPane>
       <AnchorPane layoutX="-1.0" prefHeight="65.0" prefWidth="520.0" style="-fx-background-color: #0091EA;">
          <children>
