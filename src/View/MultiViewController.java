@@ -3,6 +3,7 @@ package View;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.Vector;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXSlider;
@@ -10,6 +11,7 @@ import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import Game.Game;
 import Game.Launcher;
+import IA.Coup;
 import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
@@ -67,6 +69,9 @@ public class MultiViewController extends ToolsBarController implements Initializ
 	Game game = new Game();
 	Image speakerOff = new Image("Images/speakerOff.png");
 	Image speakerOn = new Image("Images/speakerOn.png");
+	Vector<Coup> listJoueur1 = new Vector<Coup>() ;
+	Vector<Coup> listJoueur2 = new Vector<Coup>() ;
+	
 	Launcher launcher = Launcher.getInstance() ;
 	
 	@Override
@@ -193,14 +198,21 @@ public class MultiViewController extends ToolsBarController implements Initializ
 	@FXML
 	void onClickButton00()
 	{
+		Coup coups = new Coup() ;
+		coups.setIn(this.game.getPlateau());
 		this.Button00.setDisable(true);
 		this.Button00.setImage((this.game.turnPlayer(0) ? cercle : croix)) ;
+		coups.setOut(this.game.getPlateau());
+		if(this.game.turnPlayer1) this.listJoueur1.add(coups) ;
+		else this.listJoueur2.add(coups) ;
 		this.click++;
 		if(this.click > 4)
 		{
 			int a = this.game.win() ;
 			if(a != -1)
 			{
+				if(this.game.turnPlayer1) this.game.saveCoup(listJoueur1);
+				else this.game.saveCoup(listJoueur2);
 				this.afficheTrait(a) ;
 				this.win() ;
 				return ;
@@ -216,14 +228,21 @@ public class MultiViewController extends ToolsBarController implements Initializ
 	@FXML
 	void onClickButton01()
 	{
+		Coup coups = new Coup() ;
+		coups.setIn(this.game.getPlateau());
 		this.Button01.setDisable(true);
 		this.Button01.setImage((this.game.turnPlayer(1) ? cercle : croix)) ;
+		coups.setOut(this.game.getPlateau());
+		if(this.game.turnPlayer1) this.listJoueur1.add(coups) ;
+		else this.listJoueur2.add(coups) ;
 		this.click++;
 		if(this.click > 4)
 		{
 			int a = this.game.win() ;
 			if(a != -1)
 			{
+				if(!this.game.turnPlayer1) this.game.saveCoup(listJoueur2);
+				else this.game.saveCoup(listJoueur1);
 				this.afficheTrait(a) ;
 				this.win() ;
 				return ;
@@ -238,14 +257,21 @@ public class MultiViewController extends ToolsBarController implements Initializ
 	@FXML
 	void onClickButton02()
 	{
+		Coup coups = new Coup() ;
+		coups.setIn(this.game.getPlateau());
 		this.Button02.setDisable(true);
 		this.Button02.setImage((this.game.turnPlayer(2) ? cercle : croix)) ;
+		coups.setOut(this.game.getPlateau());
+		if(this.game.turnPlayer1) this.listJoueur1.add(coups) ;
+		else this.listJoueur2.add(coups) ;
 		this.click++;
 		if(this.click > 4)
 		{
 			int a = this.game.win() ;
 			if(a != -1)
 			{
+				if(!this.game.turnPlayer1) this.game.saveCoup(listJoueur2);
+				else this.game.saveCoup(listJoueur1); 
 				this.afficheTrait(a) ;
 				this.win() ;
 				return ;
@@ -260,14 +286,21 @@ public class MultiViewController extends ToolsBarController implements Initializ
 	@FXML
 	void onClickButton10()
 	{
+		Coup coups = new Coup() ;
+		coups.setIn(this.game.getPlateau());
 		this.Button10.setDisable(true);
 		this.Button10.setImage((this.game.turnPlayer(3) ? cercle : croix)) ;
+		coups.setOut(this.game.getPlateau());
+		if(this.game.turnPlayer1) this.listJoueur1.add(coups) ;
+		else this.listJoueur2.add(coups) ;
 		this.click++;
 		if(this.click > 4)
 		{
 			int a = this.game.win() ;
 			if(a != -1)
 			{
+				if(!this.game.turnPlayer1) this.game.saveCoup(listJoueur2);
+				else this.game.saveCoup(listJoueur1);
 				this.afficheTrait(a) ;
 				this.win() ;
 				return ;
@@ -282,14 +315,21 @@ public class MultiViewController extends ToolsBarController implements Initializ
 	@FXML
 	void onClickButton11()
 	{
+		Coup coups = new Coup() ;
+		coups.setIn(this.game.getPlateau());
 		this.Button11.setDisable(true);
 		this.Button11.setImage((this.game.turnPlayer(4) ? cercle : croix)) ;
+		coups.setOut(this.game.getPlateau());
+		if(this.game.turnPlayer1) this.listJoueur1.add(coups) ;
+		else this.listJoueur2.add(coups) ;
 		this.click++;
 		if(this.click > 4)
 		{
 			int a = this.game.win() ;
 			if(a != -1)
 			{
+				if(!this.game.turnPlayer1) this.game.saveCoup(listJoueur2);
+				else this.game.saveCoup(listJoueur1);
 				this.afficheTrait(a) ;
 				this.win() ;
 				return ;
@@ -304,14 +344,21 @@ public class MultiViewController extends ToolsBarController implements Initializ
 	@FXML
 	void onClickButton12()
 	{
+		Coup coups = new Coup() ;
+		coups.setIn(this.game.getPlateau());
 		this.Button12.setDisable(true);
 		this.Button12.setImage((this.game.turnPlayer(5) ? cercle : croix)) ;
+		coups.setOut(this.game.getPlateau());
+		if(this.game.turnPlayer1) this.listJoueur1.add(coups) ;
+		else this.listJoueur2.add(coups) ;
 		this.click++;
 		if(this.click > 4)
 		{
 			int a = this.game.win() ;
 			if(a != -1)
 			{
+				if(!this.game.turnPlayer1) this.game.saveCoup(listJoueur2);
+				else this.game.saveCoup(listJoueur1);
 				this.afficheTrait(a) ;
 				this.win() ;
 				return ;
@@ -326,14 +373,21 @@ public class MultiViewController extends ToolsBarController implements Initializ
 	@FXML
 	void onClickButton20()
 	{
+		Coup coups = new Coup() ;
+		coups.setIn(this.game.getPlateau());
 		this.Button20.setDisable(true);
 		this.Button20.setImage((this.game.turnPlayer(6) ? cercle : croix)) ;
+		coups.setOut(this.game.getPlateau());
+		if(this.game.turnPlayer1) this.listJoueur1.add(coups) ;
+		else this.listJoueur2.add(coups) ;
 		this.click++;
 		if(this.click > 4)
 		{
 			int a = this.game.win() ;
 			if(a != -1)
 			{
+				if(!this.game.turnPlayer1) this.game.saveCoup(listJoueur2);
+				else this.game.saveCoup(listJoueur1); 
 				this.afficheTrait(a) ;
 				this.win() ;
 				return ;
@@ -348,14 +402,21 @@ public class MultiViewController extends ToolsBarController implements Initializ
 	@FXML
 	void onClickButton21()
 	{
+		Coup coups = new Coup() ;
+		coups.setIn(this.game.getPlateau());
 		this.Button21.setDisable(true);
 		this.Button21.setImage((this.game.turnPlayer(7) ? cercle : croix)) ;
+		coups.setOut(this.game.getPlateau());
+		if(this.game.turnPlayer1) this.listJoueur1.add(coups) ;
+		else this.listJoueur2.add(coups) ;
 		this.click++;
 		if(this.click > 4)
 		{
 			int a = this.game.win() ;
 			if(a != -1)
 			{
+				if(!this.game.turnPlayer1) this.game.saveCoup(listJoueur2);
+				else this.game.saveCoup(listJoueur1);
 				this.afficheTrait(a) ;
 				this.win() ;
 				return ;
@@ -370,14 +431,21 @@ public class MultiViewController extends ToolsBarController implements Initializ
 	@FXML
 	void onClickButton22()
 	{
+		Coup coups = new Coup() ;
+		coups.setIn(this.game.getPlateau());
 		this.Button22.setDisable(true);
 		this.Button22.setImage((this.game.turnPlayer(8) ? cercle : croix)) ;
+		coups.setOut(this.game.getPlateau());
+		if(this.game.turnPlayer1) this.listJoueur1.add(coups) ;
+		else this.listJoueur2.add(coups) ;
 		this.click++;
 		if(this.click > 4)
 		{
 			int a = this.game.win() ;
 			if(a != -1)
 			{
+				if(!this.game.turnPlayer1) this.game.saveCoup(listJoueur2);
+				else this.game.saveCoup(listJoueur1); 
 				this.afficheTrait(a) ;
 				this.win() ;
 				return ;

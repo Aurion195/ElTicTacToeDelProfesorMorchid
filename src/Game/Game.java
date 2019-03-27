@@ -1,9 +1,13 @@
 package Game;
 
+import java.io.*;
 import java.util.Vector;
 
 import org.w3c.dom.Element;
 
+import com.jfoenix.validation.DoubleValidator;
+
+import IA.Coup;
 import View.MultiViewController;
 
 public class Game 
@@ -12,12 +16,14 @@ public class Game
 	private String player00 ;
 	private String player01 ;
 	private Vector<String> choicePlayeurStrings = new Vector<String>() ;
+	private Double[] myVector = new Double[9] ;
 	
 	public Game()
 	{
 		for(int i = 0 ; i < 9 ; i++)
 		{
 			this.choicePlayeurStrings.addElement(String.valueOf(i));
+			this.myVector[i] = 0.0 ;
 		}
 	}
 	
@@ -108,11 +114,68 @@ public class Game
 	{
 		this.turnPlayer1 = !this.turnPlayer1 ;
 		this.placeStringPlayer(placePosition) ;
+		this.getCoupJouer();
 		return this.turnPlayer1 ;
 	}
 	
 	public void placeStringPlayer(int placePosition)
 	{
-		this.choicePlayeurStrings.set(placePosition, (this.turnPlayer1 ? "x" : "o")) ;
+		this.choicePlayeurStrings.set(placePosition, (this.turnPlayer1 ? "o" : "x")) ;
+	}
+	
+	public void getCoupJouer()
+	{
+		for(int i = 0 ; i < 9 ; i++)
+		{
+			if(this.choicePlayeurStrings.elementAt(i).equals("x"))
+			{
+				this.myVector[i] =  1.0 ;
+			}
+			else if(this.choicePlayeurStrings.elementAt(i).equals("o"))
+			{
+				this.myVector[i] = 2.0 ;
+			}
+			else
+			{
+				this.myVector[i] = 0.0 ;
+			}
+		}
+	}
+	
+	public int[] getPlateau()
+	{
+		int[] tab = new int[9];
+		
+		for(int i = 0; i < 9; i++)
+		{
+			tab[i] = (int) Math.round(this.myVector[i]);
+		}
+		return tab ;
+	}
+	
+	public void saveCoup(Vector<Coup> listCoup) 
+	{
+		System.out.println("Bien dans saveCoup");
+		BufferedWriter writer;
+		try
+		{
+			writer = new BufferedWriter(new FileWriter("src/IA/train.txt", true));
+
+			for(Coup coup : listCoup)
+			{
+				System.out.println(coup.getInString() + "/" + coup.getOutString());
+				writer.append(coup.getInString());
+				writer.append("/");
+				writer.append(coup.getOutString()) ;
+				writer.newLine();
+			}
+			
+			 writer.close();
+		}
+		catch(Exception e) 
+		{
+			e.printStackTrace();
+			
+		}
 	}
 }

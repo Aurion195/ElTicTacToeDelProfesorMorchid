@@ -1,14 +1,20 @@
 package Game;
 
+import java.util.Vector;
+
+import IA.Coup;
+
 public class Player 
 {
 	String name ;
 	String pion ;
+	Vector<Coup> coups ;
 
 	public Player(String name, String pion)
 	{
 		this.name = name ;
 		this.pion = pion ;
+		this.coups = new Vector<Coup>() ;
 	}
 
 	/**
@@ -36,4 +42,22 @@ public class Player
 	{
 		this.pion = pion ;
 	}
+
+	/**
+	 * @return the coups
+	 */
+	public Vector<Coup> getCoups() 
+	{
+		return coups;
+	}
+
+	/**
+	 * @param coups the coups to set
+	 */
+	public void setCoups(Vector<Coup> coups) 
+	{
+		this.coups = coups;
+	}
+	
+	
 }

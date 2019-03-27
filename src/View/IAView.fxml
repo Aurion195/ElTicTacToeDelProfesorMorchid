@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="697.0" prefWidth="518.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MultiViewController">
+   <children>
+      <AnchorPane layoutX="-1.0" layoutY="77.0" prefHeight="620.0" prefWidth="520.0" style="-fx-background-color: #009cfc;">
+         <children>
+            <ImageView id="Button00" fx:id="Button00" fitHeight="109.0" fitWidth="113.0" layoutX="70.0" layoutY="71.0" onMousePressed="#onClickButton00" pickOnBounds="true" preserveRatio="true">
+            	<image>
+            		<Image url="@Blanc.png" />
+            	</image> 
+            </ImageView>
+            <ImageView id="Button01" fx:id="Button01" fitHeight="109.0" fitWidth="113.0" layoutX="200.0" layoutY="73.0" onMousePressed="#onClickButton01" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Blanc.png" />
+               </image>
+            </ImageView>
+             <ImageView id="Button02" fx:id="Button02" fitHeight="109.0" fitWidth="113.0" layoutX="347.865966796875" layoutY="75.0" onMousePressed="#onClickButton02" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="82.36083984375">
+               <image>
+                  <Image url="@Blanc.png" />
+               </image>
+            </ImageView>
+            <ImageView id="Button10" fx:id="Button10" fitHeight="109.0" fitWidth="113.0" layoutX="66.0" layoutY="204.0" onMousePressed="#onClickButton10" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Blanc.png" />
+               </image>
+            </ImageView>
+            <ImageView id="Button11" fx:id="Button11" fitHeight="109.0" fitWidth="113.0" layoutX="200.0" layoutY="206.0" onMousePressed="#onClickButton11" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Blanc.png" />
+               </image>
+            </ImageView>
+            <ImageView id="Button12" fx:id="Button12" fitHeight="109.0" fitWidth="113.0" layoutX="348.0" layoutY="206.0" onMousePressed="#onClickButton12" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="82.0">
+               <image>
+                  <Image url="@Blanc.png" />
+               </image>
+            </ImageView>
+            <ImageView id="Button20" fx:id="Button20" fitHeight="109.0" fitWidth="113.0" layoutX="69.0" layoutY="332.0" onMousePressed="#onClickButton20" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="69.0">
+               <image>
+                  <Image url="@Blanc.png" />
+               </image>
+            </ImageView>
+            <ImageView id="Button21" fx:id="Button21" fitHeight="109.0" fitWidth="113.0" layoutX="198.0" layoutY="335.0" onMousePressed="#onClickButton21" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Blanc.png" />
+               </image>
+            </ImageView>
+            <ImageView id="Button22" fx:id="Button22" fitHeight="109.0" fitWidth="113.0" layoutX="347.54638671875" layoutY="335.0" onMousePressed="#onClickButton22" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="82.680419921875">
+               <image>
+                  <Image url="@Blanc.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="30.0" layoutX="48.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="11.0" fitWidth="386.0" layoutX="58.0" layoutY="193.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Images/separateur.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="11.0" fitWidth="386.0" layoutX="58.0" layoutY="317.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Images/separateur.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="11.0" fitWidth="386.0" layoutX="-6.0" layoutY="257.0" pickOnBounds="true" rotate="90.0">
+               <image>
+                  <Image url="@../Images/separateur.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="11.0" fitWidth="386.0" layoutX="126.0" layoutY="255.0" pickOnBounds="true" rotate="90.0">
+               <image>
+                  <Image url="@../Images/separateur.png" />
+               </image>
+            </ImageView>
+            <Polygon fill="#009cfc" layoutX="217.0" layoutY="-28.0" points="-16.0, 40.0, 11.0, 40.0, -3.0, 17.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <ImageView fx:id="Speaker" fitHeight="48.0" fitWidth="30.0" layoutX="406.0" layoutY="21.0" onMouseClicked="#onClickStopMusic" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/speakerOn.png" />
+               </image>
+            </ImageView>
+            <ImageView id="Button01" fx:id="imagePlayer00" fitHeight="65.0" fitWidth="62.0" layoutX="72.0" layoutY="527.0" onMousePressed="#onClickButton01" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Blanc.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="player00" accessibleRole="TEXT" layoutX="48.0" layoutY="476.0" mnemonicParsing="false" onAction="#displayerPlayer00" prefHeight="30.0" prefWidth="100.0" text="Button" />
+            <ImageView id="Button01" fx:id="imagePlayer01" fitHeight="65.0" fitWidth="62.0" layoutX="389.0" layoutY="528.0" onMousePressed="#onClickButton01" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Blanc.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="player01" accessibleRole="TEXT" layoutX="369.0" layoutY="474.0" mnemonicParsing="false" mouseTransparent="true" onAction="#displayPlayer01" prefHeight="30.0" prefWidth="100.0" text="Button" />
+            <Rectangle fx:id="rectangle00" arcHeight="5.0" arcWidth="5.0" fill="#ff0404" height="11.0" layoutX="71.0" layoutY="124.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="363.0" />
+            <Rectangle fx:id="rectangle02" arcHeight="5.0" arcWidth="5.0" fill="#ff0404" height="11.0" layoutX="72.0" layoutY="388.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="363.0" />
+            <Rectangle fx:id="rectangle03" arcHeight="5.0" arcWidth="5.0" fill="#f50101" height="365.0" layoutX="120.0" layoutY="72.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="11.0" />
+            <Rectangle fx:id="rectangle04" arcHeight="5.0" arcWidth="5.0" fill="#e8060e" height="365.0" layoutX="248.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="11.0" />
+            <Rectangle fx:id="rectangle01" arcHeight="5.0" arcWidth="5.0" fill="#ff0404" height="11.0" layoutX="79.0" layoutY="255.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="363.0" />
+            <Rectangle fx:id="rectangle06" arcHeight="5.0" arcWidth="5.0" fill="#ff0404" height="11.0" layoutX="8.0" layoutY="254.0" rotate="44.6" stroke="BLACK" strokeType="INSIDE" visible="false" width="497.0" />
+            <Rectangle fx:id="rectangle05" arcHeight="5.0" arcWidth="5.0" fill="#f50101" height="365.0" layoutX="378.0" layoutY="76.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="11.0" />
+            <Rectangle fx:id="rectangle07" arcHeight="5.0" arcWidth="5.0" fill="#ff0404" height="11.0" layoutX="-8.0" layoutY="260.0" rotate="-44.6" stroke="BLACK" strokeType="INSIDE" visible="false" width="518.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="520.0" style="-fx-background-color: #ffff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="418.0" layoutY="6.0" onMouseClicked="#onClickQuitButton" prefHeight="55.0" prefWidth="45.0" ripplerFill="WHITE" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="6.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onClickQuitButton" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/iconfinder_power_926636.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="42.0" layoutY="6.0" onMouseClicked="#onClickHomeButton" prefHeight="55.0" prefWidth="45.0" ripplerFill="WHITE" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="6.0">
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onClickHomeButton" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/places-home-3_icon-icons.com_48499.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="299.0" layoutY="8.0" onMouseClicked="#onClickSetttingButton" prefHeight="55.0" prefWidth="45.0" ripplerFill="WHITE" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="8.0">
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onClickSetttingButton" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/1486564730-gears-cogs_81537.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="165.0" layoutY="5.0" onMouseClicked="#onClickHomeButton" prefHeight="55.0" prefWidth="45.0" ripplerFill="WHITE" AnchorPane.rightAnchor="274.0" AnchorPane.topAnchor="5.0">
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onClickQuitButton" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/game-icon-png-4487.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
