@@ -134,6 +134,7 @@ public class MultiViewController extends ToolsBarController implements Initializ
 		translateAnimation.setInterpolator(Interpolator.LINEAR);
 		translateAnimation.play();
 	}
+	 
 	
 	private void annimationVerticale(Rectangle rectangle)
 	{
@@ -142,10 +143,13 @@ public class MultiViewController extends ToolsBarController implements Initializ
 		translateAnimation.setAutoReverse(true); 
 		translateAnimation.setByX(0); 
 		translateAnimation.setByY(70); 
+		 
 		translateAnimation.setInterpolator(Interpolator.LINEAR);
 		translateAnimation.play();
 	}
 	
+	
+
 	private void annimationDiagonale(Rectangle rectangle)
 	{
 		final TranslateTransition translateAnimation = new TranslateTransition(Duration.seconds(1), rectangle); 

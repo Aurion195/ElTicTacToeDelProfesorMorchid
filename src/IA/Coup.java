@@ -5,7 +5,7 @@ public class Coup
 	int[] in = new int[9] ;
 	int[] out = new int[9] ;
 	
-	public Coup()
+	public Coup() 
 	{
 		
 	}
