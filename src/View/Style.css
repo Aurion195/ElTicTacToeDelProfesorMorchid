@@ -40,7 +40,7 @@
 .jfx-progress-bar > .bar {
     -fx-background-color:  #F44336;
 }
-.jfx-progress-bar > .track {
+.jfx-progress-bar > .track { 
     -fx-background-color: #E0E0E0;
 }
 
@@ -50,4 +50,3 @@
 	-jfx-selected-color:#F44336 ;
 }
 	
-}
