@@ -4,7 +4,6 @@
 <?import com.jfoenix.controls.JFXProgressBar?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -22,10 +21,6 @@
             <Label layoutX="73.0" layoutY="110.0" text="Joueur 1" />
             <JFXTextField id="Pseudo01" layoutX="181.0" layoutY="212.0" promptText="Pseudo" />
             <Label layoutX="74.0" layoutY="219.0" text="Joueur 2" />
-            <RadioButton id="croix00" layoutX="368.0" layoutY="69.0" mnemonicParsing="false" text="Croix" />
-            <RadioButton id="rond00" layoutX="367.0" layoutY="113.0" mnemonicParsing="false" text="Rond" />
-            <RadioButton id="croix01" layoutX="367.0" layoutY="179.0" mnemonicParsing="false" text="Croix" />
-            <RadioButton id="rond01" layoutX="366.0" layoutY="223.0" mnemonicParsing="false" text="Rond" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="-1.0" prefHeight="65.0" prefWidth="520.0" style="-fx-background-color: #0091EA;">
