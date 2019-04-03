@@ -231,10 +231,10 @@ public class iaViewController extends ToolsBarController implements Initializabl
 					@Override
 					public void run()
 					{
-						pourcent.setText((float)(nbNeuronne/400)*tmp/40+" %");
-						//if(nameIA.equals("Easy")) pourcent.setText(Math.round((float)((nbNeuronne/400)*tmp/40))+" %") ;
-						//if(nameIA.equals("Moyen")) pourcent.setText(Math.round((float)((nbNeuronne/400)*tmp/40))+" %") ;
-						//if(nameIA.equals("Hard")) pourcent.setText(Math.round((float)((nbNeuronne/400)*tmp/40))+" %") ;
+						//pourcent.setText((float)(nbNeuronne/400)*tmp/40+" %");
+						if(nameIA.equals("Easy")) pourcent.setText(Math.round((float)((nbNeuronne/400)*tmp/40))+" %") ;
+						if(nameIA.equals("Moyen")) pourcent.setText(Math.round((float)((nbNeuronne/400)*tmp/40))+" %") ;
+						if(nameIA.equals("Hard")) pourcent.setText(Math.round((float)((nbNeuronne/800)*tmp/80))+" %") ;
 					}
 				});
 
