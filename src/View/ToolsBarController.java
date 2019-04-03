@@ -1,5 +1,8 @@
 package View;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import Game.Launcher;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -50,7 +53,4 @@ public abstract class ToolsBarController
 			System.out.println(e.getMessage());
 		}
 	}
-	
-	
-	
 }

@@ -199,6 +199,7 @@ public class MultiViewController extends ToolsBarController implements Initializ
 			break;
 		}
 	}
+	
 	@FXML
 	void onClickButton00()
 	{
@@ -495,6 +496,7 @@ public class MultiViewController extends ToolsBarController implements Initializ
 		
 		this.game.erasePion() ;
 	}
+	
 	@FXML
 	public void onClickHomeButton()
 	{

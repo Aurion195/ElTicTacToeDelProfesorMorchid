@@ -83,6 +83,8 @@ public class iaViewController extends ToolsBarController implements Initializabl
 	 * Button pour lancer le jeu
 	 */
 	@FXML private JFXButton begin ;
+	
+	private String nameIA ; 
 
 	/**
 	 * Dés qu'on va aller sur cette View, cette fonction va s'apeller et le chargement va s'effectuer tout seul
@@ -97,7 +99,7 @@ public class iaViewController extends ToolsBarController implements Initializabl
 						@Override protected Void call() throws InterruptedException 
 						{
 							try {
-								apprentissageIA("/home/nas02a/etudiants/inf/uapv1703778/eclipse-workspace/ElTicTacToeDelProfesorMorchid/src/IA/train.txt");
+								apprentissageIA("src/IA/train.txt");
 							}
 							catch(Exception e)
 							{
@@ -110,6 +112,7 @@ public class iaViewController extends ToolsBarController implements Initializabl
 			};
 			ser.setExecutor(null);
 			ser.start();
+			this.net.save("src/Sauvegarde/"+this.nameIA) ;
 		}
 		catch(Exception e)
 		{
@@ -158,6 +161,7 @@ public class iaViewController extends ToolsBarController implements Initializabl
 			hard = Integer.parseInt(doc.getElementsByTagName("Hard").item(0).getTextContent()) ;
 			
 			this.nbNeuronne = (easy == 1 ? 500 : moyen == 1 ? 1500 : 3000) ;
+			this.nameIA = (easy == 1 ? "Easy" : moyen == 1 ? "Moyen" : "Hard") ;
 		}
 		catch(Exception e)
 		{
@@ -165,6 +169,10 @@ public class iaViewController extends ToolsBarController implements Initializabl
 		}
 	}
 	
+	public iaViewController(String path)
+	{
+		this.net.load(path+"/"+this.nameIA) ;
+	}
 	/**
 	 * Constructeur de l'IA
 	 */
@@ -202,7 +210,7 @@ public class iaViewController extends ToolsBarController implements Initializabl
 		double[] in = new double[9];
 		double[] out = new double[9];
 
-		for(int i = 0 ; i <= this.nbNeuronne ; i++)
+		for(int i = 0 ; i <= 1000 ; i++)
 		{
 			try {
 				double error = 0.0 ;
@@ -220,9 +228,7 @@ public class iaViewController extends ToolsBarController implements Initializabl
 					@Override
 					public void run()
 					{
-						if(nbNeuronne == 500) pourcent.setText(Math.round((float)(nbNeuronne/50)*(tmp/50))+" %") ;
-						if(nbNeuronne == 1500) pourcent.setText(Math.round((float)(nbNeuronne/150)*(tmp/150))+" %") ;
-						if(nbNeuronne == 3000) pourcent.setText(Math.round((float)(nbNeuronne/300)*(tmp/300))+" %") ;
+						pourcent.setText(Math.round((float)(nbNeuronne/100)*(tmp/10))+" %") ;
 					}
 				});
 
@@ -326,5 +332,8 @@ public class iaViewController extends ToolsBarController implements Initializabl
 		this.coefApprentissage = coefApprentissage;
 	}
 
-
+	public MultiLayerPerceptron getNet()
+	{
+		return this.net ;
+	}
 }

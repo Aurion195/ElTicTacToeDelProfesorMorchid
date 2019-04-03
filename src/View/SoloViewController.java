@@ -45,7 +45,7 @@ public class SoloViewController extends ToolsBarController
 	{
 		Launcher launcher = Launcher.getInstance() ;
 		launcher.setPlayerName00(this.namePlayer.getText());
-		System.out.println(launcher.getPlayer00Name());
+		
 		launcher.setPLayerName01("Mr Morchid");
 		
 		Launcher main = Launcher.getInstance();

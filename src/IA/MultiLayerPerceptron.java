@@ -79,7 +79,8 @@ public class MultiLayerPerceptron implements Cloneable, Serializable {
 		return (error / output.length);
 	}
 	
-	public boolean save(String path){
+	public boolean save(String path)
+	{
 		try{
 			FileOutputStream fout = new FileOutputStream(path);
 			ObjectOutputStream oos = new ObjectOutputStream(fout);
@@ -92,7 +93,8 @@ public class MultiLayerPerceptron implements Cloneable, Serializable {
 		return true;
 	}
 	
-	public static MultiLayerPerceptron load(String path){
+	public MultiLayerPerceptron load(String path)
+	{
 		try{
 			FileInputStream fin = new FileInputStream(path);
 			ObjectInputStream oos = new ObjectInputStream(fin);

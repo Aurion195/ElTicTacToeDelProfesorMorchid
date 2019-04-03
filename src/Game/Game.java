@@ -42,6 +42,7 @@ public class Game
 	 */
 	private Double[] myVector = new Double[9] ;
 	
+	private double[] plateauIA = new double[9] ;
 	/**
 	 * Constructeur de la classe game, on initialise le plateau du jeu et le tableau
 	 */
@@ -206,6 +207,12 @@ public class Game
 		}
 	}
 	
+	public void IAVsPlayer(String pion, int position)
+	{
+		double a = (pion.equals("x") ? 1.0 : 2.0) ;
+		this.plateauIA[position] = a ;
+	}
+	
 	/**
 	 * @return le plateau du jeu
 	 */
@@ -249,4 +256,10 @@ public class Game
 			
 		}
 	}
+
+	public double[] getChoicePlayeurStrings() {
+		return this.plateauIA ;
+	}
+	
+	
 }
