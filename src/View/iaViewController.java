@@ -160,7 +160,7 @@ public class iaViewController extends ToolsBarController implements Initializabl
 			moyen = Integer.parseInt(doc.getElementsByTagName("Medium").item(0).getTextContent()) ;
 			hard = Integer.parseInt(doc.getElementsByTagName("Hard").item(0).getTextContent()) ;
 			
-			this.nbNeuronne = (easy == 1 ? 100 : moyen == 1 ? 150 : 200) ;
+			this.nbNeuronne = (easy == 1 ? 500 : moyen == 1 ? 750 : 1000) ;
 			this.nameIA = (easy == 1 ? "Easy" : moyen == 1 ? "Moyen" : "Hard") ;
 		}
 		catch(Exception e)
@@ -231,9 +231,10 @@ public class iaViewController extends ToolsBarController implements Initializabl
 					@Override
 					public void run()
 					{
-						if(nameIA.equals("Easy")) pourcent.setText(Math.round((float)((nbNeuronne/10)*tmp/1))+" %") ;
-						if(nameIA.equals("Medium")) pourcent.setText(Math.round((float)((nbNeuronne/400)*tmp/40))+" %") ;
-						if(nameIA.equals("Hard")) pourcent.setText(Math.round((float)((nbNeuronne/400)*tmp/40))+" %") ;
+						pourcent.setText((float)(nbNeuronne/400)*tmp/40+" %");
+						//if(nameIA.equals("Easy")) pourcent.setText(Math.round((float)((nbNeuronne/400)*tmp/40))+" %") ;
+						//if(nameIA.equals("Moyen")) pourcent.setText(Math.round((float)((nbNeuronne/400)*tmp/40))+" %") ;
+						//if(nameIA.equals("Hard")) pourcent.setText(Math.round((float)((nbNeuronne/400)*tmp/40))+" %") ;
 					}
 				});
 

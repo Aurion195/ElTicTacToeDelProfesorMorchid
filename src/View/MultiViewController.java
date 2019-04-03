@@ -540,9 +540,12 @@ public class MultiViewController extends ToolsBarController implements Initializ
 			if(this.game.turnPlayer1)
 			{
 				this.alertJoueur1();
+				this.game.turnPlayer1 = true ;
 			}
-			else {
-				this.alertJoueur2();
+			else
+			{
+				this.alertJoueur1();
+				this.game.turnPlayer1 = true ;
 			}
 		}
 		else 
@@ -588,8 +591,16 @@ public class MultiViewController extends ToolsBarController implements Initializ
 		alert.setTitle("Congratulations");
 		String tmpString = "" ;
 
-		if(!this.game.turnPlayer1) tmpString = launcher.getPlayer00Name() ;
-		else tmpString = launcher.getPlayer01Name() ;
+		if(!this.game.turnPlayer1)
+		{
+			tmpString = launcher.getPlayer00Name() ;
+			this.game.turnPlayer1 = true ;
+		}
+		else
+		{
+			tmpString = launcher.getPlayer01Name() ;
+			this.game.turnPlayer1 = true ;
+		}
 
 		alert.setHeaderText("Le joueur " + tmpString +" à gagner ");
 		alert.setContentText("Choose your option.");

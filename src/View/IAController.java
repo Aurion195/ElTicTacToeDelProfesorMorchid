@@ -69,18 +69,12 @@ public class IAController extends ToolsBarController implements Initializable
 	Image croix = new Image("Images/Cross.png") ;
 	Image base = new Image("Images/Blanc.png") ;
 	Launcher launcher = Launcher.getInstance() ;
-	private boolean joueur = false ;
+	private boolean joueur = true ;
 	int click = 0 ;
 
 	private Game game = new Game();
 
 	private iaViewController IA ;
-
-	/*public IAController(String ia)
-	{
-		System.out.println("Bienvenue dans l'IA");
-		this.IA = new iaViewController(ia) ;
-	}*/
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) 
@@ -191,6 +185,7 @@ public class IAController extends ToolsBarController implements Initializable
 		translateAnimation.setInterpolator(Interpolator.LINEAR);
 		translateAnimation.play();
 	}
+	
 	public void afficheTrait(int a)
 	{
 		switch(a) {
@@ -233,22 +228,24 @@ public class IAController extends ToolsBarController implements Initializable
 
 	public void turnIA()
 	{
-		System.out.println("Tour de l'ia");
 		double[] probOUT = new double[9] ;
 		double[] p = this.game.getChoicePlayeurStrings() ;
-		for(int i = 0 ; i < 9 ; i++)
-		{
-			System.out.println(p[i]);
-		}
 		probOUT = IA.getNet().forwardPropagation(p) ;
-		for(int i = 0 ; i < 9 ; i++)
-		{
-			System.out.println(probOUT[i]);
-		}
 		this.getBestCoup(probOUT) ;
-		for(int i = 0 ; i < 9 ; i++)
+		
+		if(this.click > 4)
 		{
-			probOUT[i] = 0;
+			int a = this.game.win() ;
+			if(a != -1)
+			{
+				this.afficheTrait(a) ;
+				this.win() ;
+				return ;
+			}
+		}
+		if(this.click == 9)
+		{
+			this.gameNull() ;
 		}
 	}
 
@@ -270,7 +267,6 @@ public class IAController extends ToolsBarController implements Initializable
 		}
 
 		this.poserRond(maxIndice);
-		return ;
 	}
 
 
@@ -278,7 +274,6 @@ public class IAController extends ToolsBarController implements Initializable
 	{
 		this.joueur = !joueur ;
 		this.click++ ;
-		System.out.println("On pose à l'indice ->" + maxIndice);
 		switch(maxIndice)
 		{
 		case 0 :
@@ -662,13 +657,15 @@ public class IAController extends ToolsBarController implements Initializable
 
 		if(result.get() == buttonTypeOne)
 		{
+			this.joueur = true ;
 			this.eraseImage();
-			if(this.game.turnPlayer1)
+			if(this.joueur)
 			{
 				this.alertJoueur1();
 			}
-			else {
-				this.alertJoueur2();
+			else 
+			{
+				this.alertJoueur1();
 			}
 		}
 		else 
@@ -714,7 +711,7 @@ public class IAController extends ToolsBarController implements Initializable
 		alert.setTitle("Congratulations");
 		String tmpString = "" ;
 
-		if(!this.game.turnPlayer1) tmpString = launcher.getPlayer00Name() ;
+		if(!this.joueur) tmpString = launcher.getPlayer00Name() ;
 		else tmpString = launcher.getPlayer01Name() ;
 
 		alert.setHeaderText("Le joueur " + tmpString +" à gagner ");
@@ -728,14 +725,15 @@ public class IAController extends ToolsBarController implements Initializable
 
 		if(result.get() == buttonTypeOne)
 		{
-
+			this.joueur = true ;
 			this.eraseImage();
-			if(this.game.turnPlayer1)
+			if(this.joueur)
 			{
 				this.alertJoueur1();
 			}
-			else {
-				this.alertJoueur2();
+			else 
+			{
+				this.alertJoueur1();
 			}
 		}
 		else 

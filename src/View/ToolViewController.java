@@ -10,6 +10,7 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.*;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXSlider;
 import com.jfoenix.controls.JFXToggleButton;
 
@@ -30,7 +31,9 @@ public class ToolViewController extends ToolsBarController  implements Initializ
 	@FXML RadioButton easy ;
 	@FXML RadioButton medium ;
 	@FXML RadioButton hard ;
-
+	@FXML JFXButton save ;
+	@FXML JFXButton learn ;
+	
 	public void onClickHomeButton()
 	{
 		super.onClickHomeButton();
@@ -120,6 +123,26 @@ public class ToolViewController extends ToolsBarController  implements Initializ
 	}
 
 	@FXML
+	public void learnIA()
+	{
+		Launcher main = Launcher.getInstance();
+		FXMLLoader loader = new FXMLLoader();
+		
+		try {
+			loader.setLocation(getClass().getResource("Ia.fxml"));
+			main.setRootLayout(loader.load());
+
+			Scene scene = new Scene(main.getRootLayout());
+			main.getPrimaryStage().setScene(scene);
+			main.getPrimaryStage().show();
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+			
+		}
+	}
+	@FXML
 	public void saveOption()
 	{
 		System.out.println("Sauvegarde");
@@ -184,21 +207,6 @@ public class ToolViewController extends ToolsBarController  implements Initializ
 			transformer.transform(source, sortie);
 			System.out.println("On sauvegarde bien");
 			
-			Launcher main = Launcher.getInstance();
-			FXMLLoader loader = new FXMLLoader();
-			try {
-				loader.setLocation(getClass().getResource("Ia.fxml"));
-				main.setRootLayout(loader.load());
-
-				Scene scene = new Scene(main.getRootLayout());
-				main.getPrimaryStage().setScene(scene);
-				main.getPrimaryStage().show();
-			} 
-			catch (Exception e) 
-			{
-				e.printStackTrace();
-				
-			}
 		}
 		catch(Exception e)
 		{

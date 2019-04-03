@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Config>
   <Config>
-    <Music>1</Music>
-    <Sound>2</Sound>
-    <Facile>1</Facile>
-    <Medium>0</Medium>
+    <Music>0</Music>
+    <Sound>10</Sound>
+    <Facile>0</Facile>
+    <Medium>1</Medium>
     <Hard>0</Hard>
   </Config>
 </Config>

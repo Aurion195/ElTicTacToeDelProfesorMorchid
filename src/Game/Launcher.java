@@ -42,27 +42,27 @@ public class Launcher extends Application
 	 * 1er scene
 	 */
 	private Stage primaryStage;
-	
+
 	/**
 	 * Scene que l'on va changer 
 	 */
 	private AnchorPane rootLayout;
-	
+
 	/**
 	 * Instance unique
 	 */
 	private static volatile Launcher instance = null;
-	
+
 	/**
 	 * Lecteur audio
 	 */
 	private static MediaPlayer mediaPlayer ;
-	
+
 	/**
 	 * Player 1
 	 */
 	private Player player00 = new Player("");
-	
+
 	/**
 	 * Player 2
 	 */
@@ -106,65 +106,83 @@ public class Launcher extends Application
 	 * Permet de jouer de la music dans le menu
 	 */
 	public void playMusic()
-	{	
-		Media sound=new Media(new File("src/Son/Take_On_Me.wav").toURI().toString());
-		this.mediaPlayer = new MediaPlayer(sound);
-		//this.mediaPlayer.play();
+	{
+		try {
+			int musicOn, soundMusic ;
 
-		final Label currentlyPlaying = new Label();
-		final ProgressBar progress = new ProgressBar();
-		final ChangeListener<? super javafx.util.Duration> progressChangeListener = null;
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document doc = dBuilder.parse("config.xml");
+
+			musicOn = Integer.parseInt(doc.getElementsByTagName("Music").item(0).getTextContent()) ;
+			soundMusic = Integer.parseInt(doc.getElementsByTagName("Sound").item(0).getTextContent()) ;
+				Media sound=new Media(new File("src/Son/Take_On_Me.wav").toURI().toString());
+				this.mediaPlayer = new MediaPlayer(sound);
+				if(musicOn == 1) 
+				{
+				this.setVolume(mediaPlayer, soundMusic);
+				this.mediaPlayer.play();
+				
+				final Label currentlyPlaying = new Label();
+				final ProgressBar progress = new ProgressBar();
+				final ChangeListener<? super javafx.util.Duration> progressChangeListener = null;
 
 
 
 
-		final StackPane layout = new StackPane();
+				final StackPane layout = new StackPane();
 
-		// determine the source directory for the playlist (either the first parameter to the program or a 
-		final List<String> params = getParameters().getRaw();
-		final File dir =  new File("src/Son/");
+				// determine the source directory for the playlist (either the first parameter to the program or a 
+				final List<String> params = getParameters().getRaw();
+				final File dir =  new File("src/Son/");
 
-		if(!dir.exists() && dir.isDirectory()) 
-		{
-			System.out.println("Cannot find audio source directory: " + dir);
-		}
-
-		// create some media players.
-		final List<MediaPlayer> players = new ArrayList<MediaPlayer>();
-		for(String file : dir.list(new FilenameFilter() 
-		{
-			@Override public boolean accept(File dir, String name) 
-			{
-				return name.endsWith(".wav");
-			}
-		}))
-
-			try {
-				players.add(createPlayer((dir + "/" + file)));
-			}
-		catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-
-		if (players.isEmpty()) 
-		{
-			System.out.println("No audio found in " + dir);
-			return;
-		}
-
-		// play each audio file in turn.
-
-		for (int i = 0; i < players.size(); i++) 
-		{
-			final MediaPlayer player     = players.get(i);
-			final MediaPlayer nextPlayer = players.get((i + 1) % players.size());
-			player.setOnEndOfMedia(new Runnable() {
-				@Override public void run() {
-					player.currentTimeProperty().removeListener(progressChangeListener);
-
-					nextPlayer.play();
+				if(!dir.exists() && dir.isDirectory()) 
+				{
+					System.out.println("Cannot find audio source directory: " + dir);
 				}
-			});
+
+				// create some media players.
+				final List<MediaPlayer> players = new ArrayList<MediaPlayer>();
+				for(String file : dir.list(new FilenameFilter() 
+				{
+					@Override public boolean accept(File dir, String name) 
+					{
+						return name.endsWith(".wav");
+					}
+				}))
+
+					try {
+						players.add(createPlayer((dir + "/" + file)));
+					}
+				catch (Exception e) {
+					System.out.println(e.getMessage());
+				}
+
+				if (players.isEmpty()) 
+				{
+					System.out.println("No audio found in " + dir);
+					return;
+				}
+
+				// play each audio file in turn.
+
+				for (int i = 0; i < players.size(); i++) 
+				{
+					final MediaPlayer player     = players.get(i);
+					final MediaPlayer nextPlayer = players.get((i + 1) % players.size());
+					player.setOnEndOfMedia(new Runnable() {
+						@Override public void run() {
+							player.currentTimeProperty().removeListener(progressChangeListener);
+
+							nextPlayer.play();
+						}
+					});
+				}
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
 		}
 	}
 

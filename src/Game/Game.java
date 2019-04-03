@@ -158,6 +158,7 @@ public class Game
 		for(int i = 0 ; i < 9 ; i++)
 		{
 			this.choicePlayeurStrings.set(i, String.valueOf(i)) ;
+			this.plateauIA[i] = 0.0 ;
 		}
 	}
 	
@@ -210,8 +211,8 @@ public class Game
 	
 	public void IAVsPlayer(String pion, int position)
 	{
-		System.out.println("on pose le pion");
 		double a = (pion.equals("x") ? 1.0 : 2.0) ;
+		this.choicePlayeurStrings.setElementAt(pion, position);
 		this.plateauIA[position] = a ;
 	}
 	
