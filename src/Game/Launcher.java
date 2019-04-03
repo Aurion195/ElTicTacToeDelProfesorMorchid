@@ -6,6 +6,11 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXMLLoader;
@@ -68,7 +73,7 @@ public class Launcher extends Application
 		Media sound=new Media(new File("src/Son/Take_On_Me.wav").toURI().toString());
 		this.mediaPlayer = new MediaPlayer(sound);
 		this.mediaPlayer.play();
-		
+
 		final Label currentlyPlaying = new Label();
 		final ProgressBar progress = new ProgressBar();
 		final ChangeListener<? super javafx.util.Duration> progressChangeListener = null;
@@ -163,9 +168,8 @@ public class Launcher extends Application
 	{
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("Morprion");
-		
-		this.playMusic();
 
+		this.playMusic();
 		initRootLayout();
 	}
 
@@ -257,17 +261,17 @@ public class Launcher extends Application
 	{
 		return this.player01.getName() ;
 	}
-	
+
 	public String getPion00()
 	{
 		return this.player00.getPion() ;
 	}
-	
+
 	public String getPion01()
 	{
 		return this.player01.getPion() ;
 	}
-	
+
 	public void setPlayerName00(String name)
 	{
 		this.player00.setName(name) ;
@@ -277,12 +281,12 @@ public class Launcher extends Application
 	{
 		this.player00.setPion(pion);
 	}
-	
+
 	public void setPLayerName01(String name)
 	{
 		this.player01.setName(name);
 	}
-	
+
 	public void setPlayerPion01(String pion)
 	{
 		this.player01.setPion(pion);

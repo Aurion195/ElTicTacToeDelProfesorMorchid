@@ -24,8 +24,21 @@ public class IA
 		this.net = new MultiLayerPerceptron(layers, coefApprentissage, new SigmoidalTransferFunction());
 	}
 	
-	public void apprentissageIA(String chemin) throws FileNotFoundException, IDLTypeException, InterruptedException
+	private double[] convertIntArrayToDoubleArray(int[] a)
 	{
+		double[] tmp = new double[9] ;
+		
+		for(int i = 0 ; i < 9 ; i++)
+		{
+			tmp[i] = (int) a[i] ;
+		}
+		
+		return tmp ;
+	}
+	
+	public void apprentissageIA(String chemin)
+	{
+		double error = 0.0 ;
 		getProgressBarIncrement();
 		addProgresse = this.quotientProgress;
 		addProgressePourcent = this.quotientProgressPourcent;
@@ -36,15 +49,21 @@ public class IA
 
 		for(int i = 0 ; i < 1000 ; i++)
 		{
-			coups = getAllCoup();
+			try {
+				coups = getAllCoup(chemin);
 
-			for(Coup coupJouer : coups)
-			{
-				in = convertIntArrayToDoubleArray(coupJouer.getIn());
-				out = convertIntArrayToDoubleArray(coupJouer.getOut());
-				error = mlp.backPropagate(in, out);
+				for(Coup coup : coups)
+				{
+					in = convertIntArrayToDoubleArray(coup.getIn());
+					out = convertIntArrayToDoubleArray(coup.getOut());
+					error = this.net.backPropagate(in, out);
+					System.out.println(error);
+				}
 			}
-
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
 
 			Platform.runLater(new Runnable(){
 
@@ -63,7 +82,18 @@ public class IA
 		}
 	}
 
-	public ArrayList<Coup> getAllCoup() throws FileNotFoundException, IOException
+	private int[] convertStringtoIntArray(String a)
+	{
+		int[] tmp = new int[9] ;
+		for(int i = 0 ; i < 9 ; i++)
+		{
+			tmp[i] = a.codePointAt(i) ;
+		}
+		
+		return tmp ;
+	}
+	
+	public ArrayList<Coup> getAllCoup(String chemin) throws FileNotFoundException, IOException
 	{
 		ArrayList<Coup> coup = new ArrayList<Coup>();
 		String recupLigne = "";
@@ -71,15 +101,15 @@ public class IA
 		String outString = "";
 
 		// Ouverture du fichier et travail de lecture
-		try (BufferedReader br = new BufferedReader(new FileReader("src/file/train.txt")))
+		try (BufferedReader br = new BufferedReader(new FileReader(chemin)))
 		{
 			String line;
 			while ((line = br.readLine()) != null)
 			{
 				recupLigne = line;
-				inString = recupLigne.substring(0, recupLigne.lastIndexOf(";"));
-				outString = recupLigne.substring(recupLigne.lastIndexOf(";")+1, recupLigne.length());
-				coup.add(new CoupJouer(convertStringtoIntArray(inString), convertStringtoIntArray(outString)));
+				inString = recupLigne.substring(0, recupLigne.lastIndexOf("/"));
+				outString = recupLigne.substring(recupLigne.lastIndexOf("/")+1, recupLigne.length());
+				coup.add(new Coup(this.convertStringtoIntArray(inString), this.convertStringtoIntArray(outString)));
 			}
 		}
 

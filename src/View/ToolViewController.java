@@ -17,7 +17,9 @@ import Game.Launcher;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.RadioButton;
 
 public class ToolViewController extends ToolsBarController  implements Initializable
@@ -87,9 +89,9 @@ public class ToolViewController extends ToolsBarController  implements Initializ
 		Launcher main = Launcher.getInstance();
 		
 		
-		toggleButton.setOnAction(event -> {
+		this.toggleButton.setOnAction(event -> {
             
-            if(toggleButton.isSelected()){
+            if(this.toggleButton.isSelected()){
             	main.getMedia().play() ;
             }
             else{
@@ -181,8 +183,23 @@ public class ToolViewController extends ToolsBarController  implements Initializ
 
 			transformer.transform(source, sortie);
 			System.out.println("On sauvegarde bien");
-		}
+			
+			Launcher main = Launcher.getInstance();
+			FXMLLoader loader = new FXMLLoader();
+			try {
+				loader.setLocation(getClass().getResource("Ia.fxml"));
+				main.setRootLayout(loader.load());
 
+				Scene scene = new Scene(main.getRootLayout());
+				main.getPrimaryStage().setScene(scene);
+				main.getPrimaryStage().show();
+			} 
+			catch (Exception e) 
+			{
+				e.printStackTrace();
+				
+			}
+		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
