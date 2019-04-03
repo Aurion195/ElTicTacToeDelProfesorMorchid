@@ -52,6 +52,7 @@ public class Game
 		{
 			this.choicePlayeurStrings.addElement(String.valueOf(i));
 			this.myVector[i] = 0.0 ;
+			this.plateauIA[i] = 0.0 ;
 		}
 	}
 	
@@ -209,6 +210,7 @@ public class Game
 	
 	public void IAVsPlayer(String pion, int position)
 	{
+		System.out.println("on pose le pion");
 		double a = (pion.equals("x") ? 1.0 : 2.0) ;
 		this.plateauIA[position] = a ;
 	}

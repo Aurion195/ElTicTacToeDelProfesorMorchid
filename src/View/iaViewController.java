@@ -160,7 +160,7 @@ public class iaViewController extends ToolsBarController implements Initializabl
 			moyen = Integer.parseInt(doc.getElementsByTagName("Medium").item(0).getTextContent()) ;
 			hard = Integer.parseInt(doc.getElementsByTagName("Hard").item(0).getTextContent()) ;
 			
-			this.nbNeuronne = (easy == 1 ? 500 : moyen == 1 ? 1500 : 3000) ;
+			this.nbNeuronne = (easy == 1 ? 100 : moyen == 1 ? 150 : 200) ;
 			this.nameIA = (easy == 1 ? "Easy" : moyen == 1 ? "Moyen" : "Hard") ;
 		}
 		catch(Exception e)
@@ -171,8 +171,11 @@ public class iaViewController extends ToolsBarController implements Initializabl
 	
 	public iaViewController(String path)
 	{
-		this.net.load(path+"/"+this.nameIA) ;
+		this.layers = new int[]{ 9, nbNeuronne, 9};
+		this.net = new MultiLayerPerceptron(layers, coefApprentissage, new SigmoidalTransferFunction());
+		this.net.load(path) ;
 	}
+	
 	/**
 	 * Constructeur de l'IA
 	 */
@@ -194,7 +197,7 @@ public class iaViewController extends ToolsBarController implements Initializabl
 
 		for(int i = 0 ; i < 9 ; i++)
 		{
-			tmp[i] = (int) a[i] ;
+			tmp[i] = (double) a[i] ;
 		}
 
 		return tmp ;
@@ -209,11 +212,10 @@ public class iaViewController extends ToolsBarController implements Initializabl
 		ArrayList<Coup> coups;
 		double[] in = new double[9];
 		double[] out = new double[9];
-
-		for(int i = 0 ; i <= 1000 ; i++)
+		double error = 0.0 ;
+		for(int i = 0 ; i <= 4000 ; i++)
 		{
 			try {
-				double error = 0.0 ;
 				coups = getAllCoup(chemin);
 				this.tmp = (double)i ;
 				for(Coup coup : coups)
@@ -221,14 +223,17 @@ public class iaViewController extends ToolsBarController implements Initializabl
 					in = convertIntArrayToDoubleArray(coup.getIn());
 					out = convertIntArrayToDoubleArray(coup.getOut());
 					error = this.net.backPropagate(in, out);
+					System.out.println(error);
 				}
-
+				
 				Platform.runLater(new Runnable()
 				{
 					@Override
 					public void run()
 					{
-						pourcent.setText(Math.round((float)(nbNeuronne/100)*(tmp/10))+" %") ;
+						if(nameIA.equals("Easy")) pourcent.setText(Math.round((float)((nbNeuronne/10)*tmp/1))+" %") ;
+						if(nameIA.equals("Medium")) pourcent.setText(Math.round((float)((nbNeuronne/400)*tmp/40))+" %") ;
+						if(nameIA.equals("Hard")) pourcent.setText(Math.round((float)((nbNeuronne/400)*tmp/40))+" %") ;
 					}
 				});
 
@@ -260,7 +265,7 @@ public class iaViewController extends ToolsBarController implements Initializabl
 		int[] tmp = new int[9] ;
 		for(int i = 0 ; i < 9 ; i++)
 		{
-			tmp[i] = a.codePointAt(i) ;
+			tmp[i] = Integer.parseInt(String.valueOf(a.charAt(i))) ;
 		}
 
 		return tmp ;

@@ -8,51 +8,51 @@
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="697.0" prefWidth="518.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.IAViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="697.0" prefWidth="518.0" style="-fx-background-color: transparent;" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.IAController">
    <children>
-      <AnchorPane layoutX="-1.0" layoutY="77.0" prefHeight="620.0" prefWidth="520.0" style="-fx-background-color: #009cfc;">
+      <AnchorPane layoutX="-1.0" layoutY="77.0" prefHeight="620.0" prefWidth="520.0" style="-fx-background-color: #009cfc;" stylesheets="@Style.css">
          <children>
-            <ImageView id="Button00" fx:id="Button00" fitHeight="109.0" fitWidth="113.0" layoutX="70.0" layoutY="71.0" onMousePressed="#onClickButton00" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button00" fx:id="Button00" fitHeight="109.0" fitWidth="113.0" layoutX="70.0" layoutY="71.0" onMouseClicked="#onClickButton00" onMousePressed="#onClickButton00" pickOnBounds="true" preserveRatio="true">
             	<image>
             		<Image url="@Blanc.png" />
             	</image> 
             </ImageView>
-            <ImageView id="Button01" fx:id="Button01" fitHeight="109.0" fitWidth="113.0" layoutX="200.0" layoutY="73.0" onMousePressed="#onClickButton01" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button01" fx:id="Button01" fitHeight="109.0" fitWidth="113.0" layoutX="200.0" layoutY="73.0" onMouseClicked="#onClickButton01" onMousePressed="#onClickButton01" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-             <ImageView id="Button02" fx:id="Button02" fitHeight="109.0" fitWidth="113.0" layoutX="347.865966796875" layoutY="75.0" onMousePressed="#onClickButton02" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="82.36083984375">
+             <ImageView id="Button02" fx:id="Button02" fitHeight="109.0" fitWidth="113.0" layoutX="347.865966796875" layoutY="75.0" onMouseClicked="#onClickButton02" onMousePressed="#onClickButton02" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="82.36083984375">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button10" fx:id="Button10" fitHeight="109.0" fitWidth="113.0" layoutX="66.0" layoutY="204.0" onMousePressed="#onClickButton10" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button10" fx:id="Button10" fitHeight="109.0" fitWidth="113.0" layoutX="66.0" layoutY="204.0" onMouseClicked="#onClickButton10" onMousePressed="#onClickButton10" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button11" fx:id="Button11" fitHeight="109.0" fitWidth="113.0" layoutX="200.0" layoutY="206.0" onMousePressed="#onClickButton11" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button11" fx:id="Button11" fitHeight="109.0" fitWidth="113.0" layoutX="200.0" layoutY="206.0" onMouseClicked="#onClickButton11" onMousePressed="#onClickButton11" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button12" fx:id="Button12" fitHeight="109.0" fitWidth="113.0" layoutX="348.0" layoutY="206.0" onMousePressed="#onClickButton12" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="82.0">
+            <ImageView id="Button12" fx:id="Button12" fitHeight="109.0" fitWidth="113.0" layoutX="348.0" layoutY="206.0" onMouseClicked="#onClickButton12" onMousePressed="#onClickButton12" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="82.0">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button20" fx:id="Button20" fitHeight="109.0" fitWidth="113.0" layoutX="69.0" layoutY="332.0" onMousePressed="#onClickButton20" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="69.0">
+            <ImageView id="Button20" fx:id="Button20" fitHeight="109.0" fitWidth="113.0" layoutX="69.0" layoutY="332.0" onMouseClicked="#onClickButton20" onMousePressed="#onClickButton20" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="69.0">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button21" fx:id="Button21" fitHeight="109.0" fitWidth="113.0" layoutX="198.0" layoutY="335.0" onMousePressed="#onClickButton21" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="Button21" fx:id="Button21" fitHeight="109.0" fitWidth="113.0" layoutX="198.0" layoutY="335.0" onMouseClicked="#onClickButton21" onMousePressed="#onClickButton21" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Blanc.png" />
                </image>
             </ImageView>
-            <ImageView id="Button22" fx:id="Button22" fitHeight="109.0" fitWidth="113.0" layoutX="347.54638671875" layoutY="335.0" onMousePressed="#onClickButton22" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="82.680419921875">
+            <ImageView id="Button22" fx:id="Button22" fitHeight="109.0" fitWidth="113.0" layoutX="347.54638671875" layoutY="335.0" onMouseClicked="#onClickButton22" onMousePressed="#onClickButton22" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="82.680419921875">
                <image>
                   <Image url="@Blanc.png" />
                </image>
@@ -106,7 +106,7 @@
             <Rectangle fx:id="rectangle07" arcHeight="5.0" arcWidth="5.0" fill="#ff0404" height="11.0" layoutX="-8.0" layoutY="260.0" rotate="-44.6" stroke="BLACK" strokeType="INSIDE" visible="false" width="518.0" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="520.0" style="-fx-background-color: #ffff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="520.0" style="-fx-background-color: #ffff;" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="418.0" layoutY="6.0" onMouseClicked="#onClickQuitButton" prefHeight="55.0" prefWidth="45.0" ripplerFill="WHITE" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="6.0">
                <graphic>

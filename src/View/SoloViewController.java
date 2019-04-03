@@ -51,7 +51,7 @@ public class SoloViewController extends ToolsBarController
 		Launcher main = Launcher.getInstance();
     	FXMLLoader loader = new FXMLLoader();
     	try {
-    		loader.setLocation(getClass().getResource("MultiView.fxml"));
+    		loader.setLocation(getClass().getResource("IAView.fxml"));
     		main.setRootLayout(loader.load());
 
     		Scene scene = new Scene(main.getRootLayout());
@@ -59,7 +59,7 @@ public class SoloViewController extends ToolsBarController
     		main.getPrimaryStage().show();
     	} 
     	catch (Exception e) {
-			System.out.println(e.getMessage());
+			e.printStackTrace();
 		}
 	}
 }

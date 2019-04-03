@@ -109,7 +109,7 @@ public class Launcher extends Application
 	{	
 		Media sound=new Media(new File("src/Son/Take_On_Me.wav").toURI().toString());
 		this.mediaPlayer = new MediaPlayer(sound);
-		this.mediaPlayer.play();
+		//this.mediaPlayer.play();
 
 		final Label currentlyPlaying = new Label();
 		final ProgressBar progress = new ProgressBar();
