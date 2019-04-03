@@ -10,14 +10,41 @@ import com.jfoenix.validation.DoubleValidator;
 import IA.Coup;
 import View.MultiViewController;
 
+/**
+ * Classe Game, elle va s'occuper de la gestion BACK-END du jeu
+ * @author MATHIEU Thomas
+ * @author GARCIA Jérémy
+ */
 public class Game 
 {
+	/**
+	 * Boolean permettant de savoir le tour du joueur
+	 */
 	public boolean turnPlayer1 = true ;
+	
+	/**
+	 * Nom du joueur 1
+	 */
 	private String player00 ;
+	
+	/**
+	 * Nom du joueur 2
+	 */
 	private String player01 ;
+	
+	/**
+	 * Plateau du jeu, la on on va placer les pions des joueurs
+	 */
 	private Vector<String> choicePlayeurStrings = new Vector<String>() ;
+	
+	/**
+	 * Tableau de double contenant le plateau du joueur
+	 */
 	private Double[] myVector = new Double[9] ;
 	
+	/**
+	 * Constructeur de la classe game, on initialise le plateau du jeu et le tableau
+	 */
 	public Game()
 	{
 		for(int i = 0 ; i < 9 ; i++)
@@ -27,6 +54,11 @@ public class Game
 		}
 	}
 	
+	/**
+	 * Permet de savoir si le joueur à gagné en utilisant les diagonales
+	 * @param c = plateau de jeu ;
+	 * @return le int qui permet d'identifier la barre rouge
+	 */
 	private int crossWin(Vector<String> c)
 	{
 		if((c.elementAt(0).toString().equals(c.elementAt(4).toString()) && c.elementAt(4).toString().equals(c.elementAt(8).toString())))
@@ -41,6 +73,11 @@ public class Game
 		return -1 ;
 	}
 	
+	/**
+	 * Permet de savoir si le joueur à gagné en utilisant les lignes horizontales
+	 * @param c = plateau de jeu ;
+	 * @return le int qui permet d'identifier la barre rouge
+	 */
 	private int horizontalWin(Vector<String> c)
 	{
 		if((c.elementAt(0).toString().equals(c.elementAt(1).toString()) && c.elementAt(1).toString().equals(c.elementAt(2).toString())))
@@ -59,6 +96,11 @@ public class Game
 		return -1 ;
 	}
 	
+	/**
+	 * Permet de savoir si le joueur à gagné en utilisant les lignes verticales
+	 * @param c = plateau de jeu ;
+	 * @return le int qui permet d'identifier la barre rouge
+	 */
 	private int verticaleWin(Vector<String> c)
 	{
 		if((c.elementAt(0).toString().equals(c.elementAt(3).toString()) && c.elementAt(3).toString().equals(c.elementAt(6).toString())))
@@ -77,6 +119,10 @@ public class Game
 		return -1 ;
 	}
 	
+	/**
+	 * Fonction appeler à chaque fin de tour de jeu, elle va vérifier si un joueur n'a pas gagné
+	 * @return un int != de 0, si un joueur à gagné
+	 */
 	public int win()
 	{
 		int a = this.horizontalWin(this.choicePlayeurStrings) ;
@@ -102,6 +148,9 @@ public class Game
 		
 	}
 	
+	/**
+	 * Permet la fonction rejouer, efface tous les pions du plateau de jeu
+	 */
 	public void erasePion()
 	{
 		for(int i = 0 ; i < 9 ; i++)
@@ -110,6 +159,11 @@ public class Game
 		}
 	}
 	
+	/**
+	 * Change le tour du joueur
+	 * @param placePosition = position on le joueur à placer le pion ;
+	 * @return le tour du joueur
+	 */
 	public boolean turnPlayer(int placePosition)
 	{
 		this.turnPlayer1 = !this.turnPlayer1 ;
@@ -118,11 +172,21 @@ public class Game
 		return this.turnPlayer1 ;
 	}
 	
+	/**
+	 * Permet de placer le pion dans le plateau du jeu 
+	 * @param placePosition = position du pion sur le plateau
+	 */
 	public void placeStringPlayer(int placePosition)
 	{
 		this.choicePlayeurStrings.set(placePosition, (this.turnPlayer1 ? "o" : "x")) ;
 	}
 	
+	/**
+	 * Permet de donner tous les coups jouer par tous les joueurs
+	 * 1 = player 1
+	 * 2 = player 2
+	 * 0 = pas de pion
+	 */
 	public void getCoupJouer()
 	{
 		for(int i = 0 ; i < 9 ; i++)
@@ -142,6 +206,9 @@ public class Game
 		}
 	}
 	
+	/**
+	 * @return le plateau du jeu
+	 */
 	public int[] getPlateau()
 	{
 		int[] tab = new int[9];
@@ -153,6 +220,10 @@ public class Game
 		return tab ;
 	}
 	
+	/**
+	 * Fonction permettant de sauvegarder les coups dans le fichier train.txt pour l'IA
+	 * @param listCoup = list de coup à sauvegarder ;
+	 */
 	public void saveCoup(Vector<Coup> listCoup) 
 	{
 		System.out.println("Bien dans saveCoup");

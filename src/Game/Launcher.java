@@ -30,17 +30,48 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.media.MediaView;
 
+/**
+ * Classe qui permet de lancer l'application -> Singleton
+ * @author MATHIEU Thomas
+ * @author GARCIA Jérémy
+ *
+ */
 public class Launcher extends Application 
 {
-
+	/**
+	 * 1er scene
+	 */
 	private Stage primaryStage;
+	
+	/**
+	 * Scene que l'on va changer 
+	 */
 	private AnchorPane rootLayout;
+	
+	/**
+	 * Instance unique
+	 */
 	private static volatile Launcher instance = null;
+	
+	/**
+	 * Lecteur audio
+	 */
 	private static MediaPlayer mediaPlayer ;
-	private Player player00 = new Player("", "");
-	private Player player01 = new Player("", "");
+	
+	/**
+	 * Player 1
+	 */
+	private Player player00 = new Player("");
+	
+	/**
+	 * Player 2
+	 */
+	private Player player01 = new Player("");
 
 
+	/**
+	 * Constructeur de la classe
+	 */
 	public Launcher()
 	{
 		super();
@@ -53,6 +84,9 @@ public class Launcher extends Application
 		}
 	}
 
+	/**
+	 * @return le singleton de Launcher
+	 */
 	public final static Launcher getInstance()
 	{
 		if(Launcher.instance == null)
@@ -68,6 +102,9 @@ public class Launcher extends Application
 		return Launcher.instance;
 	}
 
+	/**
+	 * Permet de jouer de la music dans le menu
+	 */
 	public void playMusic()
 	{	
 		Media sound=new Media(new File("src/Son/Take_On_Me.wav").toURI().toString());
@@ -132,7 +169,9 @@ public class Launcher extends Application
 	}
 
 
-	/** @return a MediaPlayer for the given source which will report any errors it encounters */
+	/** 
+	 * @return le mediaPlayer
+	 * */
 	private MediaPlayer createPlayer(String aMediaSrc) 
 	{
 		final MediaPlayer player = new MediaPlayer(new Media(aMediaSrc));
@@ -150,6 +189,7 @@ public class Launcher extends Application
 
 
 	/**
+	 * Permet d'arreter la music
 	 * @param mediaPlayer
 	 */
 	public void stopMusic(MediaPlayer mediaPlayer)
@@ -157,12 +197,19 @@ public class Launcher extends Application
 		mediaPlayer.pause();
 	}
 
-
+	/**
+	 * Permet de modifier le volume Audio du player
+	 * @param mediaPlayer = lecteur audio ;
+	 * @param v = volume ;
+	 */
 	public void setVolume(MediaPlayer mediaPlayer, double v)
 	{  
 		mediaPlayer.setVolume(v);
 	}
 
+	/**
+	 * Lance l'application
+	 */
 	@Override
 	public void start(Stage primaryStage)  
 	{
@@ -174,7 +221,7 @@ public class Launcher extends Application
 	}
 
 	/**
-	 * Initializes the root layout.
+	 * Initialize le root layout
 	 */
 	public void initRootLayout() 
 	{
@@ -242,53 +289,54 @@ public class Launcher extends Application
 		return primaryStage;
 	}
 
+	/**
+	 * Main du jeu 
+	 */
 	public static void main(String[] args) 
 	{
 		launch(args);
 	}
 
+	/**
+	 * @return le lecteur audio
+	 */
 	public MediaPlayer getMedia()
 	{
 		return this.mediaPlayer ;
 	}
 
+	/**
+	 * @return le nom du player 1
+	 */
 	public String getPlayer00Name()
 	{
 		return this.player00.getName() ;
 	}
 
+	/**
+	 * @return le nom du player 2
+	 */
 	public String getPlayer01Name()
 	{
 		return this.player01.getName() ;
 	}
 
-	public String getPion00()
-	{
-		return this.player00.getPion() ;
-	}
-
-	public String getPion01()
-	{
-		return this.player01.getPion() ;
-	}
-
+	/**
+	 * Permet de changer le nom du joueur 1
+	 * @param name = nouveau nom ;
+	 */
 	public void setPlayerName00(String name)
 	{
 		this.player00.setName(name) ;
 	}
 
-	public void setPlayerPion00(String pion)
-	{
-		this.player00.setPion(pion);
-	}
-
+	/**
+	 * Permet de changer le nom du joueur 2
+	 * @param name = nouveau nom
+	 */
 	public void setPLayerName01(String name)
 	{
 		this.player01.setName(name);
 	}
 
-	public void setPlayerPion01(String pion)
-	{
-		this.player01.setPion(pion);
-	}
 }

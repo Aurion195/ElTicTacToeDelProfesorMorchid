@@ -11,9 +11,19 @@ import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 import sun.launcher.resources.launcher;
 
+/**
+ * Classe permettant de gérer le menu de l'application
+ * @author MATHIEU Thomas
+ * @author GARCIA Jérémy
+ *
+ */
 public class MenuViewController extends ToolsBarController
 {
-	private void makeOnFadeOut(String view) 
+	/**
+	 * Permet de changer de vue
+	 * @param view = nouvemme vue que l'on veut ;
+	 */
+	private void changeView(String view) 
 	{
 		Launcher main = Launcher.getInstance();
 		FXMLLoader loader = new FXMLLoader();
@@ -31,16 +41,24 @@ public class MenuViewController extends ToolsBarController
 
 	}
 
+	/**
+	 * Quand l'utilisaeur voudra jouer sur l'IA, il va cliquer sur le button 
+	 * "Solo"
+	 */
 	@FXML
 	void onClickSoloButton()
 	{
-		this.makeOnFadeOut("SoloView.fxml");
+		this.changeView("Ia.fxml");
 	}
 	
+	/**
+	 * Quand l'utilisateur voudra jouer contre un ami à lui, il cliquera sur le button 
+	 * "Multi"
+	 */
 	@FXML
 	void onClickMultiButton()
 	{
-		this.makeOnFadeOut("PlayerConfigView.fxml");
+		this.changeView("PlayerConfigView.fxml");
 	}
 	
 	@FXML

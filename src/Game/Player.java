@@ -4,16 +4,32 @@ import java.util.Vector;
 
 import IA.Coup;
 
+/**
+ * Classe player
+ * @author MATHIEU Thomas
+ * @author GARCIA Jérémy
+ *
+ */
 public class Player 
 {
+	/**
+	 * Nom du joueur
+	 */
+	
 	String name ;
-	String pion ;
+	
+	/**
+	 * liste de coup du joueur
+	 */
 	Vector<Coup> coups ;
 
-	public Player(String name, String pion)
+	/**
+	 * Constructeur du joueur
+	 * @param name = nom du joueur ;
+	 */
+	public Player(String name)
 	{
 		this.name = name ;
-		this.pion = pion ;
 		this.coups = new Vector<Coup>() ;
 	}
 
@@ -31,16 +47,6 @@ public class Player
 	public void setName(String name) 
 	{
 		this.name = name;
-	}
-	
-	public String getPion()
-	{
-		return this.pion ;
-	}
-	
-	public void setPion(String pion)
-	{
-		this.pion = pion ;
 	}
 
 	/**
