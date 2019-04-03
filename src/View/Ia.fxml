@@ -53,9 +53,10 @@
 		</AnchorPane>
 		<AnchorPane layoutY="77.0" prefHeight="494.0" prefWidth="519.0" style="-fx-background-color: #212121;" stylesheets="@Style.css">
 			<children>
-				<JFXProgressBar fx:id="progress" layoutX="119.0" layoutY="207.0" prefHeight="26.0" prefWidth="292.0" />
-				<Label fx:id="pourcent" layoutX="229.0" layoutY="138.0" text="Label" textFill="#f2ebeb" />
+				<JFXProgressBar fx:id="progress" layoutX="117.0" layoutY="207.0" prefHeight="26.0" prefWidth="292.0" />
+				<Label fx:id="pourcent" layoutX="233.0" layoutY="138.0" text="Label" textFill="#f2ebeb" />
             <JFXButton fx:id="apprentissage" layoutX="173.0" layoutY="320.0" onMouseClicked="#lancerApprentissage" prefHeight="65.0" prefWidth="174.0" text="Lancer Apprentissage" textFill="#fcf5f5" />
+            <JFXButton layoutX="115.0" layoutY="247.0" prefHeight="26.0" prefWidth="292.0" style="-fx-background-color: #F44336;" stylesheets="@Style.css" text="Let's go !" textFill="WHITE" />
 			</children>
 		</AnchorPane>
 	</children>
