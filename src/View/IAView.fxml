@@ -79,7 +79,7 @@
                </image>
             </ImageView>
             <Polygon fill="#212121" layoutX="217.0" layoutY="-28.0" points="-16.0, 40.0, 11.0, 40.0, -3.0, 17.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-            <ImageView fx:id="Speaker" fitHeight="48.0" fitWidth="30.0" layoutX="406.0" layoutY="21.0" onMouseClicked="#onClickStopMusic" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Speaker" fitHeight="55.0" fitWidth="53.0" layoutX="451.0" layoutY="14.0" onMouseClicked="#onClickStopMusic" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Images/speakerOn.png" />
                </image>
@@ -103,7 +103,7 @@
             <Rectangle fx:id="rectangle01" arcHeight="5.0" arcWidth="5.0" fill="#ff0404" height="11.0" layoutX="79.0" layoutY="255.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="363.0" />
             <Rectangle fx:id="rectangle06" arcHeight="5.0" arcWidth="5.0" fill="#ff0404" height="11.0" layoutX="8.0" layoutY="254.0" rotate="44.6" stroke="BLACK" strokeType="INSIDE" visible="false" width="497.0" />
             <Rectangle fx:id="rectangle05" arcHeight="5.0" arcWidth="5.0" fill="#f50101" height="365.0" layoutX="378.0" layoutY="76.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="11.0" />
-            <Rectangle fx:id="rectangle07" arcHeight="5.0" arcWidth="5.0" fill="#ff0404" height="11.0" layoutX="-8.0" layoutY="260.0" rotate="-44.6" stroke="BLACK" strokeType="INSIDE" visible="false" width="518.0" />
+            <Rectangle fx:id="rectangle07" arcHeight="5.0" arcWidth="5.0" fill="#ff0404" height="11.0" layoutX="61.0" layoutY="224.0" rotate="-44.6" stroke="BLACK" strokeType="INSIDE" width="456.0" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="520.0" style="-fx-background-color: #0091EA;" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

@@ -292,8 +292,9 @@ public class MultiViewController extends ToolsBarController implements Initializ
 	 * Permet de faire bouger la ligne en diagonale
 	 * @param rectangle = rectangle à annimer ;
 	 */
-	private void annimationDiagonale(Rectangle rectangle)
+	private void annimationDiagonale7(Rectangle rectangle)
 	{
+		
 		final TranslateTransition translateAnimation = new TranslateTransition(Duration.seconds(1), rectangle); 
 		translateAnimation.setCycleCount(TranslateTransition.INDEFINITE); 
 		translateAnimation.setAutoReverse(true); 
@@ -302,6 +303,23 @@ public class MultiViewController extends ToolsBarController implements Initializ
 		translateAnimation.setInterpolator(Interpolator.LINEAR);
 		translateAnimation.play();
 	}
+	
+	/**
+	 * Permet de faire bouger la ligne en diagonale
+	 * @param rectangle = rectangle à annimer ;
+	 */
+	private void annimationDiagonale8(Rectangle rectangle)
+	{
+		
+		final TranslateTransition translateAnimation = new TranslateTransition(Duration.seconds(1), rectangle); 
+		translateAnimation.setCycleCount(TranslateTransition.INDEFINITE); 
+		translateAnimation.setAutoReverse(true); 
+		translateAnimation.setByX(-70); 
+		translateAnimation.setByY(70); 
+		translateAnimation.setInterpolator(Interpolator.LINEAR);
+		translateAnimation.play();
+	}
+	
 	
 	/**
 	 * Fonction permettant à l'interface de savoir quelle rectangle à afficher quand un utilisateur à gagner
@@ -336,11 +354,11 @@ public class MultiViewController extends ToolsBarController implements Initializ
 			break ;
 		case 7:
 			this.rectangle06.setVisible(true);
-			this.annimationDiagonale(rectangle06);
+			this.annimationDiagonale7(rectangle06);
 			break ;
 		case 8:
 			this.rectangle07.setVisible(true);
-			this.annimationDiagonale(rectangle07);
+			this.annimationDiagonale8(rectangle07);
 			break ;
 		default:
 			break;

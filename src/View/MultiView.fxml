@@ -103,7 +103,7 @@
             <Rectangle fx:id="rectangle01" arcHeight="5.0" arcWidth="5.0" fill="#f44336" height="11.0" layoutX="26.0" layoutY="255.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="416.0" />
             <Rectangle fx:id="rectangle06" arcHeight="5.0" arcWidth="5.0" fill="#f44336" height="11.0" layoutX="-19.0" layoutY="224.0" rotate="44.6" stroke="BLACK" strokeType="INSIDE" visible="false" width="497.0" />
             <Rectangle fx:id="rectangle05" arcHeight="5.0" arcWidth="5.0" fill="#f44336" height="396.0" layoutX="378.0" layoutY="52.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="11.0" />
-            <Rectangle fx:id="rectangle07" arcHeight="5.0" arcWidth="5.0" fill="#f44336" height="11.0" layoutY="252.0" rotate="-44.6" stroke="BLACK" strokeType="INSIDE" visible="false" width="507.0" />
+            <Rectangle fx:id="rectangle07" arcHeight="5.0" arcWidth="5.0" fill="#f44336" height="11.0" layoutX="54.0" layoutY="221.0" rotate="-44.6" stroke="BLACK" strokeType="INSIDE" width="466.0" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="520.0" style="-fx-background-color: #0091EA;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
