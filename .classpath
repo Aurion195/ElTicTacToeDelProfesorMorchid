@@ -2,6 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/Thomas/Desktop/Jeux java/ElTicTacToeDelProfesorMorchid/jfoenix-8.0.8.jar"/>
+	<classpathentry kind="lib" path="/home/nas02a/etudiants/inf/uapv1703778/eclipse-workspace/ElTicTacToeDelProfesorMorchid/jfoenix-8.0.8.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

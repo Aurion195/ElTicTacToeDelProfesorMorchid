@@ -39,9 +39,9 @@ public class iaViewController extends ToolsBarController implements Initializabl
 {
 	
 	/**Pour le nombre de neuronnes choisit nous avons choisit :
-	 * Facile = 500 
-	 * Moyen = 1500
-	 * Difficile = 3000
+	 * Facile = 250 
+	 * Moyen = 500
+	 * Difficile = 750
 	 */
 	
 	/**
@@ -169,6 +169,10 @@ public class iaViewController extends ToolsBarController implements Initializabl
 		}
 	}
 	
+	/**
+	 * Permet de charger le fichier d'entrainement de l'IA
+	 * @param path = chemin vers le dossier ;
+	 */
 	public iaViewController(String path)
 	{
 		this.layers = new int[]{ 9, nbNeuronne, 9};
@@ -338,6 +342,7 @@ public class iaViewController extends ToolsBarController implements Initializabl
 		this.coefApprentissage = coefApprentissage;
 	}
 
+	
 	public MultiLayerPerceptron getNet()
 	{
 		return this.net ;

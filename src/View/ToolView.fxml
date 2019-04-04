@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="519.0" style="-fx-background-color: #F44336;" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ToolViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="519.0" style="-fx-background-color: #F44336;" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ToolViewController">
    <children>
       <AnchorPane prefHeight="65.0" prefWidth="520.0" style="-fx-background-color: #0091EA;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -77,12 +77,12 @@
                   <Font name="Roboto Mono Medium for Powerline" size="13.0" />
                </font></Text>
             <Text fill="WHITE" layoutX="96.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Volume :" />
-            <JFXButton fx:id="learn" layoutX="92.0" layoutY="388.0" onMouseClicked="#learnIA" style="-fx-background-color: #f0423c;" stylesheets="@Style.css" text="Entrainement IA" textFill="WHITE" />
+            <JFXButton fx:id="learn" layoutX="73.0" layoutY="409.0" onMouseClicked="#learnIA" style="-fx-background-color: #f0423c;" stylesheets="@Style.css" text="Entrainement IA" textFill="WHITE" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="40.0" />
             <JFXRadioButton fx:id="easy" layoutX="222.0" layoutY="272.0" onMouseClicked="#onClickEasyButton" stylesheets="@Style.css" text="Easy" textFill="#f0423c" />
             <JFXRadioButton fx:id="medium" layoutX="222.0" layoutY="316.0" onMouseClicked="#onClickMediumButton" stylesheets="@Style.css" text="Medium" textFill="#f0423c" />
             <JFXRadioButton fx:id="hard" layoutX="223.0" layoutY="360.0" onMouseClicked="#onClickHardButton" text="Hard" textFill="#f0423c" />
             <Text fill="WHITE" layoutX="96.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Difficulty IA :" />
-            <JFXButton fx:id="save" layoutX="323.0" layoutY="388.0" onMouseClicked="#saveOption" style="-fx-background-color: #f0423c;" stylesheets="@Style.css" text="Sauvegarder Option" textFill="WHITE" />
+            <JFXButton fx:id="save" layoutX="323.0" layoutY="411.0" onMouseClicked="#saveOption" style="-fx-background-color: #f0423c;" stylesheets="@Style.css" text="Sauvegarder Option" textFill="WHITE" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="40.0" />
          </children>
       </AnchorPane>
    </children>

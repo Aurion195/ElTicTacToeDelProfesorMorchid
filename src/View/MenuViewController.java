@@ -96,18 +96,27 @@ public class MenuViewController extends ToolsBarController
 		this.changeView("PlayerConfigView.fxml");
 	}
 	
+	/**
+	 * Quand l'utilisateur va cliquer sur le barre d'outils en haut, on va appeller cette fonction afin de revenir au menu
+	 */
 	@FXML
 	public void onClickHomeButton()
 	{
 		super.onClickHomeButton();
 	}
 	
+	/**
+	 * Quand l'utilisateur va cliquer sur le barre d'outils en haut, on va appeller cette fonction afin de quitter l'application
+	 */
 	@FXML
 	public void onClickQuitButton()
 	{
 		super.onClickQuitButton();
 	}
 	
+	/**
+	 * Quand l'utilisateur va cliquer sur le barre d'outils en haut, on va appeller cette fonction afin de 
+	 */
 	@FXML 
 	public void onClickToolButton()
 	{
