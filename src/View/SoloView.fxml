@@ -12,9 +12,8 @@
    <children>
       <AnchorPane layoutY="77.0" prefHeight="494.0" prefWidth="519.0" style="-fx-background-color: #212121;" stylesheets="@Style.css">
          <children>
-            <ImageView fitHeight="21.0" fitWidth="30.0" layoutX="48.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true" />
             <Polygon fill="#212121" layoutX="216.0" layoutY="-28.0" points="-16.0, 40.0, 11.0, 40.0, -3.0, 17.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-            <JFXTextField fx:id="namePlayer" layoutX="182.0" layoutY="141.0" promptText="Pseudo" styleClass="label" stylesheets="@Style.css" />
+            <JFXTextField fx:id="namePlayer" focusColor="#f44336" layoutX="182.0" layoutY="141.0" promptText="Pseudo" styleClass="label" stylesheets="@Style.css" />
             <JFXButton fx:id="ButonGo" layoutX="179.0" layoutY="206.0" onMouseClicked="#onClickGetMatch" prefHeight="45.0" prefWidth="165.0" style="-fx-background-color: #ffff;" text="Go !!" />
             <JFXProgressBar layoutX="168.0" layoutY="398.0" />
          </children>
@@ -39,9 +38,9 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="299.0" layoutY="8.0" onMouseClicked="#onClickSetttingButton" prefHeight="55.0" prefWidth="45.0" ripplerFill="WHITE" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="8.0">
+            <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="299.0" layoutY="8.0" onMouseClicked="#onClickSettingButton" prefHeight="55.0" prefWidth="45.0" ripplerFill="WHITE" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="8.0">
                <graphic>
-                  <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onClickSetttingButton" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onClickSettingButton" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/settings.png" />
                      </image>
@@ -50,7 +49,7 @@
             </JFXButton>
             <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="165.0" layoutY="5.0" onMouseClicked="#onClickHomeButton" prefHeight="55.0" prefWidth="45.0" ripplerFill="WHITE" AnchorPane.rightAnchor="274.0" AnchorPane.topAnchor="5.0">
                <graphic>
-                  <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onClickQuitButton" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onClickSettingButton" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/videogame.png" />
                      </image>

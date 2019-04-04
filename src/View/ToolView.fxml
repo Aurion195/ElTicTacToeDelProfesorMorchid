@@ -68,7 +68,7 @@
             <ImageView fitHeight="21.0" fitWidth="30.0" layoutX="48.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true" />
             <Polygon fill="#212121" layoutX="351.0" layoutY="-28.0" points="-16.0, 40.0, 11.0, 40.0, -3.0, 17.0" stroke="TRANSPARENT" strokeType="INSIDE" />
             <JFXSlider fx:id="volume" layoutX="183.0" layoutY="202.0" />
-            <JFXToggleButton fx:id="toggleButton" accessibleRole="BUTTON" layoutX="178.0" layoutY="98.0" onMouseClicked="#onClickStopMusicButton" text="On / Off" textFill="WHITE" toggleColor="#f0423c" toggleLineColor="#f0423caf">
+            <JFXToggleButton fx:id="toggleButton" accessibleRole="BUTTON" layoutX="178.0" layoutY="98.0" text="On / Off" textFill="WHITE" toggleColor="#f0423c" toggleLineColor="#f0423caf">
                <font>
                   <Font name="Roboto Mono for Powerline" size="13.0" />
                </font></JFXToggleButton>

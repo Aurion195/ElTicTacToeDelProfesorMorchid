@@ -120,7 +120,7 @@ public class Launcher extends Application
 				this.mediaPlayer = new MediaPlayer(sound);
 				if(musicOn == 1) 
 				{
-				this.setVolume(mediaPlayer, soundMusic);
+				this.setVolume(mediaPlayer, (double)soundMusic/100);
 				this.mediaPlayer.play();
 				
 				final Label currentlyPlaying = new Label();
