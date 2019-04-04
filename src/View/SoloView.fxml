@@ -14,7 +14,7 @@
          <children>
             <ImageView fitHeight="21.0" fitWidth="30.0" layoutX="48.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true" />
             <Polygon fill="#212121" layoutX="216.0" layoutY="-28.0" points="-16.0, 40.0, 11.0, 40.0, -3.0, 17.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-            <JFXTextField fx:id="namePlayer" layoutX="182.0" layoutY="141.0" promptText="Pseudo" />
+            <JFXTextField fx:id="namePlayer" layoutX="182.0" layoutY="141.0" promptText="Pseudo" styleClass="label" stylesheets="@Style.css" />
             <JFXButton fx:id="ButonGo" layoutX="179.0" layoutY="206.0" onMouseClicked="#onClickGetMatch" prefHeight="45.0" prefWidth="165.0" style="-fx-background-color: #ffff;" text="Go !!" />
             <JFXProgressBar layoutX="168.0" layoutY="398.0" />
          </children>

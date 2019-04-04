@@ -31,7 +31,7 @@ import javafx.scene.layout.*;
 import javafx.scene.media.MediaView;
 
 /**
- * Classe qui permet de lancer l'application -> Singleton
+ * Classe qui permet de lancer l'application : Singleton
  * @author MATHIEU Thomas
  * @author GARCIA Jérémy
  *
@@ -188,6 +188,8 @@ public class Launcher extends Application
 
 
 	/** 
+	 * Permet de créer le mediaPlayer
+	 * @param aMediaSrc = chemin du média ;
 	 * @return le mediaPlayer
 	 * */
 	private MediaPlayer createPlayer(String aMediaSrc) 
@@ -208,7 +210,7 @@ public class Launcher extends Application
 
 	/**
 	 * Permet d'arreter la music
-	 * @param mediaPlayer
+	 * @param mediaPlayer = lecteur audio à mettre en pause ;
 	 */
 	public void stopMusic(MediaPlayer mediaPlayer)
 	{  
@@ -299,8 +301,7 @@ public class Launcher extends Application
 	}
 
 	/**
-	 * Returns the main stage.
-	 * @return
+	 * @return return le stage principal
 	 */
 	public Stage getPrimaryStage() 
 	{
@@ -309,6 +310,7 @@ public class Launcher extends Application
 
 	/**
 	 * Main du jeu 
+	 * @param args = obligatoire ;
 	 */
 	public static void main(String[] args) 
 	{

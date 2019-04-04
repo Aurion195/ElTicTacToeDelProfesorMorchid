@@ -14,30 +14,55 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.RadioButton;
 import javafx.scene.image.ImageView;
 
+/**
+ * Classe permettant de gérer le choix des pseudo
+ * @author MATHIEU Thomas
+ * @author GARCIA Jérémy
+ *
+ */
 public class PlayerConfigViewController extends ToolsBarController 
 {
-	
+	/**
+	 * Text pour le joueur 0
+	 */
 	@FXML private JFXTextField Pseudo00 ;
+	
+	/**
+	 * Text pour le joueur 1
+	 */
 	@FXML private JFXTextField Pseudo01 ;
 	
+	/**
+	 * Quand l'utilisateur va cliquer sur ce button, le système va quitter le jeu
+	 */
 	@FXML
 	public void onClickQuitButton()
 	{
 		super.onClickQuitButton();
 	}
 	
+	/**
+	 * Quand l'utilisateur va cliquer sur ce button, le système va le renvoyer sur le menu principal
+	 */
 	@FXML
 	public void onClickHomeButton()
 	{
 		super.onClickHomeButton();
 	}
 	
+	/**
+	 * Quand l'utilisateur va cliquer sur ce button, le système va l'envoyer dans les options
+	 */
 	@FXML
 	public void onClickSettingButton()
 	{
 		super.onClickSettingButton();
 	}
 	
+	/**
+	 * Fonction permettant de vérifier que les 2 joueur n'ont pas le même pseudo
+	 * @return true / false ;
+	 */
 	private boolean verfiPseudo()
 	{
 		if(!this.Pseudo00.getText().isEmpty() && !this.Pseudo01.getText().isEmpty())
@@ -51,12 +76,20 @@ public class PlayerConfigViewController extends ToolsBarController
 		return false ;
 	}
 	
+	/**
+	 * Permet au singleton "Main" de gérer les pseudo choisit et de les changer dans les joueurs
+	 */
 	private void envoiPlayer()
 	{
 		Launcher main = Launcher.getInstance();
 		main.setPlayerName00(this.Pseudo00.getText());
 		main.setPLayerName01(this.Pseudo01.getText());
 	}
+	
+	/**
+	 * Quand l'utilisateur va cliquer sur ce button, le système va effectuer une vérification avec this.verifPseudo()
+	 * si tout est bon, on change de view et on commence le jeu
+	 */
 	@FXML
 	public void onClickGoButton()
 	{

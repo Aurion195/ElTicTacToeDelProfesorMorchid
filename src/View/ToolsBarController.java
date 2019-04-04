@@ -8,8 +8,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 
+/**
+ * Classe permettant de définir des fonctions vitales qui seront uilisé pour toute les vues
+ * @author MATHIEU Thomas
+ * @author GARCIA Jérémy
+ *
+ */
 public abstract class ToolsBarController 
 {
+	/**
+	 * Change la vue pour celle du menu principal
+	 */
 	@FXML
 	protected void onClickHomeButton()
 	{
@@ -29,12 +38,18 @@ public abstract class ToolsBarController
 		}
 	}
 	
+	/**
+	 * Ferme le jeu
+	 */
 	@FXML
 	protected void onClickQuitButton()
 	{
 		System.exit(0);
 	}
 	
+	/**
+	 * Change la vue pour aller dans celle des options
+	 */
 	@FXML
 	protected void onClickSettingButton()
 	{

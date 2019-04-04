@@ -14,32 +14,57 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 
+/**
+ * Classe permettant de gérer le pseudo d'un joueur en mode HumainVSIa
+ * @author MATHIEU Thomas
+ * @author GARCIA Jérémy
+ *
+ */
 public class SoloViewController extends ToolsBarController
 {
+	/**
+	 * Text pour le joueur 1
+	 */
 	@FXML
 	private JFXTextField namePlayer ;
 	
+	/**
+	 * Button go
+	 */
 	@FXML
 	private JFXButton ButtonGo ;
 	
-	@FXML
-	public void onClickHomeButton()
-	{
-		super.onClickHomeButton();
-	}
-	
+	/**
+	 * Quand l'utilisateur va cliquer sur ce button, le système va quitter le jeu
+	 */
 	@FXML
 	public void onClickQuitButton()
 	{
 		super.onClickQuitButton();
 	}
 	
+	/**
+	 * Quand l'utilisateur va cliquer sur ce button, le système va le renvoyer sur le menu principal
+	 */
 	@FXML
-	public void onClickSetttingButton()
+	public void onClickHomeButton()
+	{
+		super.onClickHomeButton();
+	}
+	
+	/**
+	 * Quand l'utilisateur va cliquer sur ce button, le système va l'envoyer dans les options
+	 */
+	@FXML
+	public void onClickSettingButton()
 	{
 		super.onClickSettingButton();
 	}
 	
+	/**
+	 * Envoi les nom des joueurs dans le singleton "Main", puis change la vue pour aller dans la vue
+	 * HumainVsia
+	 */
 	@FXML
 	public void onClickGetMatch()
 	{

@@ -23,42 +23,73 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.RadioButton;
 
+/**
+ * Classe permettant de gérer les options du jeu
+ * @author MATHIEU Thomas
+ * @author GARCIA Jérémy
+ *
+ */
 public class ToolViewController extends ToolsBarController  implements Initializable
 {
-
+	/**
+	 * Barre de volume que l'utilisateur pourra modifier
+	 */
 	@FXML JFXSlider volume;
+	
+	/**
+	 * Button permettant activer / desactiver la musique
+	 */
 	@FXML JFXToggleButton toggleButton ;
+	
+	/**
+	 * RadioButton pour l'IA facile
+	 */
 	@FXML RadioButton easy ;
+	
+	/**
+	 * radioButton pour l'IA moyen
+	 */
 	@FXML RadioButton medium ;
+	
+	/**
+	 * RadioButton pour l'IA Hard
+	 */
 	@FXML RadioButton hard ;
+	
+	/**
+	 * Button pour sauvegarder les options
+	 */
 	@FXML JFXButton save ;
+	
+	/**
+	 * Button pour enrainer l'IA
+	 */
 	@FXML JFXButton learn ;
 	
-	public void onClickHomeButton()
-	{
-		super.onClickHomeButton();
-	}
-
+	
+	/**
+	 * Quand l'utilisateur va cliquer sur ce button, le système va quitter le jeu
+	 */
 	@FXML
 	public void onClickQuitButton()
 	{
 		super.onClickQuitButton();
 	}
 	
+	/**
+	 * Quand l'utilisateur va cliquer sur ce button, le système va le renvoyer sur le menu principal
+	 */
 	@FXML
-	public void onClickStopMusicButton()
-	{	
-		Launcher main = Launcher.getInstance();
-		try {
-		
-		}
-		catch(Exception e)
-		{
-			System.out.println(e.getMessage());
-		}
-
+	public void onClickHomeButton()
+	{
+		super.onClickHomeButton();
 	}
+	
 
+	/**
+	 * Permet de charger le fichier sauvegarde "Config.xml" qui connait toutes les otpions, cette function va
+	 * donc modifier les valeurs définis par défault afin qu'elle coincide avec celle écrit dans le fichier
+	 */
 	private void uploadSave()
 	{
 		try {
@@ -85,6 +116,9 @@ public class ToolViewController extends ToolsBarController  implements Initializ
 		}
 	}
 	
+	/**
+	 * Quand on va aller dans cette vue pour la 1er fois, elle va permettre de gérer le chargement du fichier
+	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
@@ -122,6 +156,10 @@ public class ToolViewController extends ToolsBarController  implements Initializ
 		this.uploadSave() ;
 	}
 
+	/**
+	 * Quand l'utilisateur clique sur le button Apprentissage, le système va changer de view afin que l'utilisateur
+	 * puisse voir l'entrainement et la sauvegarde de l'IA
+	 */
 	@FXML
 	public void learnIA()
 	{
@@ -142,6 +180,11 @@ public class ToolViewController extends ToolsBarController  implements Initializ
 			
 		}
 	}
+	
+	/**
+	 * Quand l'utilisateur va cliquer sur le button Sauvegarder, le système va récuper les données modifier et l'envoyer dans la fonction
+	 * save()
+	 */
 	@FXML
 	public void saveOption()
 	{
@@ -155,6 +198,14 @@ public class ToolViewController extends ToolsBarController  implements Initializ
 		this.save(musicOn, soundMusic, IAEasy, IAMedium, IAHard) ;
 	}
 	
+	/**
+	 * Permet de sauvegarder les données modifier par l'utilisateur
+	 * @param musicOn = 1 (on) / 0 (off) ;
+	 * @param soundMusic = son music ;
+	 * @param IAEasy = 1 (selected) / 0 (non selected) ;
+	 * @param IAMedium = 1 (selected) / 0 (non selected) ;
+	 * @param IAHard = 1 (selected) / 0 (non selected) ;
+	 */
 	private void save(String musicOn, String soundMusic, String IAEasy, String IAMedium, String IAHard)
 	{
 		try {
@@ -214,6 +265,9 @@ public class ToolViewController extends ToolsBarController  implements Initializ
 		}
 	}
 	
+	/**
+	 * Quand l'utilisateur va cliquer le radioButton "Easy", il va déselectionner les 2 autres
+	 */
 	@FXML
 	public void onClickEasyButton()
 	{
@@ -222,6 +276,9 @@ public class ToolViewController extends ToolsBarController  implements Initializ
 		this.hard.setSelected(false);
 	}
 	
+	/**
+	 * Quand l'utilisateur va cliquer le radioButton "Medium", il va déselectionner les 2 autres
+	 */
 	@FXML
 	public void onClickMediumButton()
 	{
@@ -230,6 +287,9 @@ public class ToolViewController extends ToolsBarController  implements Initializ
 		this.hard.setSelected(false);
 	}
 	
+	/**
+	 * Quand l'utilisateur va cliquer le radioButton "Hard", il va déselectionner les 2 autres
+	 */
 	@FXML
 	public void onClickHardButton()
 	{

@@ -42,7 +42,11 @@ public class Game
 	 */
 	private Double[] myVector = new Double[9] ;
 	
+	/**
+	 * Tableau de double contenant le plateau de jeu 
+	 */
 	private double[] plateauIA = new double[9] ;
+	
 	/**
 	 * Constructeur de la classe game, on initialise le plateau du jeu et le tableau
 	 */
@@ -260,6 +264,9 @@ public class Game
 		}
 	}
 
+	/**
+	 * @return le tableau de double du plateau de jeu
+	 */
 	public double[] getChoicePlayeurStrings() {
 		return this.plateauIA ;
 	}

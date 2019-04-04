@@ -342,7 +342,9 @@ public class iaViewController extends ToolsBarController implements Initializabl
 		this.coefApprentissage = coefApprentissage;
 	}
 
-	
+	/**
+	 * @return le MultiLayerPercepton de la classe, permet le chargement de l'IA
+	 */
 	public MultiLayerPerceptron getNet()
 	{
 		return this.net ;

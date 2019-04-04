@@ -41,41 +41,180 @@ import javafx.util.Duration;
  */
 public class IAController extends ToolsBarController implements Initializable
 {
+	/**
+	 * Image en haut a gauche
+	 */
 	@FXML private ImageView Button00;
+	
+	/**
+	 * Image en haut au milieu
+	*/
 	@FXML private ImageView Button01;
+	
+	/**
+	 * Image en haut à droite
+	 */
 	@FXML private ImageView Button02;
+	
+	/**
+	 * Image au milieu a gauche
+	 */
 	@FXML private ImageView Button10;
+	
+	/**
+	 * Image au milieu 
+	 */
 	@FXML private ImageView Button11;
+	
+	/**
+	 * Image au milieu à droite
+	 */
 	@FXML private ImageView Button12;
+	
+	/**
+	 * Image en bas à gauche
+	 */
 	@FXML private ImageView Button20;
+	
+	/**
+	 * Image en bas au milieu
+	 */
 	@FXML private ImageView Button21;
+	
+	/**
+	 * Image en bas à droite
+	 */
 	@FXML private ImageView Button22;
+	
+	/**
+	 * Image permettant de mettre le son ou de l'enlever
+	 */
 	@FXML private ImageView Speaker;
+	
+	/**
+	 * Croix pour le joueur 1
+	 */
 	@FXML private ImageView imagePlayer00 ;
+	
+	/**
+	 * Rond pour le joueur 2
+	 */
 	@FXML private ImageView imagePlayer01 ;
+	
+	/**
+	 * Ligne rouge permettant de gérer la victoire 
+	 */
 	@FXML public Rectangle rectangle00 ;
+	
+	/**
+	 * Ligne rouge permettant de gérer la victoire 
+	 */
 	@FXML public Rectangle rectangle01 ;
+	
+	/**
+	 * Ligne rouge permettant de gérer la victoire 
+	 */
 	@FXML public Rectangle rectangle02 ;
+	
+	/**
+	 * Ligne rouge permettant de gérer la victoire 
+	 */
 	@FXML public Rectangle rectangle03 ;
+	
+	/**
+	 * Ligne rouge permettant de gérer la victoire 
+	 */
 	@FXML public Rectangle rectangle04 ;
+	
+	/**
+	 * Ligne rouge permettant de gérer la victoire 
+	 */
 	@FXML public Rectangle rectangle05 ;
+	
+	/**
+	 * Ligne rouge permettant de gérer la victoire 
+	 */
 	@FXML public Rectangle rectangle06 ;
+	
+	/**
+	 * Ligne rouge permettant de gérer la victoire 
+	 */
 	@FXML public Rectangle rectangle07 ;
+	
+	/**
+	 * Nom du joueur 1 
+	 */
 	@FXML private Button player00 ;
+	
+	/**
+	 * Nom du joueur 2
+	 */
 	@FXML private Button player01 ;
-	Image speakerOff = new Image("Images/speakerOff.png");
-	Image speakerOn = new Image("Images/speakerOn.png");
-	Image cercle = new Image("Images/Circle.png") ;
-	Image croix = new Image("Images/Cross.png") ;
-	Image base = new Image("Images/Blanc.png") ;
-	Launcher launcher = Launcher.getInstance() ;
-	private boolean joueur = true ;
+	
+	/**
+	 * Nombre permettant de gérer le nombre de clck
+	 */
 	int click = 0 ;
+	
+	/**
+	 * Image du cercle
+	 */
+	Image cercle = new Image("Images/Circle.png") ;
+	
+	/**
+	 * Image de croix
+	 */
+	Image croix = new Image("Images/Cross.png") ;
+	
+	/**
+	 * Image de base qui va apparaître sur les button
+	 */
+	Image base = new Image("Images/Blanc.png") ;
+	
+	/**
+	 * Instance de game
+	 */
+	Game game = new Game();
+	
+	/**
+	 * Image quand la musique est couper
+	 */
+	Image speakerOff = new Image("Images/speakerOff.png");
+	
+	/**
+	 * Image quand la musique est allumer
+	 */
+	Image speakerOn = new Image("Images/speakerOn.png");
+	
+	/**
+	 * Liste de coup pour le joueur 1
+	 */
+	Vector<Coup> listJoueur1 = new Vector<Coup>() ;
+	
+	/**
+	 * Liste de coup pour le joueur 2
+	 */
+	Vector<Coup> listJoueur2 = new Vector<Coup>() ;
+	
+	/**
+	 * Singleton main
+	 */
+	Launcher launcher = Launcher.getInstance() ;
+	
+	/**
+	 * Boolean pour les tour de jeu
+	 */
+	private boolean joueur = true ;
 
-	private Game game = new Game();
-
+	/**
+	 * Instace de l'ia controller
+	 */
 	private iaViewController IA ;
 
+	/**
+	 *  Quand on va arriver dans la vue, on va afficher les différents joueurs, et une alerte avec qui va commencer
+	 *  Ainsi que charger le fichier de sauvegarde de l'IA qui est choisit dans les option
+	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) 
 	{
@@ -105,7 +244,10 @@ public class IAController extends ToolsBarController implements Initializable
 			System.out.println(e.getMessage());
 		}
 	}
-
+	
+	/**
+	 * Alerte permettant de dire que le joueur 1 commence
+	 */
 	public void alertJoueur1()
 	{
 		Alert alert = new Alert(AlertType.INFORMATION);
@@ -115,40 +257,47 @@ public class IAController extends ToolsBarController implements Initializable
 		alert.showAndWait();
 	}
 
-	public void alertJoueur2()
-	{
-		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setTitle("Début du jeu !");
-		alert.setHeaderText(null);
-		alert.setContentText("Le joueur " + launcher.getPlayer01Name() + " commence");
-		alert.showAndWait();
-	}
-
+	/**
+	 * Permet d'afficher le joueur 1 dans le button correspondant
+	 */
 	public void displayerPlayer00()
 	{
 		this.player00.setText(launcher.getPlayer00Name());
 		this.imagePlayer00.setImage(croix);
 	}
-
+	
+	/**
+	 * Permet d'aficher le joueur 2 dans le button correspondant
+	 */
 	public void displayPlayer01()
 	{
 		this.player01.setText(launcher.getPlayer01Name());
 		this.imagePlayer01.setImage(cercle);
 	}
-
+	
+	/**
+	 * Quand l'utilisateur va cliquer sur ce button, on va quitter le jeu
+	 */
 	@FXML
 	public void onClickQuitButton()
 	{
 		super.onClickQuitButton();
 	}
-
+	
+	/**
+	 * Quand l'utilisateur va cliquer sur ce button on va aller dans les option du jeu
+	 */
 	@FXML
 	public void onClickSetttingButton()
 	{
 		super.onClickSettingButton();
 	}
 
-
+	
+	/**
+	 * Permet de faire bouger la ligne horizontale
+	 * @param rectangle = rectangle à annimer ;
+	 */
 	private void annimationLine(Rectangle rectangle)
 	{
 		final TranslateTransition translateAnimation = new TranslateTransition(Duration.seconds(1), rectangle); 
@@ -159,8 +308,11 @@ public class IAController extends ToolsBarController implements Initializable
 		translateAnimation.setInterpolator(Interpolator.LINEAR);
 		translateAnimation.play();
 	}
-
-
+	 
+	/**
+	 * permet de faire bouger la ligne verticale 
+	 * @param rectangle = rectangle à annimer ;
+	 */
 	private void annimationVerticale(Rectangle rectangle)
 	{
 		final TranslateTransition translateAnimation = new TranslateTransition(Duration.seconds(1), rectangle); 
@@ -168,13 +320,15 @@ public class IAController extends ToolsBarController implements Initializable
 		translateAnimation.setAutoReverse(true); 
 		translateAnimation.setByX(0); 
 		translateAnimation.setByY(70); 
-
+		 
 		translateAnimation.setInterpolator(Interpolator.LINEAR);
 		translateAnimation.play();
 	}
-
-
-
+	
+	/**
+	 * Permet de faire bouger la ligne en diagonale
+	 * @param rectangle = rectangle à annimer ;
+	 */
 	private void annimationDiagonale(Rectangle rectangle)
 	{
 		final TranslateTransition translateAnimation = new TranslateTransition(Duration.seconds(1), rectangle); 
@@ -186,6 +340,10 @@ public class IAController extends ToolsBarController implements Initializable
 		translateAnimation.play();
 	}
 	
+	/**
+	 * Fonction permettant à l'interface de savoir quelle rectangle à afficher quand un utilisateur à gagner
+	 * @param a = rectangle à afficher ;
+	 */
 	public void afficheTrait(int a)
 	{
 		switch(a) {
@@ -226,6 +384,10 @@ public class IAController extends ToolsBarController implements Initializable
 		}
 	}
 
+	/**
+	 * Quand c'est le tour de l'IA, cette function va appeller la function forwardPropagation qui renvoi un tableau de probailités pour 
+	 * les case à jouer
+	 */
 	public void turnIA()
 	{
 		double[] probOUT = new double[9] ;
@@ -249,6 +411,10 @@ public class IAController extends ToolsBarController implements Initializable
 		}
 	}
 
+	/**
+	 * Trouve le meilleur coup possible dans le tableau de probabilités et apelle la funtion poserRond()
+	 * @param proba = tableau de probabilités pour le meilleur coup ;
+	 */
 	private void getBestCoup(double[] proba)
 	{
 		double max = 0.0 ;
@@ -269,7 +435,10 @@ public class IAController extends ToolsBarController implements Initializable
 		this.poserRond(maxIndice);
 	}
 
-
+	/**
+	 * Permet de poser le rond à l'indice passer en paramètre
+	 * @param maxIndice = indice ou poser le rond ;
+	 */
 	public void poserRond(int maxIndice)
 	{
 		this.joueur = !joueur ;
@@ -325,7 +494,13 @@ public class IAController extends ToolsBarController implements Initializable
 			break ;
 		}
 	}
-
+	
+	/**
+	 * Quand l'utilisateur va cliquer sur le boutton00, le jeu en back-end va gérer le tour de joueur et quelle image poser.
+	 * On va aussi enregister chaque coup que l'utilisateur va effectuer, ainsi que le plateau.
+	 * Quand il y aura plus de 4 click enregistrer, le jeu va aussi vérifier si le joueur à gagner aprés qu'il ait poser.
+	 * Termine en faisant appel au tour de l'IA
+	 */
 	@FXML
 	void onClickButton00()
 	{
@@ -354,6 +529,12 @@ public class IAController extends ToolsBarController implements Initializable
 		return ;
 	}
 
+	/**
+	 * Quand l'utilisateur va cliquer sur le boutton01, le jeu en back-end va gérer le tour de joueur et quelle image poser.
+	 * On va aussi enregister chaque coup que l'utilisateur va effectuer, ainsi que le plateau.
+	 * Quand il y aura plus de 4 click enregistrer, le jeu va aussi vérifier si le joueur à gagner aprés qu'il ait poser.
+	 * Termine en faisant appel au tour de l'IA
+	 */
 	@FXML
 	void onClickButton01()
 	{
@@ -384,6 +565,12 @@ public class IAController extends ToolsBarController implements Initializable
 		return ;
 	}
 
+	/**
+	 * Quand l'utilisateur va cliquer sur le boutton02, le jeu en back-end va gérer le tour de joueur et quelle image poser.
+	 * On va aussi enregister chaque coup que l'utilisateur va effectuer, ainsi que le plateau.
+	 * Quand il y aura plus de 4 click enregistrer, le jeu va aussi vérifier si le joueur à gagner aprés qu'il ait poser.
+	 * Termine en faisant appel au tour de l'IA
+	 */
 	@FXML
 	void onClickButton02()
 	{
@@ -413,6 +600,12 @@ public class IAController extends ToolsBarController implements Initializable
 
 	}
 
+	/**
+	 * Quand l'utilisateur va cliquer sur le boutton10, le jeu en back-end va gérer le tour de joueur et quelle image poser.
+	 * On va aussi enregister chaque coup que l'utilisateur va effectuer, ainsi que le plateau.
+	 * Quand il y aura plus de 4 click enregistrer, le jeu va aussi vérifier si le joueur à gagner aprés qu'il ait poser.
+	 * Termine en faisant appel au tour de l'IA
+	 */
 	@FXML
 	void onClickButton10()
 	{
@@ -442,6 +635,12 @@ public class IAController extends ToolsBarController implements Initializable
 		return ;
 	}
 
+	/**
+	 * Quand l'utilisateur va cliquer sur le boutton11, le jeu en back-end va gérer le tour de joueur et quelle image poser.
+	 * On va aussi enregister chaque coup que l'utilisateur va effectuer, ainsi que le plateau.
+	 * Quand il y aura plus de 4 click enregistrer, le jeu va aussi vérifier si le joueur à gagner aprés qu'il ait poser.
+	 * Termine en faisant appel au tour de l'IA
+	 */
 	@FXML
 	void onClickButton11()
 	{
@@ -470,6 +669,12 @@ public class IAController extends ToolsBarController implements Initializable
 		return ;
 	}
 
+	/**
+	 * Quand l'utilisateur va cliquer sur le boutton12, le jeu en back-end va gérer le tour de joueur et quelle image poser.
+	 * On va aussi enregister chaque coup que l'utilisateur va effectuer, ainsi que le plateau.
+	 * Quand il y aura plus de 4 click enregistrer, le jeu va aussi vérifier si le joueur à gagner aprés qu'il ait poser.
+	 * Termine en faisant appel au tour de l'IA
+	 */
 	@FXML
 	void onClickButton12()
 	{
@@ -499,6 +704,12 @@ public class IAController extends ToolsBarController implements Initializable
 		return ;
 	}
 
+	/**
+	 * Quand l'utilisateur va cliquer sur le boutton20, le jeu en back-end va gérer le tour de joueur et quelle image poser.
+	 * On va aussi enregister chaque coup que l'utilisateur va effectuer, ainsi que le plateau.
+	 * Quand il y aura plus de 4 click enregistrer, le jeu va aussi vérifier si le joueur à gagner aprés qu'il ait poser.
+	 * Termine en faisant appel au tour de l'IA
+	 */
 	@FXML
 	void onClickButton20()
 	{
@@ -527,6 +738,12 @@ public class IAController extends ToolsBarController implements Initializable
 		return ;
 	}
 
+	/**
+	 * Quand l'utilisateur va cliquer sur le boutton21, le jeu en back-end va gérer le tour de joueur et quelle image poser.
+	 * On va aussi enregister chaque coup que l'utilisateur va effectuer, ainsi que le plateau.
+	 * Quand il y aura plus de 4 click enregistrer, le jeu va aussi vérifier si le joueur à gagner aprés qu'il ait poser.
+	 * Termine en faisant appel au tour de l'IA
+	 */
 	@FXML
 	void onClickButton21()
 	{
@@ -555,6 +772,12 @@ public class IAController extends ToolsBarController implements Initializable
 		return ;
 	}
 
+	/**
+	 * Quand l'utilisateur va cliquer sur le boutton22, le jeu en back-end va gérer le tour de joueur et quelle image poser.
+	 * On va aussi enregister chaque coup que l'utilisateur va effectuer, ainsi que le plateau.
+	 * Quand il y aura plus de 4 click enregistrer, le jeu va aussi vérifier si le joueur à gagner aprés qu'il ait poser.
+	 * Termine en faisant appel au tour de l'IA
+	 */
 	@FXML
 	void onClickButton22()
 	{
@@ -583,7 +806,11 @@ public class IAController extends ToolsBarController implements Initializable
 		return ;
 	}
 
-	void eraseImage()
+	/**
+	 * Rend le tableau comme à son départ, en rendant cliquable toutes les ImageView, effacant les rectangle rouge qui ont 
+	 * put apparaitre et en reinitialisant le nombre de click
+	 */
+	private void eraseImage()
 	{
 		this.click = 0;
 		this.Button00.setDisable(false);
@@ -618,6 +845,10 @@ public class IAController extends ToolsBarController implements Initializable
 		this.game.erasePion() ;
 	}
 
+	/**
+	 * Quand l'utilisateur va cliquer sur le button "Home", dans la barre d'action le système va effectuer une
+	 * vérification afin de savoir si le click était volontaire ou si c'était une erreur
+	 */
 	@FXML
 	public void onClickHomeButton()
 	{
@@ -642,6 +873,9 @@ public class IAController extends ToolsBarController implements Initializable
 		}
 	}
 
+	/**
+	 * Quand aucun joueur n'a gagné, lance une alerte pour le signifier et va reinitialiser le plateau
+	 */
 	public void gameNull()
 	{
 		Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -663,10 +897,6 @@ public class IAController extends ToolsBarController implements Initializable
 			{
 				this.alertJoueur1();
 			}
-			else 
-			{
-				this.alertJoueur1();
-			}
 		}
 		else 
 		{
@@ -674,7 +904,10 @@ public class IAController extends ToolsBarController implements Initializable
 		}
 
 	}
-
+	
+	/**
+	 * Transition quand l'utilisateur choisit de quitter le plateau de jeu
+	 */
 	private void makeOnFadeOut() 
 	{
 		Launcher laucher = Launcher.getInstance() ;
@@ -705,6 +938,11 @@ public class IAController extends ToolsBarController implements Initializable
 		});
 	}
 
+	/**
+	 * Quand un utilisateur à gagner, lance une alerte pour le signifier au joueur. Il choisit alors
+	 * ce qu'il veut faire : recommencer / quitter.
+	 * En fonction du choix du joueur, le système va effectuer des actions différentes
+	 */
 	public void win()
 	{
 		Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -731,10 +969,6 @@ public class IAController extends ToolsBarController implements Initializable
 			{
 				this.alertJoueur1();
 			}
-			else 
-			{
-				this.alertJoueur1();
-			}
 		}
 		else 
 		{
@@ -742,6 +976,10 @@ public class IAController extends ToolsBarController implements Initializable
 		}
 	}
 
+	/**
+	 * Quand l'utilisateur cliquera dessus, la musique jouer en arrière plan va s'arréter ou redemarrer.
+	 * Le système va changer l'image en fonction du choix du joueur
+	 */
 	@FXML
 	void onClickStopMusic()
 	{
